@@ -1,0 +1,19 @@
+model              rfmid_valid_me  rfmid_valid_A  rfmid_valid_C  rfmid_valid_B POSTHOC_idrid_ POSTHOC_papila  fail_all     fail_Bosch   fail_Remidio
+fe_v14_seed42               0.750          0.761          0.739          0.938          0.081          0.952         0.567        0.135        0.689
+fe_v14_seed43               0.498          0.607          0.389          0.931          0.078          0.954         0.540        0.202        0.647
+fe_v14_seed44               0.365          0.395          0.335          0.938          0.079          0.951         0.836        0.702        0.952
+fe_v14p_seed42              0.635          0.708          0.562          0.935          0.077          0.953         0.498        0.154        0.600
+fe_v14p_seed43              0.408          0.427          0.389          0.935          0.081          0.952         0.862        0.952        0.952
+fe_v14p_seed44              0.120          0.224          0.015          0.950          0.078          0.954         0.734        0.548        0.844
+fe_v14_f10_seed42           0.027          0.055          0.000          0.922          0.068          0.949         0.776        0.750        0.870
+fe_v14_f25_seed42           0.020          0.035          0.005          0.931          0.066          0.952         0.792        0.779        0.886
+fe_v14_f50_seed42           0.134          0.259          0.010          0.935          0.071          0.952         0.785        0.788        0.877
+
+Spearman rho (exact p) vs Chaksu failure; negative rho for validity/Dice = higher score, fewer failures
+rfmid_valid_meanAC                 all: -0.48 (p=0.194)  Bosch: -0.62 (p=0.086)  Remidio: -0.49 (p=0.180)
+rfmid_valid_A                      all: -0.48 (p=0.194)  Bosch: -0.62 (p=0.086)  Remidio: -0.49 (p=0.180)
+rfmid_valid_C                      all: -0.43 (p=0.254)  Bosch: -0.62 (p=0.081)  Remidio: -0.44 (p=0.233)
+rfmid_valid_B                      all: +0.02 (p=0.976)  Bosch: -0.31 (p=0.421)  Remidio: +0.04 (p=0.925)
+POSTHOC_idrid_centre_err_median    all: +0.02 (p=0.982)  Bosch: -0.33 (p=0.385)  Remidio: +0.01 (p=0.991)
+POSTHOC_papila_disc_dice           all: -0.50 (p=0.178)  Bosch: -0.28 (p=0.463)  Remidio: -0.54 (p=0.141)
+saved results/fe/chaksu_eval/secondary_rank_agreement.json

@@ -1,0 +1,15 @@
+chaksu_train all        n=1009 | flag: rho +0.87 (p=0.005) regret R 0.000 P 0.000 | reject: rho +0.87 (p=0.005) regret R 0.000 P 0.000 |
+   silent failure among accepted (full gate): v14_seed42 0.000 (cov 0.80), v14_seed43 0.000 (cov 0.56), v14_seed44 0.005 (cov 0.21), v14p_seed42 0.007 (cov 0.71), v14p_seed43 0.093 (cov 0.29), v14p_seed44 0.023 (cov 0.35), v14_f10_seed42 0.006 (cov 0.16), v14_f25_seed42 0.000 (cov 0.14), v14_f50_seed42 0.000 (cov 0.40)
+chaksu_train Bosch      n= 104 | flag: rho +0.75 (p=0.024) regret R 0.048 P 0.000 | reject: rho +0.92 (p=0.001) regret R 0.048 P 0.000 |
+chaksu_train Forus      n=  95 | flag: rho n/a regret R 0.000 P 0.000 | reject: rho n/a regret R 0.000 P 0.000 |
+chaksu_train Remidio    n= 810 | flag: rho +0.88 (p=0.003) regret R 0.000 P 0.000 | reject: rho +0.82 (p=0.011) regret R 0.000 P 0.000 |
+chaksu_test  all        n= 336 | flag: rho +0.93 (p=0.001) regret R 0.000 P 0.000 | reject: rho +0.83 (p=0.009) regret R 0.000 P 0.000 |
+   silent failure among accepted (full gate): v14_seed42 0.000 (cov 0.79), v14_seed43 0.000 (cov 0.50), v14_seed44 0.014 (cov 0.21), v14p_seed42 0.009 (cov 0.69), v14p_seed43 0.131 (cov 0.25), v14p_seed44 0.031 (cov 0.39), v14_f10_seed42 0.016 (cov 0.18), v14_f25_seed42 0.000 (cov 0.16), v14_f50_seed42 0.000 (cov 0.29)
+chaksu_test  Bosch      n=  41 | flag: rho +0.92 (p=0.001) regret R 0.000 P 0.000 | reject: rho +0.91 (p=0.002) regret R 0.000 P 0.000 |
+chaksu_test  Forus      n=  31 | flag: rho n/a regret R 0.000 P 0.000 | reject: rho n/a regret R 0.000 P 0.000 |
+chaksu_test  Remidio    n= 264 | flag: rho +0.87 (p=0.005) regret R 0.000 P 0.000 | reject: rho +0.85 (p=0.006) regret R 0.000 P 0.000 |
+riga         all        n= 747 | flag: rho +0.43 (p=0.250) regret R 0.000 P 0.000 | reject: rho +0.75 (p=0.025) regret R 0.000 P 0.000 |
+   silent failure among accepted (full gate): v14_seed42 0.000 (cov 0.64), v14_seed43 0.004 (cov 0.38), v14_seed44 0.009 (cov 0.15), v14p_seed42 0.012 (cov 0.79), v14p_seed43 0.152 (cov 0.17), v14p_seed44 0.000 (cov 0.15), v14_f10_seed42 0.000 (cov 0.12), v14_f25_seed42 0.009 (cov 0.16), v14_f50_seed42 0.000 (cov 0.21)
+riga         BinRushed  n= 195 | flag: rho +0.33 (p=0.385) regret R 0.000 P 0.369 | reject: rho +0.59 (p=0.103) regret R 0.000 P 0.000 |
+riga         Magrabi    n=  92 | flag: rho +0.26 (p=0.528) regret R 0.011 P 0.000 | reject: rho +0.26 (p=0.528) regret R 0.011 P 0.000 |
+riga         Messidor   n= 460 | flag: rho +0.64 (p=0.068) regret R 0.000 P 0.000 | reject: rho +0.95 (p=0.000) regret R 0.000 P 0.000 |

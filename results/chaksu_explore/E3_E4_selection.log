@@ -1,0 +1,74 @@
+
+=== train/all (n=1009) E3: within-track pick (hit, regret) | rho over nine models
+  tta_flag_rate                      research: HIT 0.000  product: HIT 0.000 | rho +0.87 (p=0.005)
+  tta_median_spread                  research: HIT 0.000  product: HIT 0.000 | rho +0.90 (p=0.002)
+  tta_flag_rate_common_0.138         research: HIT 0.000  product: HIT 0.000 | rho +0.90 (p=0.002)
+  tta_flag_rate_common_0.297         research: HIT 0.000  product: HIT 0.000 | rho +0.82 (p=0.011)
+  idrid_centre_err (in-dist)         research: miss 0.139  product: HIT 0.000 | rho -0.23 (p=0.552)
+  neg_papila_dice (in-dist)          research: miss 0.139  product: miss 0.344 | rho +0.40 (p=0.291)
+  neg_rfmid_valid_AC                 research: HIT 0.000  product: HIT 0.000 | rho +0.63 (p=0.076)
+  seed_disagreement (model level)    research: miss 0.139  product: miss 0.449
+  random                             research: hit 0.33, E[regret] 0.244  product: hit 0.33, E[regret] 0.264
+  E4 (TTA flag rate, k images): k=10: research hit 0.91 regret 0.012, product hit 0.75 regret 0.086 | k=25: research hit 0.98 regret 0.002, product hit 0.88 regret 0.041 | k=50: research hit 1.00 regret 0.000, product hit 0.95 regret 0.016 | k=100: research hit 1.00 regret 0.000, product hit 0.99 regret 0.002 | k=200: research hit 1.00 regret 0.000, product hit 1.00 regret 0.000
+
+=== train/Remidio (n=810) E3: within-track pick (hit, regret) | rho over nine models
+  tta_flag_rate                      research: HIT 0.000  product: HIT 0.000 | rho +0.88 (p=0.003)
+  tta_median_spread                  research: HIT 0.000  product: HIT 0.000 | rho +0.87 (p=0.005)
+  tta_flag_rate_common_0.138         research: HIT 0.000  product: HIT 0.000 | rho +0.90 (p=0.002)
+  tta_flag_rate_common_0.297         research: HIT 0.000  product: HIT 0.000 | rho +0.93 (p=0.001)
+  idrid_centre_err (in-dist)         research: miss 0.179  product: HIT 0.000 | rho -0.18 (p=0.644)
+  neg_papila_dice (in-dist)          research: miss 0.179  product: miss 0.390 | rho +0.28 (p=0.463)
+  neg_rfmid_valid_AC                 research: HIT 0.000  product: HIT 0.000 | rho +0.62 (p=0.086)
+  seed_disagreement (model level)    research: miss 0.179  product: miss 0.457
+  random                             research: hit 0.33, E[regret] 0.285  product: hit 0.33, E[regret] 0.282
+  E4 (TTA flag rate, k images): k=10: research hit 0.92 regret 0.015, product hit 0.76 regret 0.095 | k=25: research hit 0.99 regret 0.001, product hit 0.87 regret 0.051 | k=50: research hit 1.00 regret 0.000, product hit 0.94 regret 0.022 | k=100: research hit 1.00 regret 0.000, product hit 0.99 regret 0.004 | k=200: research hit 1.00 regret 0.000, product hit 1.00 regret 0.000
+
+=== train/Bosch (n=104) E3: within-track pick (hit, regret) | rho over nine models
+  tta_flag_rate                      research: miss 0.048  product: HIT 0.000 | rho +0.75 (p=0.024)
+  tta_median_spread                  research: miss 0.048  product: HIT 0.000 | rho +0.85 (p=0.005)
+  tta_flag_rate_common_0.138         research: miss 0.048  product: HIT 0.000 | rho +0.85 (p=0.005)
+  tta_flag_rate_common_0.297         research: HIT 0.000  product: HIT 0.000 | rho +0.90 (p=0.002)
+  idrid_centre_err (in-dist)         research: HIT 0.000  product: HIT 0.000 | rho -0.33 (p=0.375)
+  neg_papila_dice (in-dist)          research: HIT 0.000  product: miss 0.298 | rho +0.52 (p=0.156)
+  neg_rfmid_valid_AC                 research: miss 0.048  product: HIT 0.000 | rho +0.61 (p=0.087)
+  seed_disagreement (model level)    research: miss 0.048  product: miss 0.298
+  random                             research: hit 0.33, E[regret] 0.199  product: hit 0.33, E[regret] 0.365
+  E4 (TTA flag rate, k images): k=10: research hit 0.34 regret 0.032, product hit 0.93 regret 0.022 | k=25: research hit 0.21 regret 0.038, product hit 1.00 regret 0.001 | k=50: research hit 0.10 regret 0.043, product hit 1.00 regret 0.000 | k=100: research hit 0.00 regret 0.048, product hit 1.00 regret 0.000
+
+=== test/all (n=336) E3: within-track pick (hit, regret) | rho over nine models
+  tta_flag_rate                      research: HIT 0.000  product: HIT 0.000 | rho +0.93 (p=0.001)
+  tta_median_spread                  research: HIT 0.000  product: HIT 0.000 | rho +0.95 (p=0.000)
+  tta_flag_rate_common_0.138         research: HIT 0.000  product: HIT 0.000 | rho +0.90 (p=0.002)
+  tta_flag_rate_common_0.297         research: HIT 0.000  product: HIT 0.000 | rho +0.90 (p=0.002)
+  idrid_centre_err (in-dist)         research: miss 0.173  product: HIT 0.000 | rho -0.16 (p=0.683)
+  neg_papila_dice (in-dist)          research: miss 0.173  product: miss 0.280 | rho +0.49 (p=0.187)
+  neg_rfmid_valid_AC                 research: HIT 0.000  product: HIT 0.000 | rho +0.54 (p=0.135)
+  seed_disagreement (model level)    research: miss 0.173  product: miss 0.280
+  random                             research: hit 0.33, E[regret] 0.244  product: hit 0.33, E[regret] 0.246
+  E4 (TTA flag rate, k images): k=10: research hit 0.94 regret 0.010, product hit 0.59 regret 0.114 | k=25: research hit 1.00 regret 0.001, product hit 0.65 regret 0.099 | k=50: research hit 1.00 regret 0.000, product hit 0.72 regret 0.079 | k=100: research hit 1.00 regret 0.000, product hit 0.82 regret 0.049 | k=200: research hit 1.00 regret 0.000, product hit 0.96 regret 0.011
+
+=== test/Remidio (n=264) E3: within-track pick (hit, regret) | rho over nine models
+  tta_flag_rate                      research: HIT 0.000  product: HIT 0.000 | rho +0.87 (p=0.005)
+  tta_median_spread                  research: HIT 0.000  product: HIT 0.000 | rho +0.85 (p=0.006)
+  tta_flag_rate_common_0.138         research: HIT 0.000  product: HIT 0.000 | rho +0.77 (p=0.021)
+  tta_flag_rate_common_0.297         research: HIT 0.000  product: HIT 0.000 | rho +0.75 (p=0.025)
+  idrid_centre_err (in-dist)         research: miss 0.216  product: HIT 0.000 | rho -0.23 (p=0.552)
+  neg_papila_dice (in-dist)          research: miss 0.216  product: miss 0.330 | rho +0.40 (p=0.291)
+  neg_rfmid_valid_AC                 research: HIT 0.000  product: HIT 0.000 | rho +0.63 (p=0.076)
+  seed_disagreement (model level)    research: miss 0.216  product: miss 0.447
+  random                             research: hit 0.33, E[regret] 0.275  product: hit 0.33, E[regret] 0.259
+  E4 (TTA flag rate, k images): k=10: research hit 0.95 regret 0.010, product hit 0.56 regret 0.145 | k=25: research hit 1.00 regret 0.000, product hit 0.64 regret 0.118 | k=50: research hit 1.00 regret 0.000, product hit 0.67 regret 0.109 | k=100: research hit 1.00 regret 0.000, product hit 0.76 regret 0.078 | k=200: research hit 1.00 regret 0.000, product hit 0.95 regret 0.017
+
+=== test/Bosch (n=41) E3: within-track pick (hit, regret) | rho over nine models
+  tta_flag_rate                      research: HIT 0.000  product: HIT 0.000 | rho +0.92 (p=0.001)
+  tta_median_spread                  research: HIT 0.000  product: HIT 0.000 | rho +0.95 (p=0.000)
+  tta_flag_rate_common_0.138         research: HIT 0.000  product: HIT 0.000 | rho +0.98 (p=0.000)
+  tta_flag_rate_common_0.297         research: HIT 0.000  product: HIT 0.000 | rho +0.98 (p=0.000)
+  idrid_centre_err (in-dist)         research: miss 0.024  product: HIT 0.000 | rho -0.25 (p=0.521)
+  neg_papila_dice (in-dist)          research: miss 0.024  product: miss 0.171 | rho +0.37 (p=0.336)
+  neg_rfmid_valid_AC                 research: HIT 0.000  product: HIT 0.000 | rho +0.52 (p=0.162)
+  seed_disagreement (model level)    research: HIT 0.000  product: miss 0.171
+  random                             research: hit 0.33, E[regret] 0.228  product: hit 0.33, E[regret] 0.350
+  E4 (TTA flag rate, k images): k=10: research hit 0.95 regret 0.001, product hit 0.89 regret 0.019 | k=25: research hit 1.00 regret 0.000, product hit 1.00 regret 0.000
+
+saved results/fe/chaksu_explore/E3_E4_selection.json

@@ -1,0 +1,122 @@
+{
+  "created": "2026-11-13T11:22:11",
+  "fe_outputs_read": false,
+  "rules": "Paper 2 (Chaksu): reference standard for the Chaksu Train split from the published expert masks. No FE model is loaded.\nRules fixed before any FE output on Chaksu exists:\n - primary reference: STAPLE optic-disc mask (5.0_OD_OC_Mean_Median_Majority_STAPLE/<device>/Disc/STAPLE);\n   centre = centroid of the largest foreground component, radius = sqrt(area / pi), in original-image pixels;\n - sensitivity reference: Majority disc mask (same folder, Majority);\n - inter-expert baseline: each expert's binary disc mask (3.0_Doctors_Annotations_Binary_OD_OC/Expert k/<device>/Disc),\n   centroid distance to the STAPLE centre divided by the STAPLE radius;\n - images are read without EXIF rotation, as the FE pipeline reads them; mask and image sizes must match.\nWrites results/fe/chaksu_ref/reference_train.csv and summary.json. Run once; inspect the summary before locking.",
+  "script_sha256": "df1dbe82ff32b812976f02def5c49f168b73759bb653ea05b2f1621119ff1a6c",
+  "summary": {
+    "Bosch": {
+      "images": 104,
+      "staple_ok": 104,
+      "size_match": 104,
+      "size_match_only_if_transposed": 0,
+      "exif_orientation_counts": {
+        "1": 104
+      },
+      "image_sizes": {
+        "1920x1440": 104
+      },
+      "multi_component_staple": 16,
+      "minor_component_frac_p99": 0.00016245646670875357,
+      "ref_radius_px_p5_50_95": [
+        94.90576992621469,
+        111.72164559694613,
+        123.15180700550798
+      ],
+      "ref_radius_rel_to_short_side_median": 0.07758447610899037,
+      "experts_available": {
+        "1": 104,
+        "2": 104,
+        "3": 104,
+        "4": 104,
+        "5": 104
+      },
+      "expert_vs_staple_centre_rd_p50_90_99": [
+        0.023511416365914875,
+        0.0487101370747978,
+        0.0848447346104342
+      ],
+      "expert_centre_gt_0p2_rd": 2,
+      "expert_pairs": 520,
+      "majority_vs_staple_centre_rd_p50_99": [
+        0.006384364280080983,
+        0.026293164371587924
+      ]
+    },
+    "Forus": {
+      "images": 95,
+      "staple_ok": 95,
+      "size_match": 95,
+      "size_match_only_if_transposed": 0,
+      "exif_orientation_counts": {
+        "1": 95
+      },
+      "image_sizes": {
+        "2048x1536": 95
+      },
+      "multi_component_staple": 27,
+      "minor_component_frac_p99": 8.709904904577794e-05,
+      "ref_radius_px_p5_50_95": [
+        144.62507489925832,
+        158.75597147240276,
+        181.34336648429064
+      ],
+      "ref_radius_rel_to_short_side_median": 0.10335675226067888,
+      "experts_available": {
+        "1": 95,
+        "2": 95,
+        "3": 95,
+        "4": 95,
+        "5": 95
+      },
+      "expert_vs_staple_centre_rd_p50_90_99": [
+        0.015651234123746346,
+        0.0325839752988051,
+        0.052608271518680874
+      ],
+      "expert_centre_gt_0p2_rd": 0,
+      "expert_pairs": 475,
+      "majority_vs_staple_centre_rd_p50_99": [
+        0.00789448271485514,
+        0.023639959204549758
+      ]
+    },
+    "Remidio": {
+      "images": 810,
+      "staple_ok": 810,
+      "size_match": 810,
+      "size_match_only_if_transposed": 0,
+      "exif_orientation_counts": {
+        "1": 810
+      },
+      "image_sizes": {
+        "2448x3264": 810
+      },
+      "multi_component_staple": 100,
+      "minor_component_frac_p99": 0.00011403319455868681,
+      "ref_radius_px_p5_50_95": [
+        188.72127855596347,
+        215.72377210495648,
+        249.7316258176422
+      ],
+      "ref_radius_rel_to_short_side_median": 0.08812245592522733,
+      "experts_available": {
+        "1": 810,
+        "2": 810,
+        "3": 810,
+        "4": 810,
+        "5": 810
+      },
+      "expert_vs_staple_centre_rd_p50_90_99": [
+        0.022004177425654473,
+        0.0495347307351911,
+        0.08456096576357752
+      ],
+      "expert_centre_gt_0p2_rd": 0,
+      "expert_pairs": 4050,
+      "majority_vs_staple_centre_rd_p50_99": [
+        0.008305186975308916,
+        0.04176967071595087
+      ]
+    }
+  }
+}

@@ -1,0 +1,240 @@
+/home/test/OpticNeuroFusion_Starter/fe/p2_cam_locked_eval.py:36: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  t = (torch.from_numpy(np.ascontiguousarray(x)).to(dev()).permute(2, 0, 1)[None].float().div(255) - MEAN.to(dev())) / STD.to(dev())
+25/336
+50/336
+75/336
+100/336
+125/336
+150/336
+175/336
+200/336
+225/336
+250/336
+275/336
+300/336
+325/336
+{
+ "n_images": 336,
+ "n_by_device": {
+  "Bosch": 41,
+  "Forus": 31,
+  "Remidio": 264
+ },
+ "gt_r384_R1m_above_46": 2,
+ "H1_crop_remedy": {
+  "research": {
+   "R0_failure": {
+    "k": 177,
+    "n": 336,
+    "p": 0.5267857142857143,
+    "ci95": [
+     0.4733980529801715,
+     0.5795677993463242
+    ]
+   },
+   "R1m_failure": {
+    "k": 41,
+    "n": 336,
+    "p": 0.12202380952380952,
+    "ci95": [
+     0.09123499568038583,
+     0.16135797704573124
+    ]
+   },
+   "R0_only_failures": 138,
+   "R1m_only_failures": 2,
+   "p_exact": 1.4164190352742676e-38,
+   "R0_coverage": {
+    "k": 125,
+    "n": 336,
+    "p": 0.37202380952380953,
+    "ci95": [
+     0.32206056239973185,
+     0.42488036537367785
+    ]
+   },
+   "R1m_coverage": {
+    "k": 267,
+    "n": 336,
+    "p": 0.7946428571428571,
+    "ci95": [
+     0.7482336792094627,
+     0.8343906963819893
+    ]
+   },
+   "R1m_failure_among_valid": {
+    "k": 0,
+    "n": 267,
+    "p": 0.0,
+    "ci95": [
+     0.0,
+     0.014183936293390674
+    ]
+   },
+   "p_holm": 2.832838070548535e-38,
+   "success": true
+  },
+  "product": {
+   "R0_failure": {
+    "k": 187,
+    "n": 336,
+    "p": 0.5565476190476191,
+    "ci95": [
+     0.5030852537630062,
+     0.6087315455929292
+    ]
+   },
+   "R1m_failure": {
+    "k": 105,
+    "n": 336,
+    "p": 0.3125,
+    "ci95": [
+     0.26529299845869303,
+     0.36394603525583746
+    ]
+   },
+   "R0_only_failures": 90,
+   "R1m_only_failures": 8,
+   "p_exact": 1.0875246615051457e-18,
+   "R0_coverage": {
+    "k": 146,
+    "n": 336,
+    "p": 0.43452380952380953,
+    "ci95": [
+     0.38255619625492576,
+     0.487971720280307
+    ]
+   },
+   "R1m_coverage": {
+    "k": 231,
+    "n": 336,
+    "p": 0.6875,
+    "ci95": [
+     0.6360539647441625,
+     0.7347070015413069
+    ]
+   },
+   "R1m_failure_among_valid": {
+    "k": 2,
+    "n": 231,
+    "p": 0.008658008658008658,
+    "ci95": [
+     0.0023775084651898957,
+     0.03101350913986816
+    ]
+   },
+   "p_holm": 1.0875246615051457e-18,
+   "success": true
+  }
+ },
+ "H2_seed_dependence_R1m": {
+  "research": {
+   "Q": 263.46666666666664,
+   "df": 2,
+   "p": 6.150922436964022e-58,
+   "n": 336,
+   "max_minus_min": 0.5595238095238095,
+   "failure_by_seed": {
+    "42": {
+     "k": 36,
+     "n": 336,
+     "p": 0.10714285714285714,
+     "ci95": [
+      0.07840080703677516,
+      0.14476669217462212
+     ]
+    },
+    "43": {
+     "k": 96,
+     "n": 336,
+     "p": 0.2857142857142857,
+     "ci95": [
+      0.24004475474477474,
+      0.33622842664325997
+     ]
+    },
+    "44": {
+     "k": 224,
+     "n": 336,
+     "p": 0.6666666666666666,
+     "ci95": [
+      0.6146271984251639,
+      0.7149381049396977
+     ]
+    }
+   },
+   "p_holm": 1.2301844873928044e-57,
+   "meaningful": true
+  },
+  "product": {
+   "Q": 217.63,
+   "df": 2,
+   "p": 5.52390182926771e-48,
+   "n": 336,
+   "max_minus_min": 0.5029761904761905,
+   "failure_by_seed": {
+    "42": {
+     "k": 95,
+     "n": 336,
+     "p": 0.28273809523809523,
+     "ci95": [
+      0.23725168008961228,
+      0.3331364065954786
+     ]
+    },
+    "43": {
+     "k": 264,
+     "n": 336,
+     "p": 0.7857142857142857,
+     "ci95": [
+      0.7387390220020162,
+      0.8262300694806037
+     ]
+    },
+    "44": {
+     "k": 198,
+     "n": 336,
+     "p": 0.5892857142857143,
+     "ci95": [
+      0.5359607858106344,
+      0.6405920552776844
+     ]
+    }
+   },
+   "p_holm": 5.52390182926771e-48,
+   "meaningful": true
+  }
+ },
+ "H3_label_free_selection": {
+  "rho": 0.9288784237188525,
+  "p_exact": 0.0007716049382716049,
+  "success": true
+ }
+}
+selection (all): {
+ "research": {
+  "label_free_choice": "fe_v14_seed42",
+  "best_by_ground_truth": "fe_v14_seed42",
+  "choice_failure": 0.12202380952380952,
+  "choice_coverage": 0.7946428571428571,
+  "choice_failure_among_unflagged": 0.0,
+  "seed_failures": {
+   "fe_v14_seed42": 0.12202380952380952,
+   "fe_v14_seed43": 0.29464285714285715,
+   "fe_v14_seed44": 0.6815476190476191
+  }
+ },
+ "product": {
+  "label_free_choice": "fe_v14p_seed42",
+  "best_by_ground_truth": "fe_v14p_seed42",
+  "choice_failure": 0.3125,
+  "choice_coverage": 0.6934523809523809,
+  "choice_failure_among_unflagged": 0.012875536480686695,
+  "seed_failures": {
+   "fe_v14p_seed42": 0.3125,
+   "fe_v14p_seed43": 0.7708333333333334,
+   "fe_v14p_seed44": 0.5922619047619048
+  }
+ }
+}
+LOCKED EVALUATION DONE (single run)

@@ -1,0 +1,34 @@
+{
+  "created": "2026-11-13T15:36:12",
+  "amends": {
+    "results/fe/cam_eval/preregistration.json": "7ef1f6df958b8c06ec02e74f4eed51f5e5cf8e62d841cee00bfcb16c0048e44e",
+    "results/fe/cam_eval/preregistration_amendment_1.json": "d35f8a3638a7a12a2d7ca02e1ce571b8d690035e54ff581bd568370e3b02bc3b"
+  },
+  "status_at_amendment": "no annotation exists; annotation package not delivered; reference not locked; evaluation not run; no TTA output of any model on RFMiD 1.0 Test images has been produced",
+  "reason": "supplementary external check of label-free model selection on a second dataset (internal review E2); Chaksu Test is consumed; RFMiD cameras A and C are absent from FE training",
+  "unchanged": "the analysis plan of preregistration.json (seed dependence, four cells, self-detection, intra-rater agreement) still applies to the annotated sample",
+  "added": {
+    "1_label_free_selection": "fe/p2r_labelfree_selection.py, run once after this amendment and before any annotation: all RFMiD 1.0 Test images of cameras A (439) and C (73), R1m crop, nine models through the deployed TTA code; per-model TTA flag rate; within-track choice = lowest flag rate on A+C (tie: lower median spread). Ground truth is not read; per-image outputs are stored and not displayed; the annotator remains blinded.",
+    "2_annotator_calibration": "the same annotator (kim_md) also annotates 30 Chaksu Train images (10 per device, fe/p2r_make_calib_package.py, seed 20261114); reported: annotator centre distance to the STAPLE centre (r_d) and proportion above 0.2 r_d, against the five experts' distances on the same images",
+    "S1": "within each track, regret = failure of the label-free choice minus the lowest failure among the three seeds, and hit (regret 0), on assessable annotated originals of cameras A and C (TTA frames on R1m; failure = centre > 0.2 r_d or none)",
+    "S2": "Spearman correlation across the nine models between TTA flag rate (512 unlabelled A+C images) and failure on the annotated A+C originals; met if rho > 0 and exact permutation p < 0.05",
+    "S3": "secondary: deployed pipelines R1m vs R0 on the annotated A+C originals (exact McNemar); camera B results descriptive",
+    "order": [
+      "lock this amendment",
+      "run the label-free selection (record hashed)",
+      "build and send the calibration package with the RFMiD package",
+      "annotation, senior review of uncertain images, reference lock",
+      "write and self-test the supplementary evaluation script on Chaksu Train data and lock its hash in a short addendum before the reference lock",
+      "single evaluation"
+    ],
+    "interpretation": "reference from one trained annotator and about 100 annotated A+C images: a supplementary external check, not equivalent to a multi-expert reference"
+  },
+  "selection_script_sha256": "f328a034ad879b09cc7eaeff737ffa5096c4f24ba5461058c9859b8d25812139",
+  "calibration_package_script_sha256": "a3132e437654378ca561a341d8a0f2353591082f20efbcfd350da63c9597dfef",
+  "dependency_sha256": {
+    "fe/p2c_crop.py": "f3c8bcbd92f6d08bca0906685c2cea7098ae596a8d9a4b52e953e8324f744ee0",
+    "fe/p2_cam_locked_eval.py": "8107871441691549389b14e718b5c62a820619713049975b1ac709b91220a309",
+    "onfm/frame.py": "4893da26151eea294eb035725be760d9d5918afd2881bd81bd427b25d92e604d",
+    "onfm/flag_thresholds.json": "87b701072d4410070a2a528000838c043305b99050d56f541c448260549d37fc"
+  }
+}

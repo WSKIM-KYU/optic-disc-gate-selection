@@ -1,0 +1,383 @@
+/home/test/OpticNeuroFusion_Starter/fe/p2_cam_locked_eval.py:36: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  t = (torch.from_numpy(np.ascontiguousarray(x)).to(dev()).permute(2, 0, 1)[None].float().div(255) - MEAN.to(dev())) / STD.to(dev())
+25/747
+50/747
+75/747
+100/747
+125/747
+150/747
+175/747
+200/747
+225/747
+250/747
+275/747
+300/747
+325/747
+350/747
+375/747
+400/747
+425/747
+450/747
+475/747
+500/747
+525/747
+550/747
+575/747
+600/747
+625/747
+650/747
+675/747
+700/747
+725/747
+{
+ "n_images": 747,
+ "n_by_source": {
+  "Messidor": 460,
+  "BinRushed": 195,
+  "Magrabi": 92
+ },
+ "G1_label_free_rank": {
+  "rho": 0.43333333333333335,
+  "p_exact": 0.24991732804232805,
+  "success": false
+ },
+ "G3_seed_dependence_R1m": {
+  "research": {
+   "Q": 651.0099403578529,
+   "df": 2,
+   "p": 4.315067753335818e-142,
+   "n": 747,
+   "max_minus_min": 0.6224899598393574,
+   "failure_by_seed": {
+    "42": {
+     "k": 114,
+     "n": 747,
+     "p": 0.15261044176706828,
+     "ci95": [
+      0.1286038465887941,
+      0.18017179929976618
+     ]
+    },
+    "43": {
+     "k": 307,
+     "n": 747,
+     "p": 0.4109772423025435,
+     "ci95": [
+      0.37623672634717953,
+      0.4466287089190605
+     ]
+    },
+    "44": {
+     "k": 579,
+     "n": 747,
+     "p": 0.7751004016064257,
+     "ci95": [
+      0.7437952313780775,
+      0.8035905288142188
+     ]
+    }
+   },
+   "p_holm": 4.315067753335818e-142,
+   "meaningful": true
+  },
+  "product": {
+   "Q": 976.4146341463414,
+   "df": 2,
+   "p": 9.424453377416027e-213,
+   "n": 747,
+   "max_minus_min": 0.7309236947791165,
+   "failure_by_seed": {
+    "42": {
+     "k": 89,
+     "n": 747,
+     "p": 0.11914323962516733,
+     "ci95": [
+      0.09783775873046469,
+      0.14434594552886246
+     ]
+    },
+    "43": {
+     "k": 635,
+     "n": 747,
+     "p": 0.8500669344042838,
+     "ci95": [
+      0.8226768663188677,
+      0.8738748431229109
+     ]
+    },
+    "44": {
+     "k": 600,
+     "n": 747,
+     "p": 0.8032128514056225,
+     "ci95": [
+      0.773181437708151,
+      0.830141553452701
+     ]
+    }
+   },
+   "p_holm": 1.8848906754832053e-212,
+   "meaningful": true
+  }
+ },
+ "G4_crop": {
+  "research": {
+   "R0_failure": {
+    "k": 337,
+    "n": 747,
+    "p": 0.45113788487282463,
+    "ci95": [
+     0.41579371039896773,
+     0.486982054822352
+    ]
+   },
+   "R1m_failure": {
+    "k": 145,
+    "n": 747,
+    "p": 0.19410977242302543,
+    "ci95": [
+     0.1673408791953624,
+     0.22400877431344696
+    ]
+   },
+   "R0_only_failures": 193,
+   "R1m_only_failures": 1,
+   "p_exact": 1.553264613354141e-56,
+   "R0_coverage": {
+    "k": 313,
+    "n": 747,
+    "p": 0.4190093708165997,
+    "ci95": [
+     0.3841291498553388,
+     0.45471835140191713
+    ]
+   },
+   "R1m_coverage": {
+    "k": 481,
+    "n": 747,
+    "p": 0.643908969210174,
+    "ci95": [
+     0.6089136504019722,
+     0.6774316986037302
+    ]
+   },
+   "R1m_failure_among_valid": {
+    "k": 0,
+    "n": 481,
+    "p": 0.0,
+    "ci95": [
+     0.0,
+     0.007923412512457676
+    ]
+   },
+   "p_holm": 3.106529226708282e-56,
+   "success": true
+  },
+  "product": {
+   "R0_failure": {
+    "k": 296,
+    "n": 747,
+    "p": 0.3962516733601071,
+    "ci95": [
+     0.36179237195197167,
+     0.43177260899740577
+    ]
+   },
+   "R1m_failure": {
+    "k": 158,
+    "n": 747,
+    "p": 0.21151271753681392,
+    "ci95": [
+     0.1837403922637244,
+     0.24223707089228613
+    ]
+   },
+   "R0_only_failures": 142,
+   "R1m_only_failures": 4,
+   "p_exact": 4.188799933293481e-37,
+   "R0_coverage": {
+    "k": 458,
+    "n": 747,
+    "p": 0.6131191432396251,
+    "ci95": [
+     0.5776983961713544,
+     0.6473823665354534
+    ]
+   },
+   "R1m_coverage": {
+    "k": 593,
+    "n": 747,
+    "p": 0.7938420348058902,
+    "ci95": [
+     0.7633628943140008,
+     0.821314353190666
+    ]
+   },
+   "R1m_failure_among_valid": {
+    "k": 7,
+    "n": 593,
+    "p": 0.011804384485666104,
+    "ci95": [
+     0.005729487731325721,
+     0.024163870908554607
+    ]
+   },
+   "p_holm": 4.188799933293481e-37,
+   "success": true
+  }
+ }
+}
+G2: {
+ "tta_flag_rate": {
+  "Messidor": {
+   "research": {
+    "label_free_choice": "fe_v14_seed42",
+    "best_by_ground_truth": "fe_v14_seed42",
+    "choice_failure": 0.10217391304347827,
+    "choice_coverage": 0.7086956521739131,
+    "choice_failure_among_unflagged": 0.0,
+    "seed_failures": {
+     "fe_v14_seed42": 0.10217391304347827,
+     "fe_v14_seed43": 0.41956521739130437,
+     "fe_v14_seed44": 0.9021739130434783
+    }
+   },
+   "product": {
+    "label_free_choice": "fe_v14p_seed42",
+    "best_by_ground_truth": "fe_v14p_seed42",
+    "choice_failure": 0.11739130434782609,
+    "choice_coverage": 0.8782608695652174,
+    "choice_failure_among_unflagged": 0.0024752475247524753,
+    "seed_failures": {
+     "fe_v14p_seed42": 0.11739130434782609,
+     "fe_v14p_seed43": 0.9826086956521739,
+     "fe_v14p_seed44": 0.9565217391304348
+    }
+   }
+  },
+  "BinRushed": {
+   "research": {
+    "label_free_choice": "fe_v14_seed42",
+    "best_by_ground_truth": "fe_v14_seed42",
+    "choice_failure": 0.49743589743589745,
+    "choice_coverage": 0.36923076923076925,
+    "choice_failure_among_unflagged": 0.0,
+    "seed_failures": {
+     "fe_v14_seed42": 0.49743589743589745,
+     "fe_v14_seed43": 0.6410256410256411,
+     "fe_v14_seed44": 0.9179487179487179
+    }
+   },
+   "product": {
+    "label_free_choice": "fe_v14p_seed44",
+    "best_by_ground_truth": "fe_v14p_seed42",
+    "choice_failure": 0.9025641025641026,
+    "choice_coverage": 0.717948717948718,
+    "choice_failure_among_unflagged": 0.8785714285714286,
+    "seed_failures": {
+     "fe_v14p_seed42": 0.5333333333333333,
+     "fe_v14p_seed43": 0.9435897435897436,
+     "fe_v14p_seed44": 0.9025641025641026
+    }
+   }
+  },
+  "Magrabi": {
+   "research": {
+    "label_free_choice": "fe_v14_seed42",
+    "best_by_ground_truth": "fe_v14_seed43",
+    "choice_failure": 0.010869565217391304,
+    "choice_coverage": 0.9021739130434783,
+    "choice_failure_among_unflagged": 0.0,
+    "seed_failures": {
+     "fe_v14_seed42": 0.010869565217391304,
+     "fe_v14_seed43": 0.0,
+     "fe_v14_seed44": 0.0
+    }
+   },
+   "product": {
+    "label_free_choice": "fe_v14p_seed42",
+    "best_by_ground_truth": "fe_v14p_seed42",
+    "choice_failure": 0.0,
+    "choice_coverage": 1.0,
+    "choice_failure_among_unflagged": 0.0,
+    "seed_failures": {
+     "fe_v14p_seed42": 0.0,
+     "fe_v14p_seed43": 0.0,
+     "fe_v14p_seed44": 0.0
+    }
+   }
+  },
+  "all": {
+   "research": {
+    "label_free_choice": "fe_v14_seed42",
+    "best_by_ground_truth": "fe_v14_seed42",
+    "choice_failure": 0.19410977242302543,
+    "choice_coverage": 0.643908969210174,
+    "choice_failure_among_unflagged": 0.0,
+    "seed_failures": {
+     "fe_v14_seed42": 0.19410977242302543,
+     "fe_v14_seed43": 0.42570281124497994,
+     "fe_v14_seed44": 0.7951807228915663
+    }
+   },
+   "product": {
+    "label_free_choice": "fe_v14p_seed42",
+    "best_by_ground_truth": "fe_v14p_seed42",
+    "choice_failure": 0.21151271753681392,
+    "choice_coverage": 0.7951807228915663,
+    "choice_failure_among_unflagged": 0.013468013468013467,
+    "seed_failures": {
+     "fe_v14p_seed42": 0.21151271753681392,
+     "fe_v14p_seed43": 0.8514056224899599,
+     "fe_v14p_seed44": 0.8246318607764391
+    }
+   }
+  }
+ },
+ "other_criteria": {
+  "research": {
+   "idrid_centre_err": {
+    "pick": "fe_v14_seed43",
+    "regret": 0.2315930388219545
+   },
+   "neg_papila_dice": {
+    "pick": "fe_v14_seed43",
+    "regret": 0.2315930388219545
+   },
+   "neg_rfmid_valid_AC": {
+    "pick": "fe_v14_seed42",
+    "regret": 0.0
+   },
+   "rfmid_labelfree_record": {
+    "pick": "fe_v14_seed42",
+    "regret": 0.0
+   },
+   "random": {
+    "expected_regret": 0.27755466309683174,
+    "hit_prob": 0.3333333333333333
+   }
+  },
+  "product": {
+   "idrid_centre_err": {
+    "pick": "fe_v14p_seed42",
+    "regret": 0.0
+   },
+   "neg_papila_dice": {
+    "pick": "fe_v14p_seed44",
+    "regret": 0.6131191432396252
+   },
+   "neg_rfmid_valid_AC": {
+    "pick": "fe_v14p_seed42",
+    "regret": 0.0
+   },
+   "rfmid_labelfree_record": {
+    "pick": "fe_v14p_seed44",
+    "regret": 0.6131191432396252
+   },
+   "random": {
+    "expected_regret": 0.4176706827309238,
+    "hit_prob": 0.3333333333333333
+   }
+  }
+ }
+}
+LOCKED EVALUATION DONE (single run)

@@ -1,0 +1,19 @@
+{
+  "created": "2026-11-13T14:53:15",
+  "fe_outputs_read": false,
+  "files_sha256": {
+    "results/fe/chaksu_ref_test/reference_test.csv": "5cbec4370755b51d52aae6af079257a096819ec01639cab47377091b69682970",
+    "results/fe/chaksu_ref_test/summary.json": "ba15a7db0063ea7c7a1816c2642404f920331fdb7687cdd09f177870ac6ffe82",
+    "results/fe/chaksu_ref_test/reference_scale_test.csv": "b77b3f3666de37aae46b0cf6de55cc9e78f489bcc13c1797b8b39c4b2a3c1bec",
+    "results/fe/chaksu_ref_test/scale_summary.json": "fa6004af46dd2cb42077203a7f1768d2ff16812d7aefb5eaeaf7f23db8768faa",
+    "fe/p2c_build_reference_test.py": "0afef3f885096ed9ec045e72ea2238768d10dd9a4ddf80c009098c65b401d1a7",
+    "fe/p2c_ref_scale_test.py": "47c3e38e9c1b25e3b124455fb19cb0dd500cbf34e112f733b79250ffadcbcf53",
+    "data/eval/chaksu/provenance.json": "4d774661eddc6e255b8d49a962e8ba7944d90a36a1bac2aeaaeee84e9545f30e",
+    "data/eval/chaksu/extracted/UNZIP_DONE_TEST.txt": "a2d5819f69b3b39e19b2640c676a1182d2e4359c0306e7610dbb8e84836970d6"
+  },
+  "notes": [
+    "Chaksu Test 336 images (Bosch 41, Forus 31, Remidio 264): masks match image size, no EXIF rotation, STAPLE present for all",
+    "expert vs STAPLE centre: 3 of 1,680 expert-image pairs above 0.2 r_d; reference radius at 384 (R0 crop) 22.7-35.5 px p5-p95, all inside 15-46 px",
+    "a first build ran before the masks were extracted and found no masks; its outputs are kept as FAILED_noMasks_20261113_*"
+  ]
+}

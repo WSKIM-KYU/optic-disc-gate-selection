@@ -1,0 +1,81 @@
+[
+ {
+  "source": "Magrabi",
+  "folder": "Magrabia/MagrabiFemale",
+  "base": "image48",
+  "reason": "incomplete group",
+  "have": [
+   "",
+   "-1",
+   "-2",
+   "-3",
+   "-4",
+   "-5",
+   "-6"
+  ]
+ },
+ {
+  "source": "Magrabi",
+  "folder": "Magrabia/MagrabiaMale",
+  "base": "image11",
+  "reason": "3 valid raters",
+  "info": {
+   "1": {
+    "area": 152906,
+    "fill_hull_ratio": 0.9960367807672688
+   },
+   "2": {
+    "area": 155323,
+    "fill_hull_ratio": 0.994946015722076
+   },
+   "3": {
+    "area": 163353,
+    "fill_hull_ratio": 0.9967616144178558
+   },
+   "4": {
+    "area": 5304640,
+    "fill_hull_ratio": 0.11249245943174277
+   },
+   "5": {
+    "area": 5304640,
+    "fill_hull_ratio": 0.11508622639802135
+   },
+   "6": {
+    "area": 5304640,
+    "fill_hull_ratio": 0.11202287054352417
+   }
+  }
+ },
+ {
+  "source": "Magrabi",
+  "folder": "Magrabia/MagrabiaMale",
+  "base": "image8",
+  "reason": "3 valid raters",
+  "info": {
+   "1": {
+    "area": 178012,
+    "fill_hull_ratio": 0.9958823000696583
+   },
+   "2": {
+    "area": 175133,
+    "fill_hull_ratio": 0.9966082919838066
+   },
+   "3": {
+    "area": 186375,
+    "fill_hull_ratio": 0.9969094567404426
+   },
+   "4": {
+    "area": 5304640,
+    "fill_hull_ratio": 0.128112746576582
+   },
+   "5": {
+    "area": 5304640,
+    "fill_hull_ratio": 0.1312956204379562
+   },
+   "6": {
+    "area": 5304640,
+    "fill_hull_ratio": 0.12872485220486216
+   }
+  }
+ }
+]

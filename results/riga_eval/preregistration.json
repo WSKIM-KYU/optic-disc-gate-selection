@@ -1,0 +1,53 @@
+{
+  "created": "2026-11-13T17:12:59",
+  "title": "Paper 2 E2: external evaluation on RIGA of label-free model selection by TTA consistency, residual seed dependence and the fundus-aware crop",
+  "nature": "engineering localisation-accuracy study; confirmatory single run on an external public dataset added after internal review (E2); Chaksu Test is consumed and is not part of this registration",
+  "data": {
+    "dataset": "RIGA (Almazroa et al., SPIE Medical Imaging 2018; CC BY-NC 4.0; Academic Torrents eb9dd9216a1c9a622250ad70a400204e7531196d, piece-verified), never used before in this project",
+    "images": "747 used: Messidor 460, BinRushed 195, Magrabi 92 (3 Magrabi groups excluded by the pre-set reference rules)",
+    "devices": "as reported by the dataset sources: Magrabi Topcon TRC 50DX; Messidor and BinRushed per their documentation [camera models to cite]; none in FE training, but Topcon is also the maker of the PAPILA training camera (TRC-NW400), so failures may be rare"
+  },
+  "reference": "majority vote of six ophthalmologists' disc contours (convex hull of each marking), mean of raters as sensitivity; locked in results/fe/riga_ref/reference_lock.json without any FE model",
+  "fixed_settings": "identical to the Chaksu Test confirmation: R0 and R1m crops (fe/p2c_crop.py), failure = centre > 0.2 r_d or none, deployed TTA thresholds research 0.138 and product 0.297 r_d, nine models, per-image procedure fe/p2c_test_locked_eval.run_image",
+  "hypotheses": {
+    "G1_primary": "Spearman across the nine models between TTA flag rate and failure of the TTA frames on R1m (pooled 747 images); exact permutation p over 9!; met if rho > 0 and p < 0.05; not evaluable if fewer than two models have any failure or all failure proportions are equal",
+    "G2": "within each track: hit and regret of the label-free choice (lowest TTA flag rate) compared with choices by IDRiD centre error, PAPILA disc Dice, RFMiD A/C validity, the locked RFMiD label-free record (results/fe/rfmid_supp/labelfree_selection_record.json) and random choice; descriptive",
+    "G3": "seed dependence under R1m: Cochran Q over seeds 42/43/44 per track, Holm; meaningful if adjusted p < 0.05 and max-min >= 5 percentage points",
+    "G4": "deployed pipelines R1m vs R0: paired exact McNemar per track, Holm; reported with failure, coverage and failures among valid frames"
+  },
+  "secondary": "per-source results (Messidor, BinRushed, Magrabi), median-spread Spearman, self-detection, sensitivity reference (mean of raters)",
+  "interpretation_note": "the nine models form three dependent groups, so G1 is descriptive evidence across these candidates; BinRushed images have no burnt-in text, so R0 equals R1m there",
+  "single_evaluation": "fe/p2g_riga_locked_eval.py runs once; refuses on any hash or crop mismatch or if results exist",
+  "evaluation_script": "fe/p2g_riga_locked_eval.py",
+  "evaluation_script_sha256": "eca1f87f5a1ace9a953b4987dc88bc0fa0def44fd858aac188a5137851c5b385",
+  "checkpoint_sha256": {
+    "fe_v14_seed42": "a7cf7f0fe92a15280ceed72267b231e6b82463652e3221a3fe59332132b62c9d",
+    "fe_v14_seed43": "e4bd7b434b274c3639f836548b450517c635b881307cbffae061b653a4df0969",
+    "fe_v14_seed44": "ba725b797df8131305c17567f9296ef87dc2b3b0a8b7bb6c4c0880a7480a66d9",
+    "fe_v14p_seed42": "fa7ee5f3fbd322eb4ab2a859c409660b33a17a00270d09adde063c82d27700d2",
+    "fe_v14p_seed43": "23102f5f9097e89c8e2819a926698ce44a39c858de73299344586c01f42776eb",
+    "fe_v14p_seed44": "45a2c4a4c19ff954466e5fd4460b6f22ef209e9b9c3bbf1e89ee6d18e51632a9",
+    "fe_v14_f10_seed42": "495f9637384f5256bdec04c4f4ad8d7688ad21884c9df2c4e0b6d93fbace31ce",
+    "fe_v14_f25_seed42": "705e193d15fcab8f5cfaec34610983833ad6e01216a457a44e1808601d83a56b",
+    "fe_v14_f50_seed42": "f4269d0a5cb6a79f2b83be789f5cb32e14eb56f7adff03767a3b54bb6d4adca0"
+  },
+  "dependency_sha256": {
+    "fe/p2c_test_locked_eval.py": "d7453a8bfe1a41c04b2b38b4c41d7a9632e0bf30402d0b1d36656d4ca212e44b",
+    "fe/p2c_chaksu_locked_eval.py": "291a4d7a66b5269c016d3b0f0c44a132dfd94472b3a1417423f209d53fcf2d75",
+    "fe/p2_cam_locked_eval.py": "8107871441691549389b14e718b5c62a820619713049975b1ac709b91220a309",
+    "fe/p2c_crop.py": "f3c8bcbd92f6d08bca0906685c2cea7098ae596a8d9a4b52e953e8324f744ee0",
+    "onfm/frame.py": "4893da26151eea294eb035725be760d9d5918afd2881bd81bd427b25d92e604d",
+    "onfm/flag_thresholds.json": "87b701072d4410070a2a528000838c043305b99050d56f541c448260549d37fc",
+    "fe/fe_decode.py": "2b5b20b562ee594b3322a8c23ee19d02831c312e977e31ad3b3ffd3e9e3581c8",
+    "fe/fe_train.py": "6b660589ef98882f28b10e1ee39f6dc40ac2b012000193376e3528542530ecea",
+    "fe/fe_external_check.py": "e4bb974896b5dff09032c46f726a70360eb3441616eb1bb9149f703873b65d34",
+    "results/fe/review/summary_all_models.json": "21e243979034501744d21aaddda9e6c07a5c41278fcebc7da9d53612affeb9ab",
+    "results/fe/rfmid_supp/labelfree_selection_record.json": "b40ccffd553a85a24386541e4f7e36a7b796960d42caa292e6fb3d8151f217a8"
+  },
+  "reference_lock_sha256": "6371013a2d2a527663bf7c4dbe9ba1388d3af06e7a3a2b5815ce2ecdf025f920",
+  "selftest": {
+    "script_sha256": "1ee8f34b3eea61b50582f4ff6b2b0f309c4d89290e0c13cf5972d5ae53efb5ba",
+    "log_sha256": "d2b8bbb15a349ce1cd36dc20125e32c23eaf06935daf266ee7ac1ffd8761cfde",
+    "result": "RIGA reference 747 loaded; R0 and R1m crop parity 0 on 15 RIGA images (no model); end-to-end run on 9 Chaksu Train images"
+  }
+}

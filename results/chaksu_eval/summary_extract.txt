@@ -1,0 +1,77 @@
+model              group      fail  valid  medErr  radErr  cells(vc/vf/rc/rf)
+fe_v14_seed42      Bosch     13.5%  91.3%   0.036   0.020  89/6/1/8
+fe_v14_seed42      Forus      0.0% 100.0%   0.023   0.037  95/0/0/0
+fe_v14_seed42      Remidio   68.9%  66.2%   1.466   0.309  252/284/0/274
+fe_v14_seed42      all       56.7%  72.0%   0.794   0.133  436/290/1/282
+fe_v14_seed43      Bosch     20.2%  86.5%   0.040   0.023  83/7/0/14
+fe_v14_seed43      Forus      0.0% 100.0%   0.023   0.047  95/0/0/0
+fe_v14_seed43      Remidio   64.7%  49.4%   1.307   0.608  284/116/2/408
+fe_v14_seed43      all       54.0%  58.0%   0.823   0.205  462/123/2/422
+fe_v14_seed44      Bosch     70.2%  56.7%   1.394   0.379  31/28/0/45
+fe_v14_seed44      Forus      0.0% 100.0%   0.025   0.046  95/0/0/0
+fe_v14_seed44      Remidio   95.2%  44.8%   1.273   0.680  37/326/2/445
+fe_v14_seed44      all       83.6%  51.2%   1.184   0.517  163/354/2/490
+fe_v14p_seed42     Bosch     15.4%  94.2%   0.025   0.024  88/10/0/6
+fe_v14p_seed42     Forus      0.0% 100.0%   0.025   0.039  95/0/0/0
+fe_v14p_seed42     Remidio   60.0%  68.9%   0.558   0.165  318/240/6/246
+fe_v14p_seed42     all       49.8%  74.4%   0.189   0.065  501/250/6/252
+fe_v14p_seed43     Bosch     95.2%  35.6%   1.726   0.718  5/32/0/67
+fe_v14p_seed43     Forus      0.0% 100.0%   0.022   0.039  95/0/0/0
+fe_v14p_seed43     Remidio   95.2%  37.3%   1.157   0.835  30/272/9/499
+fe_v14p_seed43     all       86.2%  43.0%   1.138   0.714  130/304/9/566
+fe_v14p_seed44     Bosch     54.8%  55.8%   0.507   0.182  47/11/0/46
+fe_v14p_seed44     Forus      0.0% 100.0%   0.022   0.031  95/0/0/0
+fe_v14p_seed44     Remidio   84.4%  18.3%   0.964   2.706  86/62/40/622
+fe_v14p_seed44     all       73.4%  29.8%   0.796   2.236  228/73/40/668
+fe_v14_f10_seed42  Bosch     75.0%  21.2%   0.600   3.063  20/2/6/76
+fe_v14_f10_seed42  Forus      0.0% 100.0%   0.033   0.054  95/0/0/0
+fe_v14_f10_seed42  Remidio   87.0%   3.7%   0.466   3.758  19/11/86/694
+fe_v14_f10_seed42  all       77.6%  14.6%   0.431   3.579  134/13/92/770
+fe_v14_f25_seed42  Bosch     77.9%  19.2%   0.670   3.280  16/4/7/77
+fe_v14_f25_seed42  Forus      0.0% 100.0%   0.033   0.052  95/0/0/0
+fe_v14_f25_seed42  Remidio   88.6%   3.1%   1.538   3.604  13/12/79/706
+fe_v14_f25_seed42  all       79.2%  13.9%   0.900   3.443  124/16/86/783
+fe_v14_f50_seed42  Bosch     78.8%  22.1%   1.871   2.455  22/1/0/81
+fe_v14_f50_seed42  Forus      0.0% 100.0%   0.025   0.037  95/0/0/0
+fe_v14_f50_seed42  Remidio   87.7%   5.4%   1.186   3.437  35/9/65/701
+fe_v14_f50_seed42  all       78.5%  16.1%   1.116   3.197  152/10/65/782
+ens_research       Bosch     25.0%  85.6%   0.034   0.021  78/11/0/15
+ens_research       Forus      0.0% 100.0%   0.024   0.043  95/0/0/0
+ens_research       Remidio   71.7%  46.2%   1.405   0.776  228/146/1/435
+ens_research       all       60.2%  55.3%   1.058   0.372  401/157/1/450
+ens_product        Bosch     51.0%  70.2%   0.296   0.063  51/22/0/31
+ens_product        Forus      0.0% 100.0%   0.023   0.037  95/0/0/0
+ens_product        Remidio   82.2%  33.8%   1.038   0.967  133/141/11/525
+ens_product        all       71.3%  43.8%   0.879   0.845  279/163/11/556
+pipeline_research  Bosch     15.4%  62.5%   0.035   0.024  65/0/23/16
+pipeline_research  Forus      0.0%  86.3%   0.024   0.038  82/0/13/0
+pipeline_research  Remidio   67.7%  25.3%   1.416   0.275  201/4/61/544
+pipeline_research  all       55.9%  34.9%   0.809   0.131  348/4/97/560
+pipeline_product   Bosch     22.1%  78.8%   0.029   0.026  79/3/2/20
+pipeline_product   Forus      0.0% 100.0%   0.024   0.041  95/0/0/0
+pipeline_product   Remidio   61.0%  40.4%   0.598   0.175  300/27/16/467
+pipeline_product   all       51.2%  50.0%   0.230   0.069  474/30/18/487
+
+error distribution (r_d): <=0.2 / 0.2-0.5 / 0.5-1 / >1 / no centre
+fe_v14_seed42      Bosch      90    3    2    9    0
+fe_v14_seed42      Forus      95    0    0    0    0
+fe_v14_seed42      Remidio   252   35   48  475    0
+fe_v14_seed43      Bosch      83    1    2   18    0
+fe_v14_seed43      Forus      95    0    0    0    0
+fe_v14_seed43      Remidio   286   13   51  460    0
+fe_v14_seed44      Bosch      31    1   14   58    0
+fe_v14_seed44      Forus      95    0    0    0    0
+fe_v14_seed44      Remidio    39   73  167  531    0
+fe_v14p_seed42     Bosch      88    3    5    8    0
+fe_v14p_seed42     Forus      95    0    0    0    0
+fe_v14p_seed42     Remidio   324   69  144  273    0
+fe_v14p_seed43     Bosch       5    2   13   84    0
+fe_v14p_seed43     Forus      95    0    0    0    0
+fe_v14p_seed43     Remidio    39   62  208  501    0
+fe_v14p_seed44     Bosch      47    5    7   45    0
+fe_v14p_seed44     Forus      95    0    0    0    0
+fe_v14p_seed44     Remidio   126  121  162  401    0
+
+self-detection (all devices):
+research failures 564 | TTA flag sens 0.9911347517730497 spec 0.7820224719101123 | any flag sens 0.9929078014184397 spec 0.7820224719101123
+product failures 517 | TTA flag sens 0.8684719535783365 spec 0.9735772357723578 | any flag sens 0.941972920696325 spec 0.9634146341463414

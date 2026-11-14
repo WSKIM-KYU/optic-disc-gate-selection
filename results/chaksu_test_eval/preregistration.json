@@ -1,0 +1,67 @@
+{
+  "created": "2026-11-13T14:58:00",
+  "title": "Paper 2: confirmation on Chaksu Test of the fundus-aware crop, residual seed dependence and label-free model selection by TTA consistency",
+  "nature": "engineering localisation-accuracy study; confirmatory single run on held-out data",
+  "data": "Chaksu Test, 336 images (Bosch 41, Forus 31, Remidio 264), devices absent from FE training; never processed by any FE model before this run",
+  "reference": "STAPLE disc mask (Majority as sensitivity), locked in results/fe/chaksu_ref_test/reference_lock.json without any FE model",
+  "development_basis": "all methods and settings were chosen on Chaksu Train (post hoc development after the locked Train evaluation); development files hashed below",
+  "fixed_settings": {
+    "R0": "original crop (fe_external_check.box, gray > 15, 1.02 margin)",
+    "R1m": "fe/p2c_crop.py: largest bright component (gray > 15) after binary opening (3 iterations), 1.02 margin, outside-component pixels blanked",
+    "failure": "centre more than 0.2 r_d from the reference centre (r_d at 384 in the same crop), or no centre",
+    "pipelines": "onfm/frame.py deployed pipelines, TTA thresholds research 0.138 and product 0.297 r_d, not recalibrated",
+    "label_free_score": "per-model TTA flag rate on the unlabelled Test images (each of the nine models through the deployed TTA code on R1m, track thresholds as above)"
+  },
+  "hypotheses": {
+    "H1": "fundus-aware crop reduces failure of the deployed pipelines: paired exact McNemar R1m vs R0 per track, Holm over the two tracks; success if fewer R1m failures and adjusted p < 0.05",
+    "H2": "seed dependence persists under R1m: Cochran Q over seeds 42/43/44 per track, Holm; meaningful if adjusted p < 0.05 and max-min seed failure >= 5 percentage points",
+    "H3": "label-free selection: Spearman correlation across the nine models between TTA flag rate and failure of the TTA frames on R1m, exact permutation p over 9!; success if rho > 0 and p < 0.05"
+  },
+  "secondary": [
+    "per track, whether the seed with the lowest TTA flag rate is the seed with the fewest failures; its coverage and failures among unflagged frames; overall and per device",
+    "per-device results (Bosch 41 and Forus 31 descriptive only)",
+    "seed dependence under R0 (replication of the Train finding)",
+    "Spearman with median TTA spread; self-detection of the deployed pipelines under R0 and R1m; number of reference radii above 46 px under R1m"
+  ],
+  "interpretation_note": "Remidio contributes 264 of 336 images; per-device results are reported alongside pooled results. Each hypothesis is reported as met or not met.",
+  "single_evaluation": "fe/p2c_test_locked_eval.py runs once; refuses on any hash or crop mismatch or if results exist",
+  "evaluation_script": "fe/p2c_test_locked_eval.py",
+  "evaluation_script_sha256": "d7453a8bfe1a41c04b2b38b4c41d7a9632e0bf30402d0b1d36656d4ca212e44b",
+  "checkpoint_sha256": {
+    "fe_v14_seed42": "a7cf7f0fe92a15280ceed72267b231e6b82463652e3221a3fe59332132b62c9d",
+    "fe_v14_seed43": "e4bd7b434b274c3639f836548b450517c635b881307cbffae061b653a4df0969",
+    "fe_v14_seed44": "ba725b797df8131305c17567f9296ef87dc2b3b0a8b7bb6c4c0880a7480a66d9",
+    "fe_v14p_seed42": "fa7ee5f3fbd322eb4ab2a859c409660b33a17a00270d09adde063c82d27700d2",
+    "fe_v14p_seed43": "23102f5f9097e89c8e2819a926698ce44a39c858de73299344586c01f42776eb",
+    "fe_v14p_seed44": "45a2c4a4c19ff954466e5fd4460b6f22ef209e9b9c3bbf1e89ee6d18e51632a9",
+    "fe_v14_f10_seed42": "495f9637384f5256bdec04c4f4ad8d7688ad21884c9df2c4e0b6d93fbace31ce",
+    "fe_v14_f25_seed42": "705e193d15fcab8f5cfaec34610983833ad6e01216a457a44e1808601d83a56b",
+    "fe_v14_f50_seed42": "f4269d0a5cb6a79f2b83be789f5cb32e14eb56f7adff03767a3b54bb6d4adca0"
+  },
+  "dependency_sha256": {
+    "fe/p2c_crop.py": "f3c8bcbd92f6d08bca0906685c2cea7098ae596a8d9a4b52e953e8324f744ee0",
+    "fe/p2c_chaksu_locked_eval.py": "291a4d7a66b5269c016d3b0f0c44a132dfd94472b3a1417423f209d53fcf2d75",
+    "fe/p2_cam_locked_eval.py": "8107871441691549389b14e718b5c62a820619713049975b1ac709b91220a309",
+    "onfm/frame.py": "4893da26151eea294eb035725be760d9d5918afd2881bd81bd427b25d92e604d",
+    "onfm/flag_thresholds.json": "87b701072d4410070a2a528000838c043305b99050d56f541c448260549d37fc",
+    "fe/fe_decode.py": "2b5b20b562ee594b3322a8c23ee19d02831c312e977e31ad3b3ffd3e9e3581c8",
+    "fe/fe_train.py": "6b660589ef98882f28b10e1ee39f6dc40ac2b012000193376e3528542530ecea",
+    "fe/fe_external_check.py": "e4bb974896b5dff09032c46f726a70360eb3441616eb1bb9149f703873b65d34"
+  },
+  "reference_lock_sha256": "e6d8a14577d4baf604591e1aa0eaf03f97fa573da223925ed99289f3233cb792",
+  "development_files_sha256": {
+    "results/fe/chaksu_posthoc/rootcause_summary.json": "c936e3a60d7c9630ac74d793c00850f667e8f07567760bd57c4c034281ca8edb",
+    "results/fe/chaksu_posthoc/dev_fundus_crop.json": "f83eaa784efc70631a76353087818c2965626e97fd613da0702480baf976f19c",
+    "results/fe/chaksu_posthoc/dev_seed_committee.json": "ab0831ee3e7b46661515170780107e9f4b4d02f251ccd3f5370b299cbe449e04",
+    "results/fe/chaksu_posthoc/dev_tta_selection.json": "361b609ab01ef0ec2aaee2f19c4bdd19050585b15e91642191bdae554d260c21",
+    "fe/p2c_posthoc_rootcause.py": "2054e3d414a4a24b472f0f0b2d8e818ae2d35133bfab2c8a8eb728f79ed422f1",
+    "fe/p2c_dev_fundus_crop.py": "dc918af243a6c5458f5ac9b01f9deb255847db1bb49a34d03b04e929741d58b2",
+    "fe/p2c_dev_seed_committee.py": "33625042c6d9d103a0d76de900252f073b73b5360d75ca82577e9b8a6b19de1d",
+    "fe/p2c_dev_tta_selection.py": "7d08eb9f00bb6123e5decea590c7afdfe05c55ced43909861e8e422c77a9b433"
+  },
+  "selftest": {
+    "script_sha256": "78e45ddd47920f39a5fdaa1dd8bec5d862c0ed86dadf6db8d5e9f2113544496e",
+    "log_sha256": "123422b8b6f8ac46137796e9e36402fb059f4dbbbbc390469676e93e7ac0a2b4",
+    "result": "R1m crop identical to development; Test reference 336 loaded, R0 crop parity 0; on 15 Train images R0 results identical to the locked Train run and R1m TTA identical to development (0 failure mismatches)"
+  }
+}

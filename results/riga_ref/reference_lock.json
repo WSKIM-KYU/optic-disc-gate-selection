@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-13T17:07:42",
+  "fe_outputs_read": false,
+  "files_sha256": {
+    "results/fe/riga_ref/reference_riga.csv": "e560093c43b786105e6096377fb08cbd8f98baa26a253ef132cef4b05c3a410a",
+    "results/fe/riga_ref/excluded.json": "9a914bb3f34f936e7f25dad994f91aeb208665e17ee98742cafa1593e9177492",
+    "results/fe/riga_ref/summary.json": "fb9bdde56c4b45efc88ee55e866da5f4a9d3607eda0c908cff3e4f9272996182",
+    "results/fe/riga_ref/summary_PARTIAL_crashed_build.json": "25ded17b59598db4d61f3f9ba85445c3e9d9b1e2932fb85f5a9be995bd718414",
+    "fe/p2g_build_reference.py": "cda07c793fa30e4c6177b8e99fabe0bc0004b2c750af4ad3462d0bb22d385ba4",
+    "fe/p2g_reference_summary.py": "adcabce9289d3d5fcf1e0fb0986ec4b947c778b2e948fddcd701c38a66f28307",
+    "data/eval/riga/SHA256SUMS.txt": "2bf2a7504e23622468702232558e52b71a6c1933f7adaba85556c0b9e4762d61",
+    "data/eval/riga/prior_use_check.txt": "47b594e1ffe36f3e0704f37f81d77473930a57f48f525fa0ad15629bf58c5e36"
+  },
+  "notes": [
+    "RIGA (CC BY-NC 4.0; Academic Torrents eb9dd9216a1c9a622250ad70a400204e7531196d, piece-verified): 747 images used (Messidor 460, BinRushed 195, Magrabi 92), 3 Magrabi groups excluded",
+    "rater vs majority centre above 0.2 r_d in 15 of 4,481 pairs; convex-hull disc equals the closed contour (fill/hull ratio p5 >= 0.993)",
+    "reference radius at 384 inside 15-46 px for all 747 images under R0 and R1m",
+    "the build stopped at its summary (numpy int64); summary recomputed from the saved table by fe/p2g_reference_summary.py; the partial file is kept"
+  ]
+}

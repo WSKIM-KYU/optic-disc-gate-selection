@@ -1,0 +1,14 @@
+{
+  "created": "2026-11-13T16:03:50",
+  "amends": {
+    "results/fe/cam_eval/preregistration.json": "7ef1f6df958b8c06ec02e74f4eed51f5e5cf8e62d841cee00bfcb16c0048e44e",
+    "results/fe/cam_eval/preregistration_amendment_1.json": "d35f8a3638a7a12a2d7ca02e1ce571b8d690035e54ff581bd568370e3b02bc3b",
+    "results/fe/cam_eval/preregistration_amendment_2.json": "f327c38f613d171296e89331e3b715d3dcfc86728543a70308363fb70ccab4fa"
+  },
+  "decision": "Paper 2 proceeds as an engineering study using public data and computation only. No human annotation will be collected: the RFMiD annotation package and the Chaksu calibration package are not delivered; S1-S3 of amendment 2 and the annotation analyses of preregistration.json are not performed and will be reported as not performed.",
+  "status_at_decision": "no annotation exists; no reference for RFMiD; the label-free selection record exists (results/fe/rfmid_supp/labelfree_selection_record.json)",
+  "retained_use": "the label-free selection record is used only for an exploratory, ground-truth-free consistency check (agreement of the RFMiD A/C choice with the Chaksu choice); external ground-truth validation moves to RIGA (public, six ophthalmologists) under its own pre-registration",
+  "record_sha256": {
+    "results/fe/rfmid_supp/labelfree_selection_record.json": "b40ccffd553a85a24386541e4f7e36a7b796960d42caa292e6fb3d8151f217a8"
+  }
+}

@@ -1,0 +1,920 @@
+{
+ "created": "2026-11-13T19:12:38",
+ "primary_analysis": {
+  "P1": {
+   "rho": 0.8666666666666667,
+   "p_exact": 0.004508377425044092,
+   "met": true,
+   "tta_flag_rate_rho": 0.5666666666666667,
+   "tta_flag_rate_p": 0.12057429453262787,
+   "n_selection_images": 1111,
+   "n_annotated": 1055,
+   "interpretation": "candidate-set level (nine fixed candidates)"
+  },
+  "P2": {
+   "pooled": {
+    "research": {
+     "choice": "fe_v14_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14_seed42"
+     ],
+     "choice_tta_flag": "fe_v14_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14_seed42": 0.3412322274881517,
+      "fe_v14_seed43": 0.6853080568720379,
+      "fe_v14_seed44": 0.919431279620853
+     }
+    },
+    "product": {
+     "choice": "fe_v14p_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14p_seed42"
+     ],
+     "choice_tta_flag": "fe_v14p_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14p_seed42": 0.4881516587677725,
+      "fe_v14p_seed43": 0.9156398104265403,
+      "fe_v14p_seed44": 0.8540284360189574
+     }
+    }
+   },
+   "Zeiss": {
+    "research": {
+     "choice": "fe_v14_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14_seed42"
+     ],
+     "choice_tta_flag": "fe_v14_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14_seed42": 0.3593582887700535,
+      "fe_v14_seed43": 0.679144385026738,
+      "fe_v14_seed44": 0.9240641711229947
+     }
+    },
+    "product": {
+     "choice": "fe_v14p_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14p_seed42"
+     ],
+     "choice_tta_flag": "fe_v14p_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14p_seed42": 0.47593582887700536,
+      "fe_v14p_seed43": 0.932620320855615,
+      "fe_v14p_seed44": 0.8513368983957219
+     }
+    }
+   },
+   "Canon": {
+    "research": {
+     "choice": "fe_v14_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14_seed42"
+     ],
+     "choice_tta_flag": "fe_v14_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14_seed42": 0.2,
+      "fe_v14_seed43": 0.7333333333333333,
+      "fe_v14_seed44": 0.8833333333333333
+     }
+    },
+    "product": {
+     "choice": "fe_v14p_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14p_seed42"
+     ],
+     "choice_tta_flag": "fe_v14p_seed44",
+     "regret_tta_flag": 0.29166666666666663,
+     "seed_failures": {
+      "fe_v14p_seed42": 0.5833333333333334,
+      "fe_v14p_seed43": 0.7833333333333333,
+      "fe_v14p_seed44": 0.875
+     }
+    }
+   },
+   "met": true
+  },
+  "P3": {
+   "research": {
+    "model": "fe_v14_seed42",
+    "n_accepted": 272,
+    "failures": 3,
+    "rate": 0.011029411764705883,
+    "n_clusters": 251,
+    "primary_upper95": 0.02564102564102564,
+    "method": "cluster bootstrap",
+    "wilson95": [
+     0.0037578832635763223,
+     0.031920564077216364
+    ],
+    "cp_image_level_upper": 0.03189247953870634,
+    "upper_lt_0p05": true,
+    "coverage_all_included": 0.24482448244824484
+   },
+   "product": {
+    "model": "fe_v14p_seed42",
+    "n_accepted": 511,
+    "failures": 46,
+    "rate": 0.09001956947162426,
+    "n_clusters": 460,
+    "primary_upper95": 0.11642478892941,
+    "method": "cluster bootstrap",
+    "wilson95": [
+     0.0681670330484479,
+     0.11799041809769104
+    ],
+    "cp_image_level_upper": 0.11824719126577293,
+    "upper_lt_0p05": false,
+    "coverage_all_included": 0.46894689468946893
+   },
+   "met": true,
+   "by_device": {
+    "Zeiss": {
+     "research": {
+      "model": "fe_v14_seed42",
+      "n_accepted": 210,
+      "failures": 3,
+      "rate": 0.014285714285714285,
+      "n_clusters": 189,
+      "primary_upper95": 0.03292181069958848,
+      "method": "cluster bootstrap",
+      "wilson95": [
+       0.0048700271563653155,
+       0.041152823402178955
+      ],
+      "cp_image_level_upper": 0.04117905916336695,
+      "upper_lt_0p05": true
+     },
+     "product": {
+      "model": "fe_v14p_seed42",
+      "n_accepted": 461,
+      "failures": 40,
+      "rate": 0.08676789587852494,
+      "n_clusters": 410,
+      "primary_upper95": 0.11358585904218073,
+      "method": "cluster bootstrap",
+      "wilson95": [
+       0.06436590712053417,
+       0.1160000497989842
+      ],
+      "cp_image_level_upper": 0.11627904379220054,
+      "upper_lt_0p05": false
+     }
+    },
+    "Canon": {
+     "research": {
+      "model": "fe_v14_seed42",
+      "n_accepted": 62,
+      "failures": 0,
+      "rate": 0.0,
+      "n_clusters": 62,
+      "primary_upper95": 0.057762634429290936,
+      "method": "Clopper-Pearson, n = clusters (no failure observed)",
+      "wilson95": [
+       -6.938893903907228e-18,
+       0.05834609122500061
+      ],
+      "cp_image_level_upper": 0.057762634429290936,
+      "upper_lt_0p05": false
+     },
+     "product": {
+      "model": "fe_v14p_seed42",
+      "n_accepted": 50,
+      "failures": 6,
+      "rate": 0.12,
+      "n_clusters": 50,
+      "primary_upper95": 0.22,
+      "method": "cluster bootstrap",
+      "wilson95": [
+       0.05617523710624646,
+       0.23805078886623582
+      ],
+      "cp_image_level_upper": 0.24310131670556254,
+      "upper_lt_0p05": false
+     }
+    }
+   }
+  },
+  "P4": {
+   "research": {
+    "model": "fe_v14_seed42",
+    "device": {
+     "Canon": {
+      "n": 153,
+      "coverage": 0.40522875816993464,
+      "n_annotated": 120,
+      "failure": 0.2
+     },
+     "Zeiss": {
+      "n": 958,
+      "coverage": 0.21920668058455114,
+      "n_annotated": 935,
+      "failure": 0.3593582887700535
+     }
+    },
+    "pm_label": {
+     "0": {
+      "n": 475,
+      "coverage": 0.4378947368421053,
+      "n_annotated": 468,
+      "failure": 0.06196581196581197
+     },
+     "1": {
+      "n": 636,
+      "coverage": 0.10062893081761007,
+      "n_annotated": 587,
+      "failure": 0.5638841567291312
+     }
+    },
+    "shooting_centre": {
+     "OD": {
+      "n": 123,
+      "coverage": 0.4959349593495935,
+      "n_annotated": 123,
+      "failure": 0.21138211382113822
+     },
+     "fovea": {
+      "n": 720,
+      "coverage": 0.24444444444444444,
+      "n_annotated": 667,
+      "failure": 0.29985007496251875
+     },
+     "midpoint": {
+      "n": 268,
+      "coverage": 0.13059701492537312,
+      "n_annotated": 265,
+      "failure": 0.5056603773584906
+     }
+    },
+    "has_mask": {
+     "False": {
+      "n": 56,
+      "coverage": 0.0,
+      "n_annotated": 0,
+      "failure": null
+     },
+     "True": {
+      "n": 1055,
+      "coverage": 0.25781990521327014,
+      "n_annotated": 1055,
+      "failure": 0.3412322274881517
+     }
+    }
+   },
+   "product": {
+    "model": "fe_v14p_seed42",
+    "device": {
+     "Canon": {
+      "n": 153,
+      "coverage": 0.3660130718954248,
+      "n_annotated": 120,
+      "failure": 0.5833333333333334
+     },
+     "Zeiss": {
+      "n": 958,
+      "coverage": 0.48538622129436326,
+      "n_annotated": 935,
+      "failure": 0.47593582887700536
+     }
+    },
+    "pm_label": {
+     "0": {
+      "n": 475,
+      "coverage": 0.871578947368421,
+      "n_annotated": 468,
+      "failure": 0.07692307692307693
+     },
+     "1": {
+      "n": 636,
+      "coverage": 0.16823899371069181,
+      "n_annotated": 587,
+      "failure": 0.8160136286201022
+     }
+    },
+    "shooting_centre": {
+     "OD": {
+      "n": 123,
+      "coverage": 0.4146341463414634,
+      "n_annotated": 123,
+      "failure": 0.5772357723577236
+     },
+     "fovea": {
+      "n": 720,
+      "coverage": 0.55,
+      "n_annotated": 667,
+      "failure": 0.3808095952023988
+     },
+     "midpoint": {
+      "n": 268,
+      "coverage": 0.27611940298507465,
+      "n_annotated": 265,
+      "failure": 0.7169811320754716
+     }
+    },
+    "has_mask": {
+     "False": {
+      "n": 56,
+      "coverage": 0.17857142857142858,
+      "n_annotated": 0,
+      "failure": null
+     },
+     "True": {
+      "n": 1055,
+      "coverage": 0.4843601895734597,
+      "n_annotated": 1055,
+      "failure": 0.4881516587677725
+     }
+    }
+   }
+  },
+  "secondary": {
+   "seed_dependence_R1m": {
+    "research": {
+     "Q": 836.9859154929577,
+     "df": 2,
+     "p": 1.7816308958423115e-182,
+     "max_minus_min": 0.5658767772511848,
+     "failure_by_seed": {
+      "fe_v14_seed42": 0.3232227488151659,
+      "fe_v14_seed43": 0.6161137440758294,
+      "fe_v14_seed44": 0.8890995260663507
+     },
+     "p_holm": 3.563261791684623e-182
+    },
+    "product": {
+     "Q": 751.6444444444444,
+     "df": 2,
+     "p": 6.060140767678497e-164,
+     "max_minus_min": 0.4625592417061611,
+     "failure_by_seed": {
+      "fe_v14p_seed42": 0.44644549763033176,
+      "fe_v14p_seed43": 0.9090047393364928,
+      "fe_v14p_seed44": 0.8255924170616113
+     },
+     "p_holm": 6.060140767678497e-164
+    }
+   },
+   "crop_R1m_vs_R0": {
+    "research": {
+     "R0_failure": 0.34218009478672984,
+     "R1m_failure": 0.3412322274881517,
+     "R0_only": 14,
+     "R1m_only": 13,
+     "p_exact": 1.0,
+     "p_holm": 1.0
+    },
+    "product": {
+     "R0_failure": 0.4824644549763033,
+     "R1m_failure": 0.4881516587677725,
+     "R0_only": 10,
+     "R1m_only": 16,
+     "p_exact": 0.32693958282470703,
+     "p_holm": 0.6538791656494141
+    }
+   },
+   "failure_by_group": {
+    "pooled": {
+     "fe_v14_seed42": 0.3412322274881517,
+     "fe_v14_seed43": 0.6853080568720379,
+     "fe_v14_seed44": 0.919431279620853,
+     "fe_v14p_seed42": 0.4881516587677725,
+     "fe_v14p_seed43": 0.9156398104265403,
+     "fe_v14p_seed44": 0.8540284360189574,
+     "fe_v14_f10_seed42": 0.95260663507109,
+     "fe_v14_f25_seed42": 0.8417061611374408,
+     "fe_v14_f50_seed42": 0.6938388625592417
+    },
+    "Zeiss": {
+     "fe_v14_seed42": 0.3593582887700535,
+     "fe_v14_seed43": 0.679144385026738,
+     "fe_v14_seed44": 0.9240641711229947,
+     "fe_v14p_seed42": 0.47593582887700536,
+     "fe_v14p_seed43": 0.932620320855615,
+     "fe_v14p_seed44": 0.8513368983957219,
+     "fe_v14_f10_seed42": 0.9775401069518717,
+     "fe_v14_f25_seed42": 0.8588235294117647,
+     "fe_v14_f50_seed42": 0.6919786096256685
+    },
+    "Canon": {
+     "fe_v14_seed42": 0.2,
+     "fe_v14_seed43": 0.7333333333333333,
+     "fe_v14_seed44": 0.8833333333333333,
+     "fe_v14p_seed42": 0.5833333333333334,
+     "fe_v14p_seed43": 0.7833333333333333,
+     "fe_v14p_seed44": 0.875,
+     "fe_v14_f10_seed42": 0.7583333333333333,
+     "fe_v14_f25_seed42": 0.7083333333333334,
+     "fe_v14_f50_seed42": 0.7083333333333334
+    }
+   },
+   "selection_rates": {
+    "fe_v14_seed42": {
+     "reject": 0.7551755175517552,
+     "flag": 0.7488748874887489
+    },
+    "fe_v14_seed43": {
+     "reject": 0.8784878487848785,
+     "flag": 0.873987398739874
+    },
+    "fe_v14_seed44": {
+     "reject": 0.9747974797479748,
+     "flag": 0.9720972097209721
+    },
+    "fe_v14p_seed42": {
+     "reject": 0.5310531053105311,
+     "flag": 0.5193519351935193
+    },
+    "fe_v14p_seed43": {
+     "reject": 0.918991899189919,
+     "flag": 0.8874887488748875
+    },
+    "fe_v14p_seed44": {
+     "reject": 0.8541854185418541,
+     "flag": 0.5958595859585959
+    },
+    "fe_v14_f10_seed42": {
+     "reject": 0.9855985598559855,
+     "flag": 0.8451845184518452
+    },
+    "fe_v14_f25_seed42": {
+     "reject": 0.9396939693969397,
+     "flag": 0.882988298829883
+    },
+    "fe_v14_f50_seed42": {
+     "reject": 0.8388838883888389,
+     "flag": 0.7974797479747975
+    }
+   }
+  }
+ },
+ "sensitivity_incl_duplicates": {
+  "P1": {
+   "rho": 0.8666666666666667,
+   "p_exact": 0.004508377425044092,
+   "met": true,
+   "tta_flag_rate_rho": 0.5333333333333333,
+   "tta_flag_rate_p": 0.14752535273368605,
+   "n_selection_images": 1200,
+   "n_annotated": 1144,
+   "interpretation": "candidate-set level (nine fixed candidates)"
+  },
+  "P2": {
+   "pooled": {
+    "research": {
+     "choice": "fe_v14_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14_seed42"
+     ],
+     "choice_tta_flag": "fe_v14_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14_seed42": 0.32517482517482516,
+      "fe_v14_seed43": 0.6765734265734266,
+      "fe_v14_seed44": 0.9204545454545454
+     }
+    },
+    "product": {
+     "choice": "fe_v14p_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14p_seed42"
+     ],
+     "choice_tta_flag": "fe_v14p_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14p_seed42": 0.4554195804195804,
+      "fe_v14p_seed43": 0.909965034965035,
+      "fe_v14p_seed44": 0.8461538461538461
+     }
+    }
+   },
+   "Zeiss": {
+    "research": {
+     "choice": "fe_v14_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14_seed42"
+     ],
+     "choice_tta_flag": "fe_v14_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14_seed42": 0.33984375,
+      "fe_v14_seed43": 0.669921875,
+      "fe_v14_seed44": 0.9248046875
+     }
+    },
+    "product": {
+     "choice": "fe_v14p_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14p_seed42"
+     ],
+     "choice_tta_flag": "fe_v14p_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14p_seed42": 0.4404296875,
+      "fe_v14p_seed43": 0.9248046875,
+      "fe_v14p_seed44": 0.8427734375
+     }
+    }
+   },
+   "Canon": {
+    "research": {
+     "choice": "fe_v14_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14_seed42"
+     ],
+     "choice_tta_flag": "fe_v14_seed42",
+     "regret_tta_flag": 0.0,
+     "seed_failures": {
+      "fe_v14_seed42": 0.2,
+      "fe_v14_seed43": 0.7333333333333333,
+      "fe_v14_seed44": 0.8833333333333333
+     }
+    },
+    "product": {
+     "choice": "fe_v14p_seed42",
+     "regret": 0.0,
+     "optimal": [
+      "fe_v14p_seed42"
+     ],
+     "choice_tta_flag": "fe_v14p_seed44",
+     "regret_tta_flag": 0.29166666666666663,
+     "seed_failures": {
+      "fe_v14p_seed42": 0.5833333333333334,
+      "fe_v14p_seed43": 0.7833333333333333,
+      "fe_v14p_seed44": 0.875
+     }
+    }
+   },
+   "met": true
+  },
+  "P3": {
+   "research": {
+    "model": "fe_v14_seed42",
+    "n_accepted": 306,
+    "failures": 3,
+    "rate": 0.00980392156862745,
+    "n_clusters": 263,
+    "primary_upper95": 0.02280130293159609,
+    "method": "cluster bootstrap",
+    "wilson95": [
+     0.0033396512669895285,
+     0.028423675542580268
+    ],
+    "cp_image_level_upper": 0.028382327159497747,
+    "upper_lt_0p05": true,
+    "coverage_all_included": 0.255
+   },
+   "product": {
+    "model": "fe_v14p_seed42",
+    "n_accepted": 590,
+    "failures": 46,
+    "rate": 0.07796610169491526,
+    "n_clusters": 487,
+    "primary_upper95": 0.10638297872340426,
+    "method": "cluster bootstrap",
+    "wilson95": [
+     0.058959247348366356,
+     0.10243328560991749
+    ],
+    "cp_image_level_upper": 0.10262820268245569,
+    "upper_lt_0p05": false,
+    "coverage_all_included": 0.5
+   },
+   "met": true,
+   "by_device": {
+    "Zeiss": {
+     "research": {
+      "model": "fe_v14_seed42",
+      "n_accepted": 244,
+      "failures": 3,
+      "rate": 0.012295081967213115,
+      "n_clusters": 201,
+      "primary_upper95": 0.028985507246376812,
+      "method": "cluster bootstrap",
+      "wilson95": [
+       0.004190009506554231,
+       0.0355192241329962
+      ],
+      "cp_image_level_upper": 0.03550898407408485,
+      "upper_lt_0p05": true
+     },
+     "product": {
+      "model": "fe_v14p_seed42",
+      "n_accepted": 540,
+      "failures": 40,
+      "rate": 0.07407407407407407,
+      "n_clusters": 437,
+      "primary_upper95": 0.10199775960827787,
+      "method": "cluster bootstrap",
+      "wilson95": [
+       0.0548669980619276,
+       0.09929847953301915
+      ],
+      "cp_image_level_upper": 0.09950417017522269,
+      "upper_lt_0p05": false
+     }
+    },
+    "Canon": {
+     "research": {
+      "model": "fe_v14_seed42",
+      "n_accepted": 62,
+      "failures": 0,
+      "rate": 0.0,
+      "n_clusters": 62,
+      "primary_upper95": 0.057762634429290936,
+      "method": "Clopper-Pearson, n = clusters (no failure observed)",
+      "wilson95": [
+       -6.938893903907228e-18,
+       0.05834609122500061
+      ],
+      "cp_image_level_upper": 0.057762634429290936,
+      "upper_lt_0p05": false
+     },
+     "product": {
+      "model": "fe_v14p_seed42",
+      "n_accepted": 50,
+      "failures": 6,
+      "rate": 0.12,
+      "n_clusters": 50,
+      "primary_upper95": 0.22,
+      "method": "cluster bootstrap",
+      "wilson95": [
+       0.05617523710624646,
+       0.23805078886623582
+      ],
+      "cp_image_level_upper": 0.24310131670556254,
+      "upper_lt_0p05": false
+     }
+    }
+   }
+  },
+  "P4": {
+   "research": {
+    "model": "fe_v14_seed42",
+    "device": {
+     "Canon": {
+      "n": 153,
+      "coverage": 0.40522875816993464,
+      "n_annotated": 120,
+      "failure": 0.2
+     },
+     "Zeiss": {
+      "n": 1047,
+      "coverage": 0.23304680038204392,
+      "n_annotated": 1024,
+      "failure": 0.33984375
+     }
+    },
+    "pm_label": {
+     "0": {
+      "n": 563,
+      "coverage": 0.42984014209591476,
+      "n_annotated": 556,
+      "failure": 0.0737410071942446
+     },
+     "1": {
+      "n": 637,
+      "coverage": 0.10047095761381476,
+      "n_annotated": 588,
+      "failure": 0.5629251700680272
+     }
+    },
+    "shooting_centre": {
+     "OD": {
+      "n": 123,
+      "coverage": 0.4959349593495935,
+      "n_annotated": 123,
+      "failure": 0.21138211382113822
+     },
+     "fovea": {
+      "n": 800,
+      "coverage": 0.25625,
+      "n_annotated": 747,
+      "failure": 0.28112449799196787
+     },
+     "midpoint": {
+      "n": 277,
+      "coverage": 0.1444043321299639,
+      "n_annotated": 274,
+      "failure": 0.49635036496350365
+     }
+    },
+    "has_mask": {
+     "False": {
+      "n": 56,
+      "coverage": 0.0,
+      "n_annotated": 0,
+      "failure": null
+     },
+     "True": {
+      "n": 1144,
+      "coverage": 0.2674825174825175,
+      "n_annotated": 1144,
+      "failure": 0.32517482517482516
+     }
+    }
+   },
+   "product": {
+    "model": "fe_v14p_seed42",
+    "device": {
+     "Canon": {
+      "n": 153,
+      "coverage": 0.3660130718954248,
+      "n_annotated": 120,
+      "failure": 0.5833333333333334
+     },
+     "Zeiss": {
+      "n": 1047,
+      "coverage": 0.5195797516714422,
+      "n_annotated": 1024,
+      "failure": 0.4404296875
+     }
+    },
+    "pm_label": {
+     "0": {
+      "n": 563,
+      "coverage": 0.8738898756660746,
+      "n_annotated": 556,
+      "failure": 0.07553956834532374
+     },
+     "1": {
+      "n": 637,
+      "coverage": 0.1695447409733124,
+      "n_annotated": 588,
+      "failure": 0.814625850340136
+     }
+    },
+    "shooting_centre": {
+     "OD": {
+      "n": 123,
+      "coverage": 0.4146341463414634,
+      "n_annotated": 123,
+      "failure": 0.5772357723577236
+     },
+     "fovea": {
+      "n": 800,
+      "coverage": 0.58375,
+      "n_annotated": 747,
+      "failure": 0.3467202141900937
+     },
+     "midpoint": {
+      "n": 277,
+      "coverage": 0.296028880866426,
+      "n_annotated": 274,
+      "failure": 0.6970802919708029
+     }
+    },
+    "has_mask": {
+     "False": {
+      "n": 56,
+      "coverage": 0.17857142857142858,
+      "n_annotated": 0,
+      "failure": null
+     },
+     "True": {
+      "n": 1144,
+      "coverage": 0.5157342657342657,
+      "n_annotated": 1144,
+      "failure": 0.4554195804195804
+     }
+    }
+   }
+  },
+  "secondary": {
+   "seed_dependence_R1m": {
+    "research": {
+     "Q": 941.8853146853147,
+     "df": 2,
+     "p": 2.9662149757773292e-205,
+     "max_minus_min": 0.5856643356643356,
+     "failure_by_seed": {
+      "fe_v14_seed42": 0.30506993006993005,
+      "fe_v14_seed43": 0.6040209790209791,
+      "fe_v14_seed44": 0.8907342657342657
+     },
+     "p_holm": 5.9324299515546585e-205
+    },
+    "product": {
+     "Q": 872.5983739837399,
+     "df": 2,
+     "p": 3.2935983055262573e-190,
+     "max_minus_min": 0.4895104895104895,
+     "failure_by_seed": {
+      "fe_v14p_seed42": 0.4125874125874126,
+      "fe_v14p_seed43": 0.9020979020979021,
+      "fe_v14p_seed44": 0.8164335664335665
+     },
+     "p_holm": 3.2935983055262573e-190
+    }
+   },
+   "crop_R1m_vs_R0": {
+    "research": {
+     "R0_failure": 0.32604895104895104,
+     "R1m_failure": 0.32517482517482516,
+     "R0_only": 14,
+     "R1m_only": 13,
+     "p_exact": 1.0,
+     "p_holm": 1.0
+    },
+    "product": {
+     "R0_failure": 0.45017482517482516,
+     "R1m_failure": 0.4554195804195804,
+     "R0_only": 10,
+     "R1m_only": 16,
+     "p_exact": 0.32693958282470703,
+     "p_holm": 0.6538791656494141
+    }
+   },
+   "failure_by_group": {
+    "pooled": {
+     "fe_v14_seed42": 0.32517482517482516,
+     "fe_v14_seed43": 0.6765734265734266,
+     "fe_v14_seed44": 0.9204545454545454,
+     "fe_v14p_seed42": 0.4554195804195804,
+     "fe_v14p_seed43": 0.909965034965035,
+     "fe_v14p_seed44": 0.8461538461538461,
+     "fe_v14_f10_seed42": 0.9562937062937062,
+     "fe_v14_f25_seed42": 0.8426573426573427,
+     "fe_v14_f50_seed42": 0.6835664335664335
+    },
+    "Zeiss": {
+     "fe_v14_seed42": 0.33984375,
+     "fe_v14_seed43": 0.669921875,
+     "fe_v14_seed44": 0.9248046875,
+     "fe_v14p_seed42": 0.4404296875,
+     "fe_v14p_seed43": 0.9248046875,
+     "fe_v14p_seed44": 0.8427734375,
+     "fe_v14_f10_seed42": 0.9794921875,
+     "fe_v14_f25_seed42": 0.8583984375,
+     "fe_v14_f50_seed42": 0.6806640625
+    },
+    "Canon": {
+     "fe_v14_seed42": 0.2,
+     "fe_v14_seed43": 0.7333333333333333,
+     "fe_v14_seed44": 0.8833333333333333,
+     "fe_v14p_seed42": 0.5833333333333334,
+     "fe_v14p_seed43": 0.7833333333333333,
+     "fe_v14p_seed44": 0.875,
+     "fe_v14_f10_seed42": 0.7583333333333333,
+     "fe_v14_f25_seed42": 0.7083333333333334,
+     "fe_v14_f50_seed42": 0.7083333333333334
+    }
+   },
+   "selection_rates": {
+    "fe_v14_seed42": {
+     "reject": 0.745,
+     "flag": 0.7391666666666666
+    },
+    "fe_v14_seed43": {
+     "reject": 0.8716666666666667,
+     "flag": 0.8675
+    },
+    "fe_v14_seed44": {
+     "reject": 0.9758333333333333,
+     "flag": 0.9733333333333334
+    },
+    "fe_v14p_seed42": {
+     "reject": 0.5,
+     "flag": 0.4891666666666667
+    },
+    "fe_v14p_seed43": {
+     "reject": 0.91,
+     "flag": 0.8808333333333334
+    },
+    "fe_v14p_seed44": {
+     "reject": 0.8466666666666667,
+     "flag": 0.595
+    },
+    "fe_v14_f10_seed42": {
+     "reject": 0.9866666666666667,
+     "flag": 0.8466666666666667
+    },
+    "fe_v14_f25_seed42": {
+     "reject": 0.9391666666666667,
+     "flag": 0.8866666666666667
+    },
+    "fe_v14_f50_seed42": {
+     "reject": 0.8291666666666667,
+     "flag": 0.7908333333333334
+    }
+   }
+  }
+ },
+ "stageA_sha256": "3b9f8d12293ccb94fc0c4354998fa2c4b7d771bdb8fdf7b7adc0db36bc0f5079",
+ "script_sha256": "f5b5eb103077cd3bbbc5385b7599f4c83d3f2810fe37942e7983418db52aa381",
+ "reference_lock_sha256": "01ad849356688179f23c6703100d50cfced6e608c614b6b0e0daebcaa06dc371"
+}

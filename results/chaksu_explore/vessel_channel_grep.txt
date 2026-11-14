@@ -1,0 +1,17 @@
+fe/fe_train.py:1:"""FE v1: partial-label multi-task U-Net (disc, cup, vessels) on PAPILA + FIVES at 384."""
+fe/fe_train.py:18:    def __init__(s, n_out=3):
+fe/fe_train.py:22:        s.head = nn.Conv2d(32, n_out, 1)
+fe/fe_train.py:56:    for c, name in enumerate(("disc", "cup", "vessel")):
+fe/fe_train.py:65:        e.append(np.linalg.norm(gp[0] - gg[0]) / gg[1]); rr.append(abs(gp[1] - gg[1]) / gg[1])
+fe/fe_train.py:67:        if cp is not None and cg is not None: cdr.append(abs(cp[2] / gp[2] - cg[2] / gg[2]))
+fe/fe_train.py:95:            m = evaluate(model, X[va], Y[va], A[va], dev); score = np.mean([m["dice_disc"], m["dice_cup"], m["dice_vessel"]])
+fe/fe_train.py:97:            log(f"ep{ep:03d} loss={tl/steps:.4f} val disc={m['dice_disc']:.3f} cup={m['dice_cup']:.3f} vessel={m['dice_vessel']:.3f} "
+fe/fe_decode.py:1:"""FE decoding rule (v1.1): heatmap peak selects the disc component; centroid of that component gives the centre.
+fe/fe_decode.py:2:status: ok (mask component found) | heat_only (no mask component; centre = heatmap peak, low confidence) | fail."""
+fe/fe_decode.py:23:def decode(p, r_max=int(0.35 * S), heat_min=0.2):
+fe/fe_decode.py:24:    disc_p, heat = p[0], p[3]; c0 = peak(heat); hpk = float(heat.max())
+fe/fe_decode.py:32:    out = {"heat_peak": hpk, "peak_xy": c0.tolist(), "spurious_frac": float((raw & ~near).sum() / max(raw.sum(), 1))}
+fe/fe_decode.py:38:    elif hpk >= heat_min:
+fe/fe_decode.py:39:        out.update(status="heat_only", center=c0.tolist(), radius=float("nan"), disc_mean_prob=float(disc_p[near].max()), mask=None)
+fe/fe_decode.py:46:    """Frame confidence v1 (0..1), scale-free: heatmap peak x disc circularity x disc probability x (1 - spurious)."""
+fe/fe_decode.py:48:    q = min(1.0, max(0.0, (o["heat_peak"] - h_lo) / h_span)); m = o.get("mask")

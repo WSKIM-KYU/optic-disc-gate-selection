@@ -1,0 +1,77 @@
+/home/test/OpticNeuroFusion_Starter/onfm/frame.py:16: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  def _norm(self, x): return (torch.from_numpy(np.ascontiguousarray(x)).to(self.dev).permute(2, 0, 1)[None].float().div(255) - MEAN.to(self.dev)) / STD.to(self.dev)
+50/1009
+100/1009
+150/1009
+200/1009
+250/1009
+300/1009
+350/1009
+400/1009
+450/1009
+500/1009
+550/1009
+600/1009
+650/1009
+700/1009
+750/1009
+800/1009
+850/1009
+900/1009
+950/1009
+1000/1009
+
+[Bosch] model                fail   flag  medSpr  cover fail|kept
+      fe_v14_seed42       12.5%  30.8%   0.093  69.2%      0.0%
+      fe_v14_seed43        7.7%  39.4%   0.124  60.6%      0.0%
+      fe_v14_seed44       62.5%  78.8%   1.357  21.2%      0.0%
+      fe_v14p_seed42      13.5%  12.5%   0.132  87.5%      2.2%
+      fe_v14p_seed43      93.3%  91.3%   1.977   8.7%     22.2%
+      fe_v14p_seed44      43.3%  38.5%   0.164  61.5%      7.8%
+      fe_v14_f10_seed42   71.2%  69.2%   0.253  30.8%     59.4%
+      fe_v14_f25_seed42   69.2%  63.5%   0.211  36.5%     36.8%
+      fe_v14_f50_seed42   69.2%  77.9%   0.532  22.1%      4.3%
+  Spearman vs failure: {'flag_rate': 'rho +0.75 (p=0.024)', 'median_spread': 'rho +0.85 (p=0.005)'}
+  research: label-free choice fe_v14_seed42 (failure 12.5%); best by ground truth fe_v14_seed43
+  product: label-free choice fe_v14p_seed42 (failure 13.5%); best by ground truth fe_v14p_seed42
+
+[Forus] model                fail   flag  medSpr  cover fail|kept
+      fe_v14_seed42        0.0%  17.9%   0.089  82.1%      0.0%
+      fe_v14_seed43        0.0%  51.6%   0.139  48.4%      0.0%
+      fe_v14_seed44        0.0%  30.5%   0.127  69.5%      0.0%
+      fe_v14p_seed42       0.0%   0.0%   0.102 100.0%      0.0%
+      fe_v14p_seed43       0.0%   0.0%   0.129 100.0%      0.0%
+      fe_v14p_seed44       0.0%   0.0%   0.128 100.0%      0.0%
+      fe_v14_f10_seed42    0.0%  49.5%   0.136  50.5%      0.0%
+      fe_v14_f25_seed42    0.0%  35.8%   0.124  64.2%      0.0%
+      fe_v14_f50_seed42    0.0%  17.9%   0.096  82.1%      0.0%
+  research: label-free choice fe_v14_seed42 (failure 0.0%); best by ground truth fe_v14_seed42
+  product: label-free choice fe_v14p_seed42 (failure 0.0%); best by ground truth fe_v14p_seed42
+
+[Remidio] model                fail   flag  medSpr  cover fail|kept
+      fe_v14_seed42        8.8%  18.1%   0.088  81.9%      0.0%
+      fe_v14_seed43       26.7%  43.2%   0.124  56.8%      0.0%
+      fe_v14_seed44       76.4%  84.1%   0.662  15.9%      0.8%
+      fe_v14p_seed42      33.6%  32.2%   0.173  67.8%      2.2%
+      fe_v14p_seed43      79.3%  74.0%   0.617  26.0%     21.8%
+      fe_v14p_seed44      72.6%  48.3%   0.277  51.7%     47.3%
+      fe_v14_f10_seed42   69.3%  59.5%   0.169  40.5%     53.4%
+      fe_v14_f25_seed42   79.1%  66.5%   0.212  33.5%     54.2%
+      fe_v14_f50_seed42   53.1%  52.6%   0.148  47.4%     14.1%
+  Spearman vs failure: {'flag_rate': 'rho +0.88 (p=0.003)', 'median_spread': 'rho +0.87 (p=0.005)'}
+  research: label-free choice fe_v14_seed42 (failure 8.8%); best by ground truth fe_v14_seed42
+  product: label-free choice fe_v14p_seed42 (failure 33.6%); best by ground truth fe_v14p_seed42
+
+[all] model                fail   flag  medSpr  cover fail|kept
+      fe_v14_seed42        8.3%  19.4%   0.089  80.6%      0.0%
+      fe_v14_seed43       22.2%  43.6%   0.125  56.4%      0.0%
+      fe_v14_seed44       67.8%  78.5%   0.590  21.5%      0.5%
+      fe_v14p_seed42      28.3%  27.2%   0.157  72.8%      1.9%
+      fe_v14p_seed43      73.2%  68.8%   0.603  31.2%     15.2%
+      fe_v14p_seed44      62.7%  42.7%   0.217  57.3%     35.1%
+      fe_v14_f10_seed42   62.9%  59.6%   0.167  40.4%     47.5%
+      fe_v14_f25_seed42   70.7%  63.3%   0.189  36.7%     43.5%
+      fe_v14_f50_seed42   49.8%  51.9%   0.146  48.1%     11.3%
+  Spearman vs failure: {'flag_rate': 'rho +0.87 (p=0.005)', 'median_spread': 'rho +0.90 (p=0.002)'}
+  research: label-free choice fe_v14_seed42 (failure 8.3%); best by ground truth fe_v14_seed42
+  product: label-free choice fe_v14p_seed42 (failure 28.3%); best by ground truth fe_v14p_seed42

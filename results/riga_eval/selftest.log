@@ -1,0 +1,8 @@
+== (1) RIGA reference: 747 {'Messidor': 460, 'BinRushed': 195, 'Magrabi': 92}
+  15 images, max |R0 box diff| = 0.00e+00, max |R1m box diff| = 0.00e+00
+== (2) end to end on 9 Chaksu Train images (relabelled)
+/home/test/OpticNeuroFusion_Starter/fe/p2_cam_locked_eval.py:36: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  t = (torch.from_numpy(np.ascontiguousarray(x)).to(dev()).permute(2, 0, 1)[None].float().div(255) - MEAN.to(dev())) / STD.to(dev())
+  sections: ['G1_label_free_rank', 'G2_within_track', 'G3_seed_dependence_R1m', 'G4_crop', 'secondary'] | G1 (not interpretable): {'rho': 0.7022846502991756, 'p_exact': 0.04404761904761905, 'success': True}
+  other criteria (research): {'idrid_centre_err': 'fe_v14_seed43', 'neg_papila_dice': 'fe_v14_seed43', 'neg_rfmid_valid_AC': 'fe_v14_seed42', 'rfmid_labelfree_record': 'fe_v14_seed42', 'random': {'expected_regret': 0.14814814814814814, 'hit_prob': 0.6666666666666666}}
+SELF-TEST DONE (nothing written)

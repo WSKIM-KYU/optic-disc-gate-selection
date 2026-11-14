@@ -1,0 +1,79 @@
+/home/test/OpticNeuroFusion_Starter/fe/p2_cam_locked_eval.py:36: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  t = (torch.from_numpy(np.ascontiguousarray(x)).to(dev()).permute(2, 0, 1)[None].float().div(255) - MEAN.to(dev())) / STD.to(dev())
+50/1009
+100/1009
+150/1009
+200/1009
+250/1009
+300/1009
+350/1009
+400/1009
+450/1009
+500/1009
+550/1009
+600/1009
+650/1009
+700/1009
+750/1009
+800/1009
+850/1009
+900/1009
+950/1009
+1000/1009
+Bosch: R1 reference radius p5/50/95 = 25.0/29.4/32.6 px, above 46 px: 0
+Forus: R1 reference radius p5/50/95 = 28.7/31.5/36.4 px, above 46 px: 0
+Remidio: R1 reference radius p5/50/95 = 32.7/37.4/43.8 px, above 46 px: 18
+
+model              device    R0 fail  R1 fail  R1m fail | R0 valid R1 valid R1m valid
+fe_v14_seed42      Bosch       13.5%     9.6%      9.6% |    91.3%    94.2%     93.3%
+fe_v14_seed42      Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14_seed42      Remidio     68.9%    18.0%      8.4% |    66.2%    88.4%     94.8%
+fe_v14_seed42      all         56.7%    15.5%      7.7% |    72.0%    90.1%     95.1%
+fe_v14_seed43      Bosch       20.2%     4.8%      4.8% |    86.5%    96.2%     96.2%
+fe_v14_seed43      Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14_seed43      Remidio     64.7%    33.0%     26.3% |    49.4%    81.9%     85.2%
+fe_v14_seed43      all         54.0%    27.0%     21.6% |    58.0%    85.0%     87.7%
+fe_v14_seed44      Bosch       70.2%    64.4%     65.4% |    56.7%    56.7%     54.8%
+fe_v14_seed44      Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14_seed44      Remidio     95.2%    82.7%     74.4% |    44.8%    79.3%     77.2%
+fe_v14_seed44      all         83.6%    73.0%     66.5% |    51.2%    78.9%     77.0%
+fe_v14p_seed42     Bosch       15.4%     8.7%      9.6% |    94.2%    98.1%     98.1%
+fe_v14p_seed42     Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14p_seed42     Remidio     60.0%    40.7%     30.2% |    68.9%    78.1%     82.6%
+fe_v14p_seed42     all         49.8%    33.6%     25.3% |    74.4%    82.3%     85.8%
+fe_v14p_seed43     Bosch       95.2%    92.3%     93.3% |    35.6%    34.6%     34.6%
+fe_v14p_seed43     Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14p_seed43     Remidio     95.2%    79.8%     81.0% |    37.3%    70.9%     68.8%
+fe_v14p_seed43     all         86.2%    73.5%     74.6% |    43.0%    69.9%     68.2%
+fe_v14p_seed44     Bosch       54.8%    45.2%     47.1% |    55.8%    60.6%     60.6%
+fe_v14p_seed44     Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14p_seed44     Remidio     84.4%    70.5%     71.2% |    18.3%    34.4%     33.7%
+fe_v14p_seed44     all         73.4%    61.2%     62.0% |    29.8%    43.3%     42.7%
+fe_v14_f10_seed42  Bosch       75.0%    74.0%     73.1% |    21.2%    26.0%     26.9%
+fe_v14_f10_seed42  Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14_f10_seed42  Remidio     87.0%    77.2%     71.0% |     3.7%    13.6%     25.4%
+fe_v14_f10_seed42  all         77.6%    69.6%     64.5% |    14.6%    23.0%     32.6%
+fe_v14_f25_seed42  Bosch       77.9%    75.0%     77.9% |    19.2%    26.9%     21.2%
+fe_v14_f25_seed42  Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14_f25_seed42  Remidio     88.6%    79.8%     79.6% |     3.1%    11.1%     15.8%
+fe_v14_f25_seed42  all         79.2%    71.8%     72.0% |    13.9%    21.1%     24.3%
+fe_v14_f50_seed42  Bosch       78.8%    73.1%     74.0% |    22.1%    27.9%     27.9%
+fe_v14_f50_seed42  Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+fe_v14_f50_seed42  Remidio     87.7%    62.3%     50.5% |     5.4%    38.0%     52.1%
+fe_v14_f50_seed42  all         78.5%    57.6%     48.2% |    16.1%    42.8%     54.1%
+ens_research       Bosch       25.0%     6.7%      6.7% |    85.6%    96.2%     96.2%
+ens_research       Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+ens_research       Remidio     71.7%    33.7%     24.1% |    46.2%    82.1%     86.2%
+ens_research       all         60.2%    27.8%     20.0% |    55.3%    85.2%     88.5%
+ens_product        Bosch       51.0%    42.3%     48.1% |    70.2%    75.0%     74.0%
+ens_product        Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+ens_product        Remidio     82.2%    65.6%     63.6% |    33.8%    62.8%     67.4%
+ens_product        all         71.3%    57.0%     56.0% |    43.8%    67.6%     71.2%
+pipeline_research  Bosch       15.4%    11.5%     12.5% |    62.5%    70.2%     69.2%
+pipeline_research  Forus        0.0%     0.0%      0.0% |    86.3%    87.4%     82.1%
+pipeline_research  Remidio     67.7%    18.6%      8.8% |    25.3%    72.6%     81.5%
+pipeline_research  all         55.9%    16.2%      8.3% |    34.9%    73.7%     80.3%
+pipeline_product   Bosch       22.1%    11.5%     13.5% |    78.8%    88.5%     86.5%
+pipeline_product   Forus        0.0%     0.0%      0.0% |   100.0%   100.0%    100.0%
+pipeline_product   Remidio     61.0%    44.6%     33.6% |    40.4%    56.2%     66.2%
+pipeline_product   all         51.2%    37.0%     28.3% |    50.0%    63.6%     71.5%

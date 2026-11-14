@@ -1,0 +1,325 @@
+{
+ "note": "EXPLORATORY audit after the locked PALM run (reviewer checks); changes nothing in the locked results.\n(1) P3 sensitivity to the same-eye cluster definition: image-level Wilson and Clopper-Pearson, locked cluster bootstrap with five\n    random seeds, largest cluster split into single images, image-level bootstrap, and analysis without the largest cluster;\n    where the failed accepted images sit; whether the largest cluster is among the excluded duplicates.\n(2) Images without a disc mask accepted by each choice, with the predicted frame drawn on the R1m crop for visual review.",
+ "largest_cluster": {
+  "size": 87,
+  "members_in_excluded_duplicates": 50,
+  "members_included": 37,
+  "members_included_with_mask": 37
+ },
+ "research": {
+  "model": "fe_v14_seed42",
+  "accepted": 272,
+  "failures": 3,
+  "accepted_in_largest_cluster": 16,
+  "failed_images_cluster_size": [
+   [
+    "T0089",
+    1
+   ],
+   [
+    "T0135",
+    1
+   ],
+   [
+    "V0389",
+    1
+   ]
+  ],
+  "wilson95": [
+   0.0038,
+   0.0319
+  ],
+  "clopper_pearson_image_upper": 0.0319,
+  "cluster_boot_locked_def_5_seeds": [
+   0.0256,
+   0.0257,
+   0.0256,
+   0.0256,
+   0.0256
+  ],
+  "cluster_boot_largest_split": 0.0256,
+  "image_level_boot": 0.0257,
+  "without_largest_cluster": {
+   "accepted": 256,
+   "failures": 3,
+   "cluster_boot": 0.0272
+  }
+ },
+ "product": {
+  "model": "fe_v14p_seed42",
+  "accepted": 511,
+  "failures": 46,
+  "accepted_in_largest_cluster": 33,
+  "failed_images_cluster_size": [
+   [
+    "T0012",
+    1
+   ],
+   [
+    "T0038",
+    1
+   ],
+   [
+    "T0063",
+    87
+   ],
+   [
+    "T0082",
+    1
+   ],
+   [
+    "T0089",
+    1
+   ],
+   [
+    "T0096",
+    1
+   ],
+   [
+    "T0146",
+    1
+   ],
+   [
+    "T0182",
+    1
+   ],
+   [
+    "T0183",
+    1
+   ],
+   [
+    "T0210",
+    1
+   ],
+   [
+    "T0220",
+    1
+   ],
+   [
+    "T0236",
+    1
+   ],
+   [
+    "T0239",
+    1
+   ],
+   [
+    "T0281",
+    87
+   ],
+   [
+    "T0289",
+    1
+   ],
+   [
+    "T0305",
+    1
+   ],
+   [
+    "T0311",
+    1
+   ],
+   [
+    "T0324",
+    1
+   ],
+   [
+    "T0336",
+    1
+   ],
+   [
+    "T0347",
+    1
+   ],
+   [
+    "T0354",
+    1
+   ],
+   [
+    "T0367",
+    1
+   ],
+   [
+    "T0378",
+    1
+   ],
+   [
+    "T0383",
+    1
+   ],
+   [
+    "H0005",
+    1
+   ],
+   [
+    "N0152",
+    1
+   ],
+   [
+    "N0153",
+    1
+   ],
+   [
+    "P0067",
+    1
+   ],
+   [
+    "P0068",
+    1
+   ],
+   [
+    "P0070",
+    1
+   ],
+   [
+    "P0087",
+    1
+   ],
+   [
+    "P0094",
+    1
+   ],
+   [
+    "P0122",
+    1
+   ],
+   [
+    "P0144",
+    1
+   ],
+   [
+    "P0171",
+    1
+   ],
+   [
+    "P0189",
+    1
+   ],
+   [
+    "P0194",
+    1
+   ],
+   [
+    "V0049",
+    1
+   ],
+   [
+    "V0098",
+    1
+   ],
+   [
+    "V0137",
+    1
+   ],
+   [
+    "V0178",
+    1
+   ],
+   [
+    "V0228",
+    1
+   ],
+   [
+    "V0253",
+    1
+   ],
+   [
+    "V0262",
+    1
+   ],
+   [
+    "V0286",
+    1
+   ],
+   [
+    "V0389",
+    1
+   ]
+  ],
+  "wilson95": [
+   0.0682,
+   0.118
+  ],
+  "clopper_pearson_image_upper": 0.1182,
+  "cluster_boot_locked_def_5_seeds": [
+   0.1164,
+   0.1161,
+   0.1159,
+   0.1156,
+   0.1158
+  ],
+  "cluster_boot_largest_split": 0.1164,
+  "image_level_boot": 0.1155,
+  "without_largest_cluster": {
+   "accepted": 478,
+   "failures": 44,
+   "cluster_boot": 0.1199
+  }
+ },
+ "no_mask": {
+  "included_images": 56,
+  "research": [],
+  "product": [
+   {
+    "stem": "T0020",
+    "device": "Canon",
+    "pm_label": "1",
+    "centre": "fovea"
+   },
+   {
+    "stem": "H0013",
+    "device": "Canon",
+    "pm_label": "0",
+    "centre": "fovea"
+   },
+   {
+    "stem": "P0062",
+    "device": "Zeiss",
+    "pm_label": "1",
+    "centre": "midpoint"
+   },
+   {
+    "stem": "P0076",
+    "device": "Zeiss",
+    "pm_label": "1",
+    "centre": "midpoint"
+   },
+   {
+    "stem": "P0138",
+    "device": "Zeiss",
+    "pm_label": "1",
+    "centre": "fovea"
+   },
+   {
+    "stem": "V0062",
+    "device": "Canon",
+    "pm_label": "1",
+    "centre": "fovea"
+   },
+   {
+    "stem": "V0099",
+    "device": "Canon",
+    "pm_label": "1",
+    "centre": "fovea"
+   },
+   {
+    "stem": "V0124",
+    "device": "Canon",
+    "pm_label": "0",
+    "centre": "fovea"
+   },
+   {
+    "stem": "V0126",
+    "device": "Canon",
+    "pm_label": "0",
+    "centre": "fovea"
+   },
+   {
+    "stem": "V0282",
+    "device": "Zeiss",
+    "pm_label": "0",
+    "centre": "fovea"
+   }
+  ]
+ }
+}

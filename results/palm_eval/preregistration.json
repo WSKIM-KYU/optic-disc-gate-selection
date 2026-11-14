@@ -1,0 +1,64 @@
+{
+  "created": "2026-11-13T18:40:53",
+  "title": "Paper 2 E8: confirmation on PALM of label-free model selection by full deployment-gate rejection rate (TTA instability or radius rule)",
+  "nature": "engineering study; confirmatory single run on a third external dataset. The full-gate criterion was found in exploratory analysis after the RIGA evaluation (E6b); the RIGA primary hypothesis G1 (TTA flag rate) remains not met and is not revised by this registration",
+  "data": {
+    "dataset": "PALM (Sci Data 2024; figshare 21299148, CC0, MD5 verified), never used before in this project",
+    "images": "1,200 (Zeiss 1,047, Canon 153); disc masks for 1,144; 89 images duplicated in REFUGE1 (thumbnail correlation >= 0.985) excluded from the primary analysis",
+    "same_eye_proxy": "clusters of PALM images with thumbnail correlation >= 0.985 (1,066 clusters; largest 87 images, which makes cluster intervals conservative); no patient or eye identifiers are provided"
+  },
+  "reference": "PALM consensus disc mask (disc = black), largest component centroid and sqrt(area/pi); one mask per image, so no inter-rater baseline; locked in results/fe/palm_ref/reference_lock.json without any FE model",
+  "procedure": {
+    "stage_A": "label-free: reads no reference and no mask; all 1,200 images; R0 and R1m crops; nine models single pass, ensembles, deployed pipelines; nine models through the deployed TTA code on R1m; selection recorded before stage B",
+    "stage_B": "evaluation: requires the stage A file produced by this script; maps the reference and scores",
+    "fixed_settings": "R1m crop fe/p2c_crop.py; failure = centre > 0.2 r_d or none; deployed TTA thresholds research 0.138, product 0.297 r_d; radius rule 15-46 px; no change after development"
+  },
+  "decision_rules": {
+    "full_gate_rejection": "share of images whose TTA frame on R1m is not valid (no centre, radius outside 15-46 px, or TTA-spread flag); images without a centre count as rejected",
+    "selection_denominator": "all included images, with and without disc masks",
+    "ties": "equal rejection rate -> seed order 42, 43, 44",
+    "optimal": "all seeds with the lowest failure count as optimal",
+    "devices": "Zeiss and Canon selected separately for per-device regret"
+  },
+  "hypotheses": {
+    "P1_primary": "Spearman across the nine fixed candidates between full-gate rejection rate and failure of the TTA frames on R1m (annotated included images), pooled; exact permutation p over 9!; met if rho > 0 and p < 0.05. Candidate-set-level criterion: the p value refers to these nine models, not to a population of models. The TTA flag rate criterion is reported alongside",
+    "P2_key_secondary": "regret of the label-free choice per track, pooled; met if regret = 0 in both tracks; per-device regret reported",
+    "P3_key_secondary": "research-track choice: silent failure among frames accepted by the full gate (annotated included images); primary 95% upper bound by cluster bootstrap (10,000 resamples, 97.5th percentile) or, with no observed failure, Clopper-Pearson with n = clusters among accepted images; met if < 5%; Wilson and image-level Clopper-Pearson bounds reported; product-track choice descriptive",
+    "P4_descriptive": "failure and coverage of the chosen models by device, pathologic-myopia label, shooting centre and mask presence"
+  },
+  "secondary": "TTA flag rate criterion; seed dependence under R1m (Cochran Q, Holm); deployed pipelines R1m vs R0 (exact McNemar, Holm); sensitivity including the 89 REFUGE1 duplicates. All auxiliary",
+  "interpretation_notes": [
+    "conclusions refer to the annotated evaluation subset; images without masks are mostly pathologic myopia (49 of 56)",
+    "15 of 120 Canon reference radii exceed 46 px at 384, so the radius rule rejects some correct Canon frames; Canon has 120 annotated images",
+    "the nine candidates form three dependent groups"
+  ],
+  "single_evaluation": "stage A and stage B each run once; both refuse if their outputs exist or on any hash mismatch",
+  "evaluation_script": "fe/p2p_palm_eval.py",
+  "evaluation_script_sha256": "f5b5eb103077cd3bbbc5385b7599f4c83d3f2810fe37942e7983418db52aa381",
+  "checkpoint_sha256": {
+    "fe_v14_seed42": "a7cf7f0fe92a15280ceed72267b231e6b82463652e3221a3fe59332132b62c9d",
+    "fe_v14_seed43": "e4bd7b434b274c3639f836548b450517c635b881307cbffae061b653a4df0969",
+    "fe_v14_seed44": "ba725b797df8131305c17567f9296ef87dc2b3b0a8b7bb6c4c0880a7480a66d9",
+    "fe_v14p_seed42": "fa7ee5f3fbd322eb4ab2a859c409660b33a17a00270d09adde063c82d27700d2",
+    "fe_v14p_seed43": "23102f5f9097e89c8e2819a926698ce44a39c858de73299344586c01f42776eb",
+    "fe_v14p_seed44": "45a2c4a4c19ff954466e5fd4460b6f22ef209e9b9c3bbf1e89ee6d18e51632a9",
+    "fe_v14_f10_seed42": "495f9637384f5256bdec04c4f4ad8d7688ad21884c9df2c4e0b6d93fbace31ce",
+    "fe_v14_f25_seed42": "705e193d15fcab8f5cfaec34610983833ad6e01216a457a44e1808601d83a56b",
+    "fe_v14_f50_seed42": "f4269d0a5cb6a79f2b83be789f5cb32e14eb56f7adff03767a3b54bb6d4adca0"
+  },
+  "dependency_sha256": {
+    "fe/p2_cam_locked_eval.py": "8107871441691549389b14e718b5c62a820619713049975b1ac709b91220a309",
+    "fe/p2c_crop.py": "f3c8bcbd92f6d08bca0906685c2cea7098ae596a8d9a4b52e953e8324f744ee0",
+    "onfm/frame.py": "4893da26151eea294eb035725be760d9d5918afd2881bd81bd427b25d92e604d",
+    "onfm/flag_thresholds.json": "87b701072d4410070a2a528000838c043305b99050d56f541c448260549d37fc",
+    "fe/fe_decode.py": "2b5b20b562ee594b3322a8c23ee19d02831c312e977e31ad3b3ffd3e9e3581c8",
+    "fe/fe_train.py": "6b660589ef98882f28b10e1ee39f6dc40ac2b012000193376e3528542530ecea",
+    "fe/fe_external_check.py": "e4bb974896b5dff09032c46f726a70360eb3441616eb1bb9149f703873b65d34"
+  },
+  "reference_lock_sha256": "01ad849356688179f23c6703100d50cfced6e608c614b6b0e0daebcaa06dc371",
+  "selftest": {
+    "script_sha256": "22a9eeb088a1a272524030e493e7555893ad09cc00c2f01e4eeec60d89e356a7",
+    "log_sha256": "b8a67e36136ef06c5b12b8e3d1ec7084c1daa9edeb17776f43a60bf8ba4d4ee4",
+    "result": "PALM crop parity 0 on 15 images (no model); on 6 Chaksu Train images R0 and R1m TTA outputs identical to earlier locked/development results (0 failure mismatches); analysis ran end to end"
+  }
+}

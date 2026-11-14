@@ -1,0 +1,22 @@
+{
+  "created": "2026-11-13T18:38:18",
+  "fe_outputs_read": false,
+  "files_sha256": {
+    "results/fe/palm_ref/reference_palm.csv": "3b0a2896943ff7abfc735c0534dd3962ddd012ac96287a61ac7360e40ad3dcd8",
+    "results/fe/palm_ref/summary.json": "4c632a40878b0b55c760a08972c65ebf89652a0a4375bf1e351bd9c1d6047e8c",
+    "results/fe/palm_ref/dup_audit.json": "f00dea3a381a199c8d6052501e10c3798cf22a5e94992ea1433e6a1368abe8f3",
+    "results/fe/palm_ref/exclusions_clusters.json": "2c55355a88937114096d725d5fa613a97b8d835c7e0ac7f1c4883484d2561285",
+    "fe/p2p_build_reference.py": "4669cd6a9f37c4b8d89568e730326be162f8f5d78409282aaa442fd16b92c081",
+    "fe/p2p_dup_audit.py": "a525a3d2d7190779d4d22efe392a45b3b6386bac859f592b45b6bbf898990f01",
+    "fe/p2p_exclusions_clusters.py": "d6802e63027e91d22a2a3e4a8c06b60298210a8b693a3073f185b42d5263e2f8",
+    "fe/p2p_inspect.py": "6ca7b7b1314685dc0dc6e6da7e3ddd333d650abc5f0235fc278e1bc26b9c228c",
+    "data/eval/palm/SHA256SUMS.txt": "c9bd096c1678c7e5d6be356d4a343dd82bb3574fe65814790277ee6852f303de",
+    "data/eval/palm/prior_use_check.txt": "753320387bb1ca479673d769db6bcbcfa178089a8e47efb3c3bc1b7969d253f0"
+  },
+  "notes": [
+    "PALM (CC0; figshare 21299148, MD5 verified): 1,200 images (Zeiss 1,047, Canon 153); disc masks for 1,144 (disc = black)",
+    "PALM images duplicated in REFUGE1 (thumbnail correlation >= 0.985) are excluded from the primary analysis; none duplicated in the FE training cache",
+    "Canon images are mostly disc-centred; 15 of 120 Canon reference radii exceed 46 px at 384 (R0)",
+    "one consensus mask per image: no inter-rater baseline"
+  ]
+}

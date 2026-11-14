@@ -1,0 +1,12 @@
+== (2) reference: 1009 {'Bosch': 104, 'Forus': 95, 'Remidio': 810} | with Majority: 1009
+== (1) crop parity on Chaksu (no model)
+  21 images, max |box difference| = 0.00e+00
+== (3) plumbing on fe_disc_v1 (development set)
+/home/test/OpticNeuroFusion_Starter/fe/p2_cam_locked_eval.py:36: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  t = (torch.from_numpy(np.ascontiguousarray(x)).to(dev()).permute(2, 0, 1)[None].float().div(255) - MEAN.to(dev())) / STD.to(dev())
+  rows 61 | sections ['descriptive', 'primary', 'per_device_cochran_q', 'self_detection', 'criterion']
+  fe_v14_seed42      failure 16%  majority-ref failure 16%  median err 0.079
+  ens_research       failure 15%  majority-ref failure 15%  median err 0.088
+  pipeline_research  failure 11%  majority-ref failure 11%  median err 0.079
+  primary (staple): {'research': {'p': 0.14956861922263506, 'max_minus_min': 0.0819672131147541, 'p_holm': 0.2991372384452701, 'meaningful': False}, 'product': {'p': 0.2682624534699609, 'max_minus_min': 0.0819672131147541, 'p_holm': 0.2991372384452701, 'meaningful': False}}
+SELF-TEST DONE (nothing written)

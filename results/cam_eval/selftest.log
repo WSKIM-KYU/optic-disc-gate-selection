@@ -1,0 +1,28 @@
+/home/test/OpticNeuroFusion_Starter/fe/p2_cam_locked_eval.py:36: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  t = (torch.from_numpy(np.ascontiguousarray(x)).to(dev()).permute(2, 0, 1)[None].float().div(255) - MEAN.to(dev())) / STD.to(dev())
+== (1) preprocessing parity (RFMiD training originals vs 384 cache)
+  images 20  mean |diff| per pixel: median 0.00  max 0.00
+== (2) plumbing on fe_disc_v1 (development set)
+  annotation columns: ['image', 'annotator', 'n_points', 'fit_type', 'cx', 'cy', 'a', 'b', 'angle_deg', 'r_eq', 'v_diam', 'h_diam', 'rms_rel', 'uncertain', 'poor_quality', 'not_assessable', 'img_w', 'img_h', 'points', 'timestamp']
+  evaluated 61  unmatched annotation rows 0
+  fe_v14_seed42          >0.2 r_d 16%  median err 0.079 r_d  valid 3%
+  fe_v14_seed43          >0.2 r_d 20%  median err 0.086 r_d  valid 2%
+  fe_v14_seed44          >0.2 r_d 25%  median err 0.088 r_d  valid 5%
+  fe_v14p_seed42         >0.2 r_d 21%  median err 0.085 r_d  valid 5%
+  fe_v14p_seed43         >0.2 r_d 21%  median err 0.105 r_d  valid 11%
+  fe_v14p_seed44         >0.2 r_d 30%  median err 0.118 r_d  valid 5%
+  fe_v14_f10_seed42      >0.2 r_d 26%  median err 0.114 r_d  valid 2%
+  fe_v14_f25_seed42      >0.2 r_d 25%  median err 0.099 r_d  valid 2%
+  fe_v14_f50_seed42      >0.2 r_d 28%  median err 0.112 r_d  valid 0%
+  ens_research           >0.2 r_d 15%  median err 0.088 r_d  valid 3%
+  ens_product            >0.2 r_d 16%  median err 0.088 r_d  valid 7%
+  pipeline_research      >0.2 r_d 11%  median err 0.079 r_d  valid 3%
+  pipeline_product       >0.2 r_d 21%  median err 0.078 r_d  valid 0%
+  analyse() sections: ['descriptive', 'primary', 'control_camera_B', 'self_detection_AC'] | primary p (synthetic camera labels): {'research': 0.565, 'product': 0.397}
+== (3) synthetic reference parsing and statistics
+  problems: [] | parsed: 3 | intra: {'pairs': 1, 'centre_rd_median': 0.1, 'radius_rel_median': 0.0}
+  wilson(5,50): [0.043, 0.214]
+  cochran_q identical: {'Q': 0.0, 'df': 2, 'p': 1.0}
+  cochran_q divergent: {'Q': 30.0, 'df': 2, 'p': 3.0590232050182594e-07}
+  holm([0.01, 0.04]): [0.02, 0.04]
+SELF-TEST DONE (nothing written)

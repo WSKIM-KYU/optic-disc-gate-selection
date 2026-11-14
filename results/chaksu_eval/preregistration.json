@@ -1,0 +1,67 @@
+{
+  "created": "2026-11-13T11:42:03",
+  "title": "Paper 2: seed-dependent device generalisation of the optic-disc frame estimator (FE), multi-expert ground truth on Chaksu",
+  "nature": "engineering localisation-accuracy study; not a diagnostic accuracy study",
+  "supersedes_primary_of": "results/fe/cam_eval/preregistration.json (see preregistration_amendment_1.json; the RFMiD annotation study is an optional secondary sub-study)",
+  "data": {
+    "dataset": "Chaksu IMAGE (Scientific Data 2023; figshare 20123135; CC BY 4.0), downloaded 2026-11-13, MD5 verified; never used before in this project and absent from SMDG",
+    "evaluation_split": "Chaksu Train, 1,009 images: Bosch hand-held 104, Forus 3Nethra 95, Remidio Fundus-on-Phone 810; none of these devices is in FE training (PAPILA, FIVES, IDRiD, RIM-ONE DL)",
+    "reserved": "Chaksu Test (336 images) is not extracted and not evaluated here; reserved for later confirmation"
+  },
+  "reference_standard": {
+    "primary": "published STAPLE fusion of five expert ophthalmologists' optic-disc outlines: centroid of the largest component and equivalent radius, mapped to the FE 384 crop",
+    "sensitivity": "published Majority fusion mask",
+    "reliability": "each expert's disc centre vs STAPLE: 2 of 5,045 expert-image pairs above 0.2 r_d; reference radius at 384 is 22-36 px (p5-p95), all 1,009 inside the 15-46 px rule",
+    "lock": "results/fe/chaksu_ref/reference_lock.json, built without loading any FE model"
+  },
+  "definitions": {
+    "failure": "predicted centre more than 0.2 r_d from the reference centre (r_d = reference radius at 384), or no centre",
+    "valid_frame": "status ok and radius 15-46 px at 384, single forward pass (as in the seed review)",
+    "cells": "valid-correct, valid-failure (silent failure), rejected-correct, rejected-failure",
+    "models": "fe_v14 and fe_v14p seeds 42-44 and fe_v14 IDRiD fractions 10/25/50% (seed 42), single forward pass; 3-seed probability ensembles per track; deployed pipeline onfm/frame.py for both tracks with deployed TTA-spread thresholds (research 0.138, product 0.297 r_d), not recalibrated"
+  },
+  "primary": {
+    "hypothesis": "within a track, models differing only in training seed differ in failure on devices absent from training",
+    "test": "Cochran Q across seeds 42/43/44 on all 1,009 images, separately for research (fe_v14) and product (fe_v14p); Holm adjustment over the two tracks",
+    "decision": "meaningful seed dependence if Holm-adjusted p < 0.05 AND the difference between the highest and lowest seed failure proportion is at least 5 percentage points; otherwise reported as not shown",
+    "sensitivity": "the same test with the Majority reference"
+  },
+  "secondary": [
+    "per-device failure, valid rate, median centre error and radius absolute error for every model (Wilson 95% CI); per-device Cochran Q",
+    "four-cell table, silent-failure and false-rejection proportions per model and device",
+    "self-detection: sensitivity and specificity of the TTA-spread flag and of any pipeline flag for failures, overall and per device",
+    "rank agreement across the nine models between RFMiD 1.0 camera A/C valid-frame rates (no ground truth; results/fe/review/summary_all_models.json, hash below) and Chaksu failure proportions: Spearman correlation, computed by a separate script after the locked run"
+  ],
+  "interpretation_note": "Remidio contributes 810 of 1,009 images, so pooled results are dominated by Remidio; per-device results are reported alongside",
+  "single_evaluation": "fe/p2c_chaksu_locked_eval.py runs once; refuses on any hash or crop mismatch or if results exist; deviations reported",
+  "evaluation_script": "fe/p2c_chaksu_locked_eval.py",
+  "evaluation_script_sha256": "291a4d7a66b5269c016d3b0f0c44a132dfd94472b3a1417423f209d53fcf2d75",
+  "checkpoint_sha256": {
+    "fe_v14_seed42": "a7cf7f0fe92a15280ceed72267b231e6b82463652e3221a3fe59332132b62c9d",
+    "fe_v14_seed43": "e4bd7b434b274c3639f836548b450517c635b881307cbffae061b653a4df0969",
+    "fe_v14_seed44": "ba725b797df8131305c17567f9296ef87dc2b3b0a8b7bb6c4c0880a7480a66d9",
+    "fe_v14p_seed42": "fa7ee5f3fbd322eb4ab2a859c409660b33a17a00270d09adde063c82d27700d2",
+    "fe_v14p_seed43": "23102f5f9097e89c8e2819a926698ce44a39c858de73299344586c01f42776eb",
+    "fe_v14p_seed44": "45a2c4a4c19ff954466e5fd4460b6f22ef209e9b9c3bbf1e89ee6d18e51632a9",
+    "fe_v14_f10_seed42": "495f9637384f5256bdec04c4f4ad8d7688ad21884c9df2c4e0b6d93fbace31ce",
+    "fe_v14_f25_seed42": "705e193d15fcab8f5cfaec34610983833ad6e01216a457a44e1808601d83a56b",
+    "fe_v14_f50_seed42": "f4269d0a5cb6a79f2b83be789f5cb32e14eb56f7adff03767a3b54bb6d4adca0"
+  },
+  "dependency_sha256": {
+    "fe/p2_cam_locked_eval.py": "8107871441691549389b14e718b5c62a820619713049975b1ac709b91220a309",
+    "onfm/frame.py": "4893da26151eea294eb035725be760d9d5918afd2881bd81bd427b25d92e604d",
+    "onfm/flag_thresholds.json": "87b701072d4410070a2a528000838c043305b99050d56f541c448260549d37fc",
+    "fe/fe_decode.py": "2b5b20b562ee594b3322a8c23ee19d02831c312e977e31ad3b3ffd3e9e3581c8",
+    "fe/fe_train.py": "6b660589ef98882f28b10e1ee39f6dc40ac2b012000193376e3528542530ecea",
+    "fe/fe_external_check.py": "e4bb974896b5dff09032c46f726a70360eb3441616eb1bb9149f703873b65d34"
+  },
+  "reference_lock_sha256": "012e379a489396e402e2f7a767f813e2314879e129da9cb7a1eb9c63346aefe0",
+  "rfmid_validity_source_sha256": {
+    "results/fe/review/summary_all_models.json": "21e243979034501744d21aaddda9e6c07a5c41278fcebc7da9d53612affeb9ab"
+  },
+  "selftest": {
+    "script_sha256": "e16c660c9952b65d9a5f48441b390477dc9fc2b51351ca64511ee9948d538ac0",
+    "log_sha256": "0a57ecef3b9f432c4a4bbd55a721242c602a41b69b5c7e99957f509b5e138151",
+    "result": "reference 1,009 images loaded; crop parity 0.00 on 21 Chaksu images (no model); plumbing on fe_disc_v1 reproduced earlier values"
+  }
+}

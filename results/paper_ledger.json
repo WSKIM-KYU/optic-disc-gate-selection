@@ -1,0 +1,2031 @@
+{
+  "updated": "2026-11-13 19:14:59",
+  "purpose": "single source of truth for every number that may appear in a paper",
+  "spec": {
+    "title": "ONFM 구현 명세서 v1.9",
+    "url": "https://claude.ai/artifact/2NQNHTrpjoxtJyBvDmh26D",
+    "as_of": "2026-11-10"
+  },
+  "experiments": {
+    "E05 glaucoma fusion (submitted, Diagnostics)": [
+      "results/e05/formal_test/protocol.json",
+      "results/e05/formal_test/results.json",
+      "results/e05/formal_test/supplementary_stats.json",
+      "results/e05/formal_test/fairness_subgroups.csv"
+    ],
+    "E06 CME (paper B)": [
+      "results/e06/split/holdout_lock.json",
+      "results/e06/formal_holdout/protocol.json",
+      "results/e06/formal_holdout/results.json"
+    ],
+    "FE (paper A)": [
+      "data/registry/models/onfm-fe-v1.0.0.json",
+      "data/registry/models/onfm-fe-v1.1.0.json",
+      "data/registry/models/onfm-fe-v1.2.0.json",
+      "data/registry/models/onfm-fe-v1.3.0.json",
+      "results/fe/fe_v13_seed42/metrics.json",
+      "data/annotation/fe_disc_v1/manifest.csv",
+      "data/annotation/fe_disc_v1/annotator_record.json",
+      "data/annotation/fe_disc_v1/fe_annot_eval.json",
+      "data/annotation/fe_disc_v1/fe_annot_eval_v13.log",
+      "fe/fe_decode.py",
+      "fe/fe_infer.py"
+    ],
+    "E10 FE engineering (TTA, ensemble)": [
+      "data/annotation/fe_disc_v1/e10_eval.json",
+      "data/annotation/fe_disc_v1/e10_eval.log",
+      "fe/fe_e10_eval.py"
+    ],
+    "FE batch-2 locked test (prepared, not run)": [
+      "data/annotation/fe_disc_v2/preregistration.json",
+      "data/annotation/fe_disc_v2/manifest.csv",
+      "fe/fe_locked_eval_v2.py"
+    ],
+    "Paper 2 first check (RFMiD 1.0 Test exposure)": [
+      "results/fe/first_check/step0_label_csvs.txt",
+      "results/fe/first_check/step1_e13_frames.txt",
+      "results/fe/first_check/step2_79pct_source.txt",
+      "results/fe/first_check/step3_human_exposure.txt",
+      "results/fe/first_check/step4_e18_and_logs.txt"
+    ],
+    "Paper 2 camera A/B/C annotation sample (RFMiD 1.0 Test; selection only)": [
+      "results/fe/cam_annot/manifest.csv",
+      "results/fe/cam_annot/selection_log.json",
+      "fe/p2_select_annotation_sample.py"
+    ],
+    "Paper 2 annotation package (blinded, repeats)": [
+      "data/annotation/fe_cam_p2/key.csv",
+      "data/annotation/fe_cam_p2/package_log.json",
+      "fe/p2_prepare_annotation.py"
+    ],
+    "FE batch-2 dry-run note (n = 0)": [
+      "data/annotation/fe_disc_v2/DRYRUN_NOTE.json"
+    ],
+    "Paper 2 locked evaluation (pre-registered, not run)": [
+      "results/fe/cam_eval/preregistration.json",
+      "fe/p2_cam_locked_eval.py",
+      "fe/p2_lock_reference.py",
+      "fe/p2_write_prereg.py",
+      "fe/p2_eval_selftest.py",
+      "results/fe/cam_eval/selftest.log"
+    ],
+    "Paper 2 amendment 1 (RFMiD annotation optional)": [
+      "results/fe/cam_eval/preregistration_amendment_1.json"
+    ],
+    "Paper 2 Chaksu reference (locked, no FE)": [
+      "results/fe/chaksu_ref/reference_lock.json",
+      "results/fe/chaksu_ref/reference_train.csv",
+      "results/fe/chaksu_ref/reference_scale_train.csv",
+      "results/fe/chaksu_ref/summary.json",
+      "results/fe/chaksu_ref/scale_summary.json",
+      "data/eval/chaksu/provenance.json",
+      "fe/p2c_build_reference.py",
+      "fe/p2c_ref_scale.py"
+    ],
+    "Paper 2 Chaksu locked evaluation": [
+      "results/fe/chaksu_eval/preregistration.json",
+      "fe/p2c_chaksu_locked_eval.py",
+      "fe/p2c_write_prereg.py",
+      "fe/p2c_selftest.py",
+      "results/fe/chaksu_eval/selftest.log"
+    ],
+    "Paper 2 Chaksu post hoc development (Train)": [
+      "results/fe/chaksu_posthoc/rootcause_summary.json",
+      "results/fe/chaksu_posthoc/dev_fundus_crop.json",
+      "results/fe/chaksu_posthoc/dev_seed_committee.json",
+      "results/fe/chaksu_posthoc/dev_tta_selection.json",
+      "results/fe/chaksu_eval/secondary_rank_agreement.json",
+      "fe/p2c_posthoc_rootcause.py",
+      "fe/p2c_dev_fundus_crop.py",
+      "fe/p2c_dev_seed_committee.py",
+      "fe/p2c_dev_tta_selection.py",
+      "fe/p2c_rank_agreement.py"
+    ],
+    "Paper 2 Chaksu Test reference (locked, no FE)": [
+      "results/fe/chaksu_ref_test/reference_lock.json",
+      "results/fe/chaksu_ref_test/reference_test.csv",
+      "results/fe/chaksu_ref_test/reference_scale_test.csv",
+      "fe/p2c_build_reference_test.py",
+      "fe/p2c_ref_scale_test.py"
+    ],
+    "Paper 2 Chaksu Test confirmation": [
+      "results/fe/chaksu_test_eval/preregistration.json",
+      "fe/p2c_test_locked_eval.py",
+      "fe/p2c_crop.py",
+      "fe/p2c_test_selftest.py",
+      "fe/p2c_test_write_prereg.py",
+      "results/fe/chaksu_test_eval/selftest.log"
+    ],
+    "Paper 2 RFMiD supplementary (amendment 2)": [
+      "results/fe/cam_eval/preregistration_amendment_2.json",
+      "results/fe/rfmid_supp/labelfree_selection_record.json",
+      "fe/p2r_labelfree_selection.py",
+      "fe/p2r_make_calib_package.py",
+      "data/annotation/fe_cam_p2_calib/key.csv",
+      "data/annotation/fe_cam_p2_calib/package_log.json"
+    ],
+    "Paper 2 exploratory E3/E4": [
+      "results/fe/chaksu_explore/E3_E4_selection.json",
+      "fe/p2c_explore_selection.py"
+    ],
+    "Paper 2 amendment 3 (no human annotation)": [
+      "results/fe/cam_eval/preregistration_amendment_3.json"
+    ],
+    "Paper 2 E2 RIGA reference (locked, no FE)": [
+      "results/fe/riga_ref/reference_lock.json",
+      "results/fe/riga_ref/reference_riga.csv",
+      "results/fe/riga_ref/summary.json",
+      "fe/p2g_build_reference.py",
+      "fe/p2g_reference_summary.py",
+      "data/eval/riga/SHA256SUMS.txt"
+    ],
+    "Paper 2 E2 RIGA evaluation": [
+      "results/fe/riga_eval/preregistration.json",
+      "fe/p2g_riga_locked_eval.py",
+      "fe/p2g_selftest.py",
+      "fe/p2g_write_prereg.py",
+      "results/fe/riga_eval/selftest.log"
+    ],
+    "Paper 2 E6/E6b exploratory (consistent-but-wrong, full gate)": [
+      "results/fe/chaksu_explore/E6_consistent_wrong.json",
+      "results/fe/chaksu_explore/E6b_full_gate.json",
+      "fe/p2e_consistent_wrong.py"
+    ],
+    "Paper 2 E8 PALM reference (locked, no FE)": [
+      "results/fe/palm_ref/reference_lock.json",
+      "results/fe/palm_ref/reference_palm.csv",
+      "results/fe/palm_ref/exclusions_clusters.json",
+      "results/fe/palm_ref/dup_audit.json",
+      "results/fe/palm_ref/summary.json",
+      "data/eval/palm/SHA256SUMS.txt"
+    ],
+    "Paper 2 E8 PALM evaluation": [
+      "results/fe/palm_eval/preregistration.json",
+      "fe/p2p_palm_eval.py",
+      "fe/p2p_selftest.py",
+      "fe/p2p_write_prereg.py",
+      "results/fe/palm_eval/selftest.log"
+    ],
+    "E07 pretraining pilot": [
+      "results/e07/pool_lock.json",
+      "results/e07/pool_lock_v1_SUPERSEDED.json",
+      "results/e07/pool_manifest.csv",
+      "results/e07/pilot_conclusion.json",
+      "results/e07/finetune_val_split.json",
+      "results/e07/finetune_results.json",
+      "results/e07/e07_decision.json",
+      "results/e07/probe_val_only.log"
+    ],
+    "E08 ACR": [
+      "results/e08/e08_record_and_prereg.json",
+      "results/e08/acr_results.json",
+      "results/e08/e08b_results.json",
+      "e08/e08b_racr.py"
+    ],
+    "E09 large-scale pretraining": [
+      "results/e09/pool_v3_lock.json",
+      "results/e09/pool_v3_manifest.csv",
+      "results/e09/e09_preregistration.json",
+      "results/e09/finetune_preds.json",
+      "results/e09/e09_eval_summary.json",
+      "results/e09/e09_decision.json",
+      "results/e09/mae_vitb16_imagenet_ep100/history.json",
+      "results/e09/mae_vitb16_scratch_ep300/history.json"
+    ],
+    "E11 design-v1 locked test": [
+      "results/e11/preregistration.json",
+      "results/e11/locked_test_results.json",
+      "results/e11/e11_decision.json",
+      "results/e11/e11_locked_test.log",
+      "e11/e11_locked_test.py"
+    ],
+    "FE v1.4 (IDRiD; camera generalisation)": [
+      "data/registry/models/onfm-fe-v1.4.0.json",
+      "results/fe/fe_v14_seed42/metrics.json",
+      "results/fe/fe_prepare_v14.log",
+      "results/e13/rfmid_frames_v14.json",
+      "results/e13/frame_v14.log",
+      "results/e13/rfmid_frames_by_config.json"
+    ],
+    "E12 RFMiD 2.0 external lock": [
+      "results/e12/rfmid2_lock.json",
+      "results/e12/rfmid2_manifest.csv",
+      "results/e12/rfmid2_frames_v14.json",
+      "e12/e12_build_rfmid2_lock.py"
+    ],
+    "E13 disc-zoom second view": [
+      "results/e13/e13a_record.json",
+      "results/e13/e13a_preds.json",
+      "results/e13/e13b_preregistration.json",
+      "results/e13/e13b_locked_results.json",
+      "results/e13/e13b_decision.json",
+      "e13/e13a_dev.py",
+      "e13/e13b_locked.py",
+      "e13/e13_disc_cache.py"
+    ],
+    "E14 leave-one-camera-out": [
+      "results/e14/e14_preds.json",
+      "results/e14/e14_decision.json",
+      "results/e14/e14.log",
+      "e14/e14_loco.py",
+      "e14/e14_prepare.py"
+    ],
+    "E15 product-track FE (v1.4p)": [
+      "data/registry/models/onfm-fe-v1.4p.0.json",
+      "results/fe/fe_v14p_seed42/metrics.json",
+      "results/e13/rfmid_frames_v14p.json",
+      "results/e13/frame_v14p.log"
+    ],
+    "E15b FE failure self-detection": [
+      "results/fe/e15b_failure_detection.json",
+      "results/fe/e15b_decision.json",
+      "fe/fe_e15b_failure.py"
+    ],
+    "E16 RFMiD 2.0 drop analysis": [
+      "results/e13/e16_analysis.json",
+      "results/e13/e16_analysis.log",
+      "e13/e16_rfmid2_analysis.py"
+    ],
+    "E17 image-quality robustness": [
+      "results/e17/e17_preds.json",
+      "results/e17/e17_decision.json",
+      "results/e17/matched_condition.json",
+      "results/e17/prepare.log",
+      "e17/e17_res.py",
+      "e17/e17_prepare.py",
+      "e17/e17_matched.py"
+    ],
+    "E18 ACR retest (FE v1.4 frames, mirrored control)": [
+      "results/e18/e18_plan.json",
+      "results/e18/e18_preds.json",
+      "results/e18/e18_decision.json",
+      "results/e18/rfmid_test_frames_v14.json",
+      "e18/e18_acr_retest.py"
+    ],
+    "E19 CME replication (FairVision AMD, DR)": [
+      "results/e19/e19_test_lock.json",
+      "results/e19/e19_preregistration.json",
+      "results/e19/e19_decision.json",
+      "results/e19/AMD/formal_holdout/protocol.json",
+      "results/e19/AMD/formal_holdout/results.json",
+      "results/e19/AMD/split/holdout_lock.json",
+      "results/e19/AMD/cache/training_meta.csv",
+      "results/e19/DR/formal_holdout/protocol.json",
+      "results/e19/DR/formal_holdout/results.json",
+      "results/e19/DR/split/holdout_lock.json",
+      "results/e19/DR/cache/training_meta.csv",
+      "e19/e19_prepare.py",
+      "e19/run_e19.sh",
+      "e06/e06_cme.py",
+      "e06/e06_cme2.py",
+      "e06/e06_formal_holdout.py"
+    ],
+    "B2 inference pipeline v1": [
+      "data/registry/models/onfm-pipeline-v1.0.0.json",
+      "models/onfm-fundus-a0-v1/manifest.json",
+      "models/onfm-fundus-a0-v1/calibration.json",
+      "onfm/flag_thresholds.json",
+      "onfm/MODEL_CARD.md",
+      "onfm/run.py",
+      "onfm/frame.py",
+      "onfm/fundus.py",
+      "onfm/preprocess.py",
+      "onfm/cme.py",
+      "onfm/report.py",
+      "results/onfm_calibrate_flags.log",
+      "results/e20_release.log"
+    ],
+    "FE paper review (duplicates, radius basis, seeds, fractions, cross-fit, ensemble)": [
+      "results/fe/idrid_rfmid_duplicate_audit.json",
+      "results/fe/idrid_internal_leak.json",
+      "results/fe/idrid_test_clean.json",
+      "results/fe/radius_basis.json",
+      "results/fe/review/e21_crossfit.json",
+      "results/fe/review/summary_all_models.json",
+      "results/fe/review/seed_ensemble.json",
+      "results/fe/review/review_steps_3_5.json",
+      "fe/fe_audit_idrid_rfmid.py",
+      "fe/fe_audit_idrid_internal.py",
+      "fe/fe_radius_basis.py",
+      "fe/fe_e21_crossfit.py",
+      "fe/fe_review_summary.py",
+      "fe/fe_seed_ensemble.py",
+      "fe/run_fe_review.sh",
+      "tools/progress.py"
+    ],
+    "Review and audits 2026-11-09/10 (user-run)": [
+      "results/e09/finetune_summary_ep30.json",
+      "results/e09/finetune_summary_ep50.json",
+      "results/e13/e22_label_check.json",
+      "results/e19/negative_flips.json",
+      "results/e19/paper3_results_all.json",
+      "results/e19/learning_curves.csv",
+      "results/e19/architecture_source.txt"
+    ],
+    "Paper 3 review 2 (validation thresholds)": [
+      "results/e19/negative_flips_valthr.json",
+      "results/e19/negative_flips_valthr.log",
+      "e19/e19_flips_valthr.py"
+    ],
+    "Paper 3 review 3 (supplementary tables)": [
+      "results/e19/paper3_tableS2_pvalues.csv",
+      "results/e19/paper3_tableS4_timeline.csv",
+      "results/e19/paper3_calibration.json"
+    ],
+    "E23 post hoc sensitivity (adapter, PCT)": [
+      "results/e23/e23a_summary.json",
+      "results/e23/e23b_summary.json",
+      "e23/run_e23a.sh",
+      "e23/run_e23b.sh",
+      "e23/e23a_summary.py",
+      "e23/e23b_pct.py",
+      "e23/e23b_eval.py",
+      "results/e23_a.log",
+      "results/e23_b.log"
+    ],
+    "Paper 3 final (E23, Figure 3)": [
+      "results/e19/paper3_Figure3.png"
+    ],
+    "Paper 3 reviews 4-5 and paper 1 supplement check": [
+      "results/e19/paper3_review4_checks.json",
+      "results/e19/paper3_compute_cost.json",
+      "results/e19/paper3_review5.json",
+      "results/e23/e23b_summary_1v.json",
+      "results/e05/formal_test/confusion_from_predictions.json",
+      "e19/e19_paper3_review4.py",
+      "e19/e19_compute_cost.py",
+      "e19/e19_paper3_review5.py",
+      "e23/run_e23c.sh",
+      "results/e23_c.log"
+    ],
+    "E24 post hoc design analyses": [
+      "results/e24/e24_designmap.json",
+      "results/e24/e24_protocol.json",
+      "results/e24/e24a_tradeoff.json",
+      "results/e24/e24b_decision.json",
+      "results/e24/e24b_summary.json",
+      "results/e24/e24c_crosseval.json",
+      "results/e24/e24c_decision.json",
+      "results/e24/e24c_summary.json",
+      "e24/e24_designmap.py",
+      "e24/e24a_tradeoff.py",
+      "e24/e24b_octonly_adapter.py",
+      "e24/e24b_summary.py",
+      "e24/e24b_variants.py",
+      "e24/e24c_bscan.py",
+      "e24/e24c_crosseval.py",
+      "e24/e24c_roleswap.py",
+      "e24/e24c_summary.py",
+      "e24/run_e24b.sh",
+      "e24/run_e24bc.sh"
+    ],
+    "data registry": [
+      "data/registry/registry.json"
+    ]
+  },
+  "files": {
+    "results/e05/formal_test/protocol.json": {
+      "sha256": "5dc99ca5bb8cd89b3989191ca0e9a383cb57e8a137c1423f7cc6983325af9352",
+      "exists": true
+    },
+    "results/e05/formal_test/results.json": {
+      "sha256": "2735e332b12b370d9ef3c0e969a7a6059d4a7bcb18e2fe38bd7e441e0d642fe7",
+      "exists": true
+    },
+    "results/e05/formal_test/supplementary_stats.json": {
+      "sha256": "23824b29b65ee085feb34a596f0b46e4cea4ebbebdb54e171c186af5e85cf58b",
+      "exists": true
+    },
+    "results/e05/formal_test/fairness_subgroups.csv": {
+      "sha256": "1cd70be45abb57e157c65f53a723a28c8bf281032a831be3c241ff2f6920da8f",
+      "exists": true
+    },
+    "results/e06/split/holdout_lock.json": {
+      "sha256": "599bf7d502c2b2b1e7958354fd68723cb6219674a4011a378c5cf6d9d7953718",
+      "exists": true
+    },
+    "results/e06/formal_holdout/protocol.json": {
+      "sha256": "84854889cb3d22589672057e835354120898b65f4e5063e1383bbc4a5e6cf2a9",
+      "exists": true
+    },
+    "results/e06/formal_holdout/results.json": {
+      "sha256": "06ef0cdb725ecdf5ca6cd0957d6bce9f10e0de0433ff21f5af2e6e490898077a",
+      "exists": true
+    },
+    "data/registry/models/onfm-fe-v1.0.0.json": {
+      "sha256": "120d44ee3ffc341604aceb7779cd33ae12e02e1f6ccbcc1d7af329f04cef1353",
+      "exists": true
+    },
+    "data/registry/models/onfm-fe-v1.1.0.json": {
+      "sha256": "06d534aae06dead01860396cee7c875ef1170efe8af77fa62e1e37797f1cca70",
+      "exists": true
+    },
+    "data/registry/models/onfm-fe-v1.2.0.json": {
+      "sha256": "12f457dcefd725f0c3383a99afc98d6abe26d7492af813e94655cc7ee55a3f08",
+      "exists": true
+    },
+    "data/registry/models/onfm-fe-v1.3.0.json": {
+      "sha256": "9588f43692479978fa86a0f66c6d1550e71c35941b0ea33ce625c386af54ed18",
+      "exists": true
+    },
+    "results/fe/fe_v13_seed42/metrics.json": {
+      "sha256": "77edf3c8f207ae9fc7ccf09c3e37770a444d03f79afef347e4b362e973cac051",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v1/manifest.csv": {
+      "sha256": "c7159b18e24297a33766c7179c67b3b40e65a9341ee96c6e0fccc7853befd9b5",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v1/annotator_record.json": {
+      "sha256": "c3f09507e03d3aae588b9ef67e37ba1e6f70e992e2a02c252cc014f667f847f5",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v1/fe_annot_eval.json": {
+      "sha256": "25c78509df27567af6f3841d5ea6e666afb8cf34271ae2114db64e5f5ee21339",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v1/fe_annot_eval_v13.log": {
+      "sha256": "53ce7881c669f29e2cec86eb7cd32ddad92823dfaeae1e3eedbeaf7bf25d7d24",
+      "exists": true
+    },
+    "fe/fe_decode.py": {
+      "sha256": "2b5b20b562ee594b3322a8c23ee19d02831c312e977e31ad3b3ffd3e9e3581c8",
+      "exists": true
+    },
+    "fe/fe_infer.py": {
+      "sha256": "c5003716d10faddff3e1cf9ffffe2aa40c306730bdbce34a222df0c2fa6f691c",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v1/e10_eval.json": {
+      "sha256": "b9f7dc9f0ba9b60cdaea853399cf158a0f442e1b64ddef31af4d59028a73fb16",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v1/e10_eval.log": {
+      "sha256": "6db27a3a3bf68e2dafde5ba2ee7eb41644e04a1de5d84668572438570b3de076",
+      "exists": true
+    },
+    "fe/fe_e10_eval.py": {
+      "sha256": "cb3580cc9fdf4ff56e48ced1c19d3c1fc2064095f393ede0ead5e1704dd540b6",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v2/preregistration.json": {
+      "sha256": "1aa4a509489bfd58c6467e76335af2e3aa710fa89e861b339738d9bda388551a",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v2/manifest.csv": {
+      "sha256": "0ef3b4d6cf8885c4ba1bfb1f7ed448b815a99e9073fd6b22f6c970b46bb945fc",
+      "exists": true
+    },
+    "fe/fe_locked_eval_v2.py": {
+      "sha256": "e9a2199636945e18aa5443bc017c31d2fd12c97648b0c94dfd4e208066d69689",
+      "exists": true
+    },
+    "results/fe/first_check/step0_label_csvs.txt": {
+      "sha256": "10c709170e813323f6dfd1d38ef51e262dc0944a68799fdd60ba0cf9867bcb84",
+      "exists": true
+    },
+    "results/fe/first_check/step1_e13_frames.txt": {
+      "sha256": "6b92c38513aaad94dc61a6ca5745042a999e623e4de88dae347bb07f10ce1524",
+      "exists": true
+    },
+    "results/fe/first_check/step2_79pct_source.txt": {
+      "sha256": "de0cc47e28ab3c7ec01270fe5ce04d5b99178e7ef9df446a236f9c2c442c8b26",
+      "exists": true
+    },
+    "results/fe/first_check/step3_human_exposure.txt": {
+      "sha256": "f9c0ed09f22753b8c80cf3415d14c17ce72623e05cd1de9a6acc78086b6be02f",
+      "exists": true
+    },
+    "results/fe/first_check/step4_e18_and_logs.txt": {
+      "sha256": "295d43983787b62a1f425a2a0548fe11fdffef1bc3690c2c522b0a14ee32b726",
+      "exists": true
+    },
+    "results/fe/cam_annot/manifest.csv": {
+      "sha256": "5c077494efa10f1ce25bbb22e4297e9700653cc6fc8996c203ae2b3be1689da5",
+      "exists": true
+    },
+    "results/fe/cam_annot/selection_log.json": {
+      "sha256": "095b125764789c8d02d535c7e0a4a56de447af39e9d5409b5bd10591334988df",
+      "exists": true
+    },
+    "fe/p2_select_annotation_sample.py": {
+      "sha256": "2630ba578e08e7cfc347c9dc009c73dcfcc7806ca22820e124fbbff8edb9d2da",
+      "exists": true
+    },
+    "data/annotation/fe_cam_p2/key.csv": {
+      "sha256": "acd697a339f048ff3fa5229eebddbb9de6d26f3d3a4db92425d65c36a776d69a",
+      "exists": true
+    },
+    "data/annotation/fe_cam_p2/package_log.json": {
+      "sha256": "e6000aa2686bcb2f5be3e0c23f99ebdfb85e5ff3766714b4ffc28b4b651c778f",
+      "exists": true
+    },
+    "fe/p2_prepare_annotation.py": {
+      "sha256": "ecd2c08fac7f74f523a0e467f5a5a768242aa183d6a4fb3612b3e9b12cf8b293",
+      "exists": true
+    },
+    "data/annotation/fe_disc_v2/DRYRUN_NOTE.json": {
+      "sha256": "febe88723851f2a61da2a6527446d7a0c24177ff14237d384dfaacf374a34e8e",
+      "exists": true
+    },
+    "results/fe/cam_eval/preregistration.json": {
+      "sha256": "7ef1f6df958b8c06ec02e74f4eed51f5e5cf8e62d841cee00bfcb16c0048e44e",
+      "exists": true
+    },
+    "fe/p2_cam_locked_eval.py": {
+      "sha256": "8107871441691549389b14e718b5c62a820619713049975b1ac709b91220a309",
+      "exists": true
+    },
+    "fe/p2_lock_reference.py": {
+      "sha256": "76037ba9f6fd175f0d28233129654a9ff970eb124947c64db46fa580977f5241",
+      "exists": true
+    },
+    "fe/p2_write_prereg.py": {
+      "sha256": "e6c4048c2215785f89fb4064569644f633f29345425b3978f426c250f835de92",
+      "exists": true
+    },
+    "fe/p2_eval_selftest.py": {
+      "sha256": "3ebf1cd7c361c282acf3af1aee20d3e61daf6c965b7eec21bf18fb9a40ac7a52",
+      "exists": true
+    },
+    "results/fe/cam_eval/selftest.log": {
+      "sha256": "f2338296e6046757585c9584bc799f2e1a16bfc234ef92170997b8a548f65f0c",
+      "exists": true
+    },
+    "results/fe/cam_eval/preregistration_amendment_1.json": {
+      "sha256": "d35f8a3638a7a12a2d7ca02e1ce571b8d690035e54ff581bd568370e3b02bc3b",
+      "exists": true
+    },
+    "results/fe/chaksu_ref/reference_lock.json": {
+      "sha256": "012e379a489396e402e2f7a767f813e2314879e129da9cb7a1eb9c63346aefe0",
+      "exists": true
+    },
+    "results/fe/chaksu_ref/reference_train.csv": {
+      "sha256": "73fc75f7506eeedfaf4092da01a962bc143316c4e66b9d27bf9da811d0cf5726",
+      "exists": true
+    },
+    "results/fe/chaksu_ref/reference_scale_train.csv": {
+      "sha256": "af9944cba762eae70816b59762130c177eb0b1a6b2b3cfa4b7356f2494071156",
+      "exists": true
+    },
+    "results/fe/chaksu_ref/summary.json": {
+      "sha256": "642ac677a28aa4f7a156c7ac096242f929ecd2b10d8fbbf4b950cb1a724d6154",
+      "exists": true
+    },
+    "results/fe/chaksu_ref/scale_summary.json": {
+      "sha256": "6b82c1ede7a38c12bff539e76a67028c47845b2993efc26e342195ab54ff9eef",
+      "exists": true
+    },
+    "data/eval/chaksu/provenance.json": {
+      "sha256": "4d774661eddc6e255b8d49a962e8ba7944d90a36a1bac2aeaaeee84e9545f30e",
+      "exists": true
+    },
+    "fe/p2c_build_reference.py": {
+      "sha256": "df1dbe82ff32b812976f02def5c49f168b73759bb653ea05b2f1621119ff1a6c",
+      "exists": true
+    },
+    "fe/p2c_ref_scale.py": {
+      "sha256": "5bd7e94a5a41bf97ba5c4a8514844416d49b7ebcb25d924e8238d26cbcd3755d",
+      "exists": true
+    },
+    "results/fe/chaksu_eval/preregistration.json": {
+      "sha256": "a00d1de319ab82d0d97e48106f40abb3bc0bfaacdae6783a53966433fdb00564",
+      "exists": true
+    },
+    "fe/p2c_chaksu_locked_eval.py": {
+      "sha256": "291a4d7a66b5269c016d3b0f0c44a132dfd94472b3a1417423f209d53fcf2d75",
+      "exists": true
+    },
+    "fe/p2c_write_prereg.py": {
+      "sha256": "ddef78a6ace07cb00ad80d6bba723cc1f50b8794efdff61287528be3cabd666a",
+      "exists": true
+    },
+    "fe/p2c_selftest.py": {
+      "sha256": "e16c660c9952b65d9a5f48441b390477dc9fc2b51351ca64511ee9948d538ac0",
+      "exists": true
+    },
+    "results/fe/chaksu_eval/selftest.log": {
+      "sha256": "0a57ecef3b9f432c4a4bbd55a721242c602a41b69b5c7e99957f509b5e138151",
+      "exists": true
+    },
+    "results/fe/chaksu_posthoc/rootcause_summary.json": {
+      "sha256": "c936e3a60d7c9630ac74d793c00850f667e8f07567760bd57c4c034281ca8edb",
+      "exists": true
+    },
+    "results/fe/chaksu_posthoc/dev_fundus_crop.json": {
+      "sha256": "f83eaa784efc70631a76353087818c2965626e97fd613da0702480baf976f19c",
+      "exists": true
+    },
+    "results/fe/chaksu_posthoc/dev_seed_committee.json": {
+      "sha256": "ab0831ee3e7b46661515170780107e9f4b4d02f251ccd3f5370b299cbe449e04",
+      "exists": true
+    },
+    "results/fe/chaksu_posthoc/dev_tta_selection.json": {
+      "sha256": "361b609ab01ef0ec2aaee2f19c4bdd19050585b15e91642191bdae554d260c21",
+      "exists": true
+    },
+    "results/fe/chaksu_eval/secondary_rank_agreement.json": {
+      "sha256": "8595ba98d5d769627b9390de9b911fe9d38bec94999db2625be9d76831245c73",
+      "exists": true
+    },
+    "fe/p2c_posthoc_rootcause.py": {
+      "sha256": "2054e3d414a4a24b472f0f0b2d8e818ae2d35133bfab2c8a8eb728f79ed422f1",
+      "exists": true
+    },
+    "fe/p2c_dev_fundus_crop.py": {
+      "sha256": "dc918af243a6c5458f5ac9b01f9deb255847db1bb49a34d03b04e929741d58b2",
+      "exists": true
+    },
+    "fe/p2c_dev_seed_committee.py": {
+      "sha256": "33625042c6d9d103a0d76de900252f073b73b5360d75ca82577e9b8a6b19de1d",
+      "exists": true
+    },
+    "fe/p2c_dev_tta_selection.py": {
+      "sha256": "7d08eb9f00bb6123e5decea590c7afdfe05c55ced43909861e8e422c77a9b433",
+      "exists": true
+    },
+    "fe/p2c_rank_agreement.py": {
+      "sha256": "e61402fc4c551dd877d398a6dfe970417113c03c44284df03277a7405f2ec9fb",
+      "exists": true
+    },
+    "results/fe/chaksu_ref_test/reference_lock.json": {
+      "sha256": "e6d8a14577d4baf604591e1aa0eaf03f97fa573da223925ed99289f3233cb792",
+      "exists": true
+    },
+    "results/fe/chaksu_ref_test/reference_test.csv": {
+      "sha256": "5cbec4370755b51d52aae6af079257a096819ec01639cab47377091b69682970",
+      "exists": true
+    },
+    "results/fe/chaksu_ref_test/reference_scale_test.csv": {
+      "sha256": "b77b3f3666de37aae46b0cf6de55cc9e78f489bcc13c1797b8b39c4b2a3c1bec",
+      "exists": true
+    },
+    "fe/p2c_build_reference_test.py": {
+      "sha256": "0afef3f885096ed9ec045e72ea2238768d10dd9a4ddf80c009098c65b401d1a7",
+      "exists": true
+    },
+    "fe/p2c_ref_scale_test.py": {
+      "sha256": "47c3e38e9c1b25e3b124455fb19cb0dd500cbf34e112f733b79250ffadcbcf53",
+      "exists": true
+    },
+    "results/fe/chaksu_test_eval/preregistration.json": {
+      "sha256": "a7d1fa6b709508fe89154880f485832460d871066e25e18bc8612d920465f86b",
+      "exists": true
+    },
+    "fe/p2c_test_locked_eval.py": {
+      "sha256": "d7453a8bfe1a41c04b2b38b4c41d7a9632e0bf30402d0b1d36656d4ca212e44b",
+      "exists": true
+    },
+    "fe/p2c_crop.py": {
+      "sha256": "f3c8bcbd92f6d08bca0906685c2cea7098ae596a8d9a4b52e953e8324f744ee0",
+      "exists": true
+    },
+    "fe/p2c_test_selftest.py": {
+      "sha256": "78e45ddd47920f39a5fdaa1dd8bec5d862c0ed86dadf6db8d5e9f2113544496e",
+      "exists": true
+    },
+    "fe/p2c_test_write_prereg.py": {
+      "sha256": "2850c1e58a51dc69ea483754b246dbbb44a441d28be1861e9aea53219b3f9ef3",
+      "exists": true
+    },
+    "results/fe/chaksu_test_eval/selftest.log": {
+      "sha256": "123422b8b6f8ac46137796e9e36402fb059f4dbbbbc390469676e93e7ac0a2b4",
+      "exists": true
+    },
+    "results/fe/cam_eval/preregistration_amendment_2.json": {
+      "sha256": "f327c38f613d171296e89331e3b715d3dcfc86728543a70308363fb70ccab4fa",
+      "exists": true
+    },
+    "results/fe/rfmid_supp/labelfree_selection_record.json": {
+      "sha256": "b40ccffd553a85a24386541e4f7e36a7b796960d42caa292e6fb3d8151f217a8",
+      "exists": true
+    },
+    "fe/p2r_labelfree_selection.py": {
+      "sha256": "f328a034ad879b09cc7eaeff737ffa5096c4f24ba5461058c9859b8d25812139",
+      "exists": true
+    },
+    "fe/p2r_make_calib_package.py": {
+      "sha256": "a3132e437654378ca561a341d8a0f2353591082f20efbcfd350da63c9597dfef",
+      "exists": true
+    },
+    "data/annotation/fe_cam_p2_calib/key.csv": {
+      "sha256": "44df0495114dcb1d42214f883b39e7560fb509ce7a354059374cf1f497ae62ae",
+      "exists": true
+    },
+    "data/annotation/fe_cam_p2_calib/package_log.json": {
+      "sha256": "d186790178ce339eeafb88a7be9fad501ec424dbb04ca86a9872295f9e44a3c2",
+      "exists": true
+    },
+    "results/fe/chaksu_explore/E3_E4_selection.json": {
+      "sha256": "4c459dd965fe51f064519f2e809cd7f1b34cddd29527a0cfe0b0b61da37c7b05",
+      "exists": true
+    },
+    "fe/p2c_explore_selection.py": {
+      "sha256": "6519c5d86e1f55a7c3e5e72555346f6afb2d8693803579edd4eff50ea30cc203",
+      "exists": true
+    },
+    "results/fe/cam_eval/preregistration_amendment_3.json": {
+      "sha256": "3db3ee66874c1ed43e647810c777c89a45e6ec80ae87055224668e89f2afa9f7",
+      "exists": true
+    },
+    "results/fe/riga_ref/reference_lock.json": {
+      "sha256": "6371013a2d2a527663bf7c4dbe9ba1388d3af06e7a3a2b5815ce2ecdf025f920",
+      "exists": true
+    },
+    "results/fe/riga_ref/reference_riga.csv": {
+      "sha256": "e560093c43b786105e6096377fb08cbd8f98baa26a253ef132cef4b05c3a410a",
+      "exists": true
+    },
+    "results/fe/riga_ref/summary.json": {
+      "sha256": "fb9bdde56c4b45efc88ee55e866da5f4a9d3607eda0c908cff3e4f9272996182",
+      "exists": true
+    },
+    "fe/p2g_build_reference.py": {
+      "sha256": "cda07c793fa30e4c6177b8e99fabe0bc0004b2c750af4ad3462d0bb22d385ba4",
+      "exists": true
+    },
+    "fe/p2g_reference_summary.py": {
+      "sha256": "adcabce9289d3d5fcf1e0fb0986ec4b947c778b2e948fddcd701c38a66f28307",
+      "exists": true
+    },
+    "data/eval/riga/SHA256SUMS.txt": {
+      "sha256": "2bf2a7504e23622468702232558e52b71a6c1933f7adaba85556c0b9e4762d61",
+      "exists": true
+    },
+    "results/fe/riga_eval/preregistration.json": {
+      "sha256": "68514e772ea611e969c33b742867cf928cf413f148017120d35679e63ad5b184",
+      "exists": true
+    },
+    "fe/p2g_riga_locked_eval.py": {
+      "sha256": "eca1f87f5a1ace9a953b4987dc88bc0fa0def44fd858aac188a5137851c5b385",
+      "exists": true
+    },
+    "fe/p2g_selftest.py": {
+      "sha256": "1ee8f34b3eea61b50582f4ff6b2b0f309c4d89290e0c13cf5972d5ae53efb5ba",
+      "exists": true
+    },
+    "fe/p2g_write_prereg.py": {
+      "sha256": "3d3b14a3ece4dc04c52c06f2531ea716ae1e848cde4d622c63dd01e2db07eea9",
+      "exists": true
+    },
+    "results/fe/riga_eval/selftest.log": {
+      "sha256": "d2b8bbb15a349ce1cd36dc20125e32c23eaf06935daf266ee7ac1ffd8761cfde",
+      "exists": true
+    },
+    "results/fe/chaksu_explore/E6_consistent_wrong.json": {
+      "sha256": "08672c9c0ee4353ca16c4a724e8261de88f563998d4c94b4b22c1f38ac7b3eca",
+      "exists": true
+    },
+    "results/fe/chaksu_explore/E6b_full_gate.json": {
+      "sha256": "36caf6d5b8ee403248ec268267509da3e5954c8ab725c02eeb44192211b97e5c",
+      "exists": true
+    },
+    "fe/p2e_consistent_wrong.py": {
+      "sha256": "d855096f1462e30e6c4f282a8bc4f44089b573075a9ee15a89a4e500202b3065",
+      "exists": true
+    },
+    "results/fe/palm_ref/reference_lock.json": {
+      "sha256": "01ad849356688179f23c6703100d50cfced6e608c614b6b0e0daebcaa06dc371",
+      "exists": true
+    },
+    "results/fe/palm_ref/reference_palm.csv": {
+      "sha256": "3b0a2896943ff7abfc735c0534dd3962ddd012ac96287a61ac7360e40ad3dcd8",
+      "exists": true
+    },
+    "results/fe/palm_ref/exclusions_clusters.json": {
+      "sha256": "2c55355a88937114096d725d5fa613a97b8d835c7e0ac7f1c4883484d2561285",
+      "exists": true
+    },
+    "results/fe/palm_ref/dup_audit.json": {
+      "sha256": "f00dea3a381a199c8d6052501e10c3798cf22a5e94992ea1433e6a1368abe8f3",
+      "exists": true
+    },
+    "results/fe/palm_ref/summary.json": {
+      "sha256": "4c632a40878b0b55c760a08972c65ebf89652a0a4375bf1e351bd9c1d6047e8c",
+      "exists": true
+    },
+    "data/eval/palm/SHA256SUMS.txt": {
+      "sha256": "c9bd096c1678c7e5d6be356d4a343dd82bb3574fe65814790277ee6852f303de",
+      "exists": true
+    },
+    "results/fe/palm_eval/preregistration.json": {
+      "sha256": "0c7fe00c55c67c4548f25057a3905900efefb9ba2e154af4118109f08d15a1c5",
+      "exists": true
+    },
+    "fe/p2p_palm_eval.py": {
+      "sha256": "f5b5eb103077cd3bbbc5385b7599f4c83d3f2810fe37942e7983418db52aa381",
+      "exists": true
+    },
+    "fe/p2p_selftest.py": {
+      "sha256": "22a9eeb088a1a272524030e493e7555893ad09cc00c2f01e4eeec60d89e356a7",
+      "exists": true
+    },
+    "fe/p2p_write_prereg.py": {
+      "sha256": "28d31bf484c557dd8f5a70b25a00f1b12af0c2a4ac230faf4f41618f464c1a0c",
+      "exists": true
+    },
+    "results/fe/palm_eval/selftest.log": {
+      "sha256": "b8a67e36136ef06c5b12b8e3d1ec7084c1daa9edeb17776f43a60bf8ba4d4ee4",
+      "exists": true
+    },
+    "results/e07/pool_lock.json": {
+      "sha256": "5092b67f04b9fcc169ce6db21608806db26185b192713ca18234c52e285a3e5e",
+      "exists": true
+    },
+    "results/e07/pool_lock_v1_SUPERSEDED.json": {
+      "sha256": "2df32cc76c0848b750ceacfec9f424b828dd79712e5d0073a065cc499ee97d97",
+      "exists": true
+    },
+    "results/e07/pool_manifest.csv": {
+      "sha256": "5a9d603d9af696198c880f6903e7d3a68b174320f12489c156cb9a496e5c0c9b",
+      "exists": true
+    },
+    "results/e07/pilot_conclusion.json": {
+      "sha256": "3e892ad27d2eaf10014e513aee50807d3345bd436cb731ed9a45c2c0c5214b02",
+      "exists": true
+    },
+    "results/e07/finetune_val_split.json": {
+      "sha256": "449a62d8ae7245e851e538aac044ab14cb0c756f281362fc4c766e3db2398d37",
+      "exists": true
+    },
+    "results/e07/finetune_results.json": {
+      "sha256": "1cd47ed6417fcfe106d5ffb0191488b33a2ae6efe8f319d6ae639731a418ea00",
+      "exists": true
+    },
+    "results/e07/e07_decision.json": {
+      "sha256": "cdcbbb16bff42e56c45ba4150e3227a1dc1fb92ef594f9301f710eb707dc9ab8",
+      "exists": true
+    },
+    "results/e07/probe_val_only.log": {
+      "sha256": "146ddea706124433e5ec4a43b0078bfc6da92a90ca0f035286d2834136535178",
+      "exists": true
+    },
+    "results/e08/e08_record_and_prereg.json": {
+      "sha256": "5cd6cc23f1146201645828af9c2838a14b9d0de9098d4bd85d4e0b85dd09f2aa",
+      "exists": true
+    },
+    "results/e08/acr_results.json": {
+      "sha256": "2f0e7c1ee5dcba4a36d30760c878f6f46546d805bff4e2be25505c727fecf6b4",
+      "exists": true
+    },
+    "results/e08/e08b_results.json": {
+      "sha256": "cd6d958932c0e3b56fd4a8424b748f06dec34e60ebe51d37480db0a0d1f78da5",
+      "exists": true
+    },
+    "e08/e08b_racr.py": {
+      "sha256": "977f57327772bc5785623a88c7e510e056097f5a7793f55bdb644e4647d55830",
+      "exists": true
+    },
+    "results/e09/pool_v3_lock.json": {
+      "sha256": "7ae6456deb94c22034b2d237aa19405bba37199e070ff5cd3ffe2876bab30693",
+      "exists": true
+    },
+    "results/e09/pool_v3_manifest.csv": {
+      "sha256": "1a6b29cfee9e94ee9322067b43fd91a23b48fa4845565f5006bdb01e66f0576d",
+      "exists": true
+    },
+    "results/e09/e09_preregistration.json": {
+      "sha256": "6c9a48a9e8d692fdde89ef375aead985aae625cf55c7a804588a59570955fdab",
+      "exists": true
+    },
+    "results/e09/finetune_preds.json": {
+      "sha256": "c8fed1094430e51ff92377131dc2e23e4f4c66735e3674400ed198288cc7da85",
+      "exists": true
+    },
+    "results/e09/e09_eval_summary.json": {
+      "sha256": "669596edb66cc32c76f0c8fb4d679d3bcdef08da4f5d0b5f4c0db1b11955482c",
+      "exists": true
+    },
+    "results/e09/e09_decision.json": {
+      "sha256": "e81ba285cae81f0c1a905f77303e98fb14de4bfa6e2463b31b017dfb0a93984f",
+      "exists": true
+    },
+    "results/e09/mae_vitb16_imagenet_ep100/history.json": {
+      "sha256": "d6a36c1ccb1f13509467343f0f4782abf15bdcf64faff495c4d926b3d7e255f9",
+      "exists": true
+    },
+    "results/e09/mae_vitb16_scratch_ep300/history.json": {
+      "sha256": "07fd3dd6bf501ed259d9a62d7c19c055701a6e7e88f976050372ea07973b8e43",
+      "exists": true
+    },
+    "results/e11/preregistration.json": {
+      "sha256": "3d9e834f5faf936e82b59a8fb271b876d899bb35acc11b15815315b538d4dadd",
+      "exists": true
+    },
+    "results/e11/locked_test_results.json": {
+      "sha256": "dca66d0bdfb5997bb5df4008c9859e314bdad0f21b631b629264be64107bcba6",
+      "exists": true
+    },
+    "results/e11/e11_decision.json": {
+      "sha256": "d3cb8b96b0dafacfc0ad81903b9bd704682e38fad8bf0ffc8b3aaba50f5bc313",
+      "exists": true
+    },
+    "results/e11/e11_locked_test.log": {
+      "sha256": "4773964df86862b8f5af6c715b380c332f221d0bb9356bf133db8e6bfb1f784b",
+      "exists": true
+    },
+    "e11/e11_locked_test.py": {
+      "sha256": "b9e292f21aa811e15e96d9f283fe52b71e6fa1f54a48b40bf982017bd6459b09",
+      "exists": true
+    },
+    "data/registry/models/onfm-fe-v1.4.0.json": {
+      "sha256": "7f9a192ab15643235d3984a26b5f98346b64263f60ad6c9294a3b841565403d1",
+      "exists": true
+    },
+    "results/fe/fe_v14_seed42/metrics.json": {
+      "sha256": "ab7ccdea954fdf6dc24bcb3faab70eb6dd7affb6cc442527d0490137e655fcc9",
+      "exists": true
+    },
+    "results/fe/fe_prepare_v14.log": {
+      "sha256": "8cbaf41913e47e446418b51e38d2ac0e75204970b4a68e47130b32368ba0ec2c",
+      "exists": true
+    },
+    "results/e13/rfmid_frames_v14.json": {
+      "sha256": "b2e1d22c0ff818abadf5349d56653eddb01458631b7479a68b5b0493549b1a4a",
+      "exists": true
+    },
+    "results/e13/frame_v14.log": {
+      "sha256": "2a034681fba30d15d3d66513df0d2c47b64ef58842103058ec3d325e8139554a",
+      "exists": true
+    },
+    "results/e13/rfmid_frames_by_config.json": {
+      "sha256": "17e46116e90dbafc282eee9295bfb8f8064ae6638631237c846b0012923fef98",
+      "exists": true
+    },
+    "results/e12/rfmid2_lock.json": {
+      "sha256": "802b818aec6bb559ab127ea68a964df2f44c8867b714128cdf7ae058e8581e3a",
+      "exists": true
+    },
+    "results/e12/rfmid2_manifest.csv": {
+      "sha256": "9271a7686274828b06c5f51bf7c244a6bf6a41c12358d22039cdd6f1736e2629",
+      "exists": true
+    },
+    "results/e12/rfmid2_frames_v14.json": {
+      "sha256": "2b72fe73bc01d37f2a3edf9989b89fd0f2fc09dd83fdb6a8e6c73eeeffcd4952",
+      "exists": true
+    },
+    "e12/e12_build_rfmid2_lock.py": {
+      "sha256": "943e5adf970a4b6f76cfb1700f6fab61f3a915baa1bc465fe3e4fd8213835f70",
+      "exists": true
+    },
+    "results/e13/e13a_record.json": {
+      "sha256": "ca30212801bbb967c78c155343b49f5639dee0cc8b446b5d65246eb831128f00",
+      "exists": true
+    },
+    "results/e13/e13a_preds.json": {
+      "sha256": "df9e00de5440c5ab2a678cd295ffe2aa4e5cfde2ae7422a2f537bee0ebc543ca",
+      "exists": true
+    },
+    "results/e13/e13b_preregistration.json": {
+      "sha256": "5cbd6c06665c57635dee114270ccc06974e58846fab0f3e5f831260ba56a9f5e",
+      "exists": true
+    },
+    "results/e13/e13b_locked_results.json": {
+      "sha256": "0732bd0bb2c2e2eb2d89dcb4909198337651bdc6cd17d39d9eea974a55a4300a",
+      "exists": true
+    },
+    "results/e13/e13b_decision.json": {
+      "sha256": "f3eb1004a1d16dcd17c7d4342f693080de8f021cd1a6557153f9f170219040f0",
+      "exists": true
+    },
+    "e13/e13a_dev.py": {
+      "sha256": "fafe44e69f8971cb1c267a44f62aae9fea234d80ff7e79d60ac0097f820a5538",
+      "exists": true
+    },
+    "e13/e13b_locked.py": {
+      "sha256": "a44e040da4f530d05a6b41e16452e0fcb40008b152388864e7f5b83b0cece016",
+      "exists": true
+    },
+    "e13/e13_disc_cache.py": {
+      "sha256": "7a48f2515fa4369abc4a29e682cd29483bc02524b80c7f65d65043008972aa6c",
+      "exists": true
+    },
+    "results/e14/e14_preds.json": {
+      "sha256": "695aa63d15b9011025c2931801fc2be4683793246efa76940651590a1cc18cd5",
+      "exists": true
+    },
+    "results/e14/e14_decision.json": {
+      "sha256": "0c5cfb884637038c67233ba7da5582a19f94b8c5a450129b6898b80a86538350",
+      "exists": true
+    },
+    "results/e14/e14.log": {
+      "sha256": "0dfefacbd107689750496e75b48223cbf22a2d308632718bd91c23df135d59bf",
+      "exists": true
+    },
+    "e14/e14_loco.py": {
+      "sha256": "1fefec7540d34324d7f5ec99f077e001cbf2a9d78b2e4ff0a76535b8b73a6235",
+      "exists": true
+    },
+    "e14/e14_prepare.py": {
+      "sha256": "921caf91a2022d8de1fc7d86e22fb5221ab5fd3019353465a803bc15a247ca71",
+      "exists": true
+    },
+    "data/registry/models/onfm-fe-v1.4p.0.json": {
+      "sha256": "d7023a136740c80406e45d8473a36d24218360c642265766471f7969d52d74fe",
+      "exists": true
+    },
+    "results/fe/fe_v14p_seed42/metrics.json": {
+      "sha256": "fe424344c2d653470690e98ddd34483796c794d80ee62325e62a8b73712dbc1c",
+      "exists": true
+    },
+    "results/e13/rfmid_frames_v14p.json": {
+      "sha256": "6d76482d7770d2dc1d6ba9d015bf4162c45bb5578d2d2eb2d48d18766c370ac7",
+      "exists": true
+    },
+    "results/e13/frame_v14p.log": {
+      "sha256": "6148d67587d0eae8b73c91a9906ed3f49665f9865cd618b9f583c75481948b56",
+      "exists": true
+    },
+    "results/fe/e15b_failure_detection.json": {
+      "sha256": "533d00dd83708a1d860a1f1e8f41defb3911e0fea0b2713651809ad505e77bcd",
+      "exists": true
+    },
+    "results/fe/e15b_decision.json": {
+      "sha256": "6801aa5641113ed9e4a5a984c8d7eba7cfa01cb5e54c75cf68186e0ce260b9d7",
+      "exists": true
+    },
+    "fe/fe_e15b_failure.py": {
+      "sha256": "a58b3950d91f3dceafef5099ba6dbd9bd08b3c7a2d187a24e404789465b898fc",
+      "exists": true
+    },
+    "results/e13/e16_analysis.json": {
+      "sha256": "457c7a6056fc43a4951314788e9c81d922a2fe40e4059596c8dc44af2fb03d0d",
+      "exists": true
+    },
+    "results/e13/e16_analysis.log": {
+      "sha256": "920d8a35df120842d02ce376b90b6a9dfb8a04261eb92ed13708c32acc2c4b23",
+      "exists": true
+    },
+    "e13/e16_rfmid2_analysis.py": {
+      "sha256": "15d51bbde9ba067028affb4ae57f89c0bbc16a4bf0c05e4d16d9905893d61c4e",
+      "exists": true
+    },
+    "results/e17/e17_preds.json": {
+      "sha256": "c6268475558e5070403280bbc9b5b1e4e3cbd2cfe24518667f7dacb92949769e",
+      "exists": true
+    },
+    "results/e17/e17_decision.json": {
+      "sha256": "cf5946292b5d52278698ae9f0f25922611edb767ff2171b30d9efba316b00098",
+      "exists": true
+    },
+    "results/e17/matched_condition.json": {
+      "sha256": "61ce7db2864e1fbc845c97abc933d2d1e224975aa17bc633b8ee1e9af5517c75",
+      "exists": true
+    },
+    "results/e17/prepare.log": {
+      "sha256": "e968ae9644aebef2168665b73e13b6eab0bb8a006821d0310dc0316f972c09ea",
+      "exists": true
+    },
+    "e17/e17_res.py": {
+      "sha256": "bcf204ccf99c4f2a568c6b691d87c97739afef4c899486db7cd079952370bd1c",
+      "exists": true
+    },
+    "e17/e17_prepare.py": {
+      "sha256": "d956fbf715ebaea8cdf628c29e639f0691d7ab11b604f03c4325d9b595ee1e6a",
+      "exists": true
+    },
+    "e17/e17_matched.py": {
+      "sha256": "4ab6bc548c2658a269de852bfbc61bc708b0e16f78236032cfb9eeac806daf31",
+      "exists": true
+    },
+    "results/e18/e18_plan.json": {
+      "sha256": "f524dc137b616e6994bda047f893e3f1141055e1f29a15920070bd7a45d1d441",
+      "exists": true
+    },
+    "results/e18/e18_preds.json": {
+      "sha256": "2296ea7b71895e2b2531e8c8d373f9c1e7dd7b243c2ff75678a79075db98b073",
+      "exists": true
+    },
+    "results/e18/e18_decision.json": {
+      "sha256": "6e42537dc253384b8165a7b518cd6b3a43d16413c5ca4e4020d64fbb3ff4f526",
+      "exists": true
+    },
+    "results/e18/rfmid_test_frames_v14.json": {
+      "sha256": "29ab0e1bb85f66fe670aeaa3b0fd6c3403838e1958029b9fd485d3e6855ff45e",
+      "exists": true
+    },
+    "e18/e18_acr_retest.py": {
+      "sha256": "86edef1700abec96e135164d25395d332d93a9ff1843e868dba04569c9a10fe2",
+      "exists": true
+    },
+    "results/e19/e19_test_lock.json": {
+      "sha256": "cd98ce10dc51cb6edc0d6f510fbddccf4d95eabe9260bed2e3ffc99ccf9a664b",
+      "exists": true
+    },
+    "results/e19/e19_preregistration.json": {
+      "sha256": "28abb10187d08b3bd4d30df3f535cc73f5179dea6f14a5e34b6f8db74d27a01f",
+      "exists": true
+    },
+    "results/e19/e19_decision.json": {
+      "sha256": "3c49557efbd802599be1cc0c9e4194e77a11948cef41b75c946ebe4c2fac8599",
+      "exists": true
+    },
+    "results/e19/AMD/formal_holdout/protocol.json": {
+      "sha256": "05ccdd799d82fb455e07ff5828d154b520062f46147ff213d10fee7a874ec781",
+      "exists": true
+    },
+    "results/e19/AMD/formal_holdout/results.json": {
+      "sha256": "c3cd774a96f95886ccf9f43be7cc264c2ec1417bf5c4c48c4609702c149bc5d2",
+      "exists": true
+    },
+    "results/e19/AMD/split/holdout_lock.json": {
+      "sha256": "ee93e6905c097b625d1a2d68ed87060b751d8a9e6a849c5a13c6aa29b7efa504",
+      "exists": true
+    },
+    "results/e19/AMD/cache/training_meta.csv": {
+      "sha256": "de101879f85d5bb824d8c60b5e447167f88b8f2c7c4c5f1dfdeb6ef87b0fa77d",
+      "exists": true
+    },
+    "results/e19/DR/formal_holdout/protocol.json": {
+      "sha256": "49605d6ff1f100bd1af6546cc1d493c666bb10daed680f19c3bb8137f389676a",
+      "exists": true
+    },
+    "results/e19/DR/formal_holdout/results.json": {
+      "sha256": "4e27f90e43767d58c833200d3badb8c365b8c68351a40ac846f8a42f9e185501",
+      "exists": true
+    },
+    "results/e19/DR/split/holdout_lock.json": {
+      "sha256": "03d068fa3f7379ed0ec23f5a813e310d31dbed853a145776f7ba17505aab0aba",
+      "exists": true
+    },
+    "results/e19/DR/cache/training_meta.csv": {
+      "sha256": "883fae70eabfff56b3b83399a90846611f318abb4581d9b6276d7a248fe665d5",
+      "exists": true
+    },
+    "e19/e19_prepare.py": {
+      "sha256": "f90a79546d5da2ba7893b5c18fa364d2c2837ca65a1592f767ed6344cc2ce55c",
+      "exists": true
+    },
+    "e19/run_e19.sh": {
+      "sha256": "f9ad2f7b1640444e0f35ffc46202c20185358fd18d0fe0280d6c4dae8123e49b",
+      "exists": true
+    },
+    "e06/e06_cme.py": {
+      "sha256": "36c3ebf82cf6418ae73138d4100f978f287581c3c67bc74542ab99e3b22508be",
+      "exists": true
+    },
+    "e06/e06_cme2.py": {
+      "sha256": "9b494ac1a2251b59e7c922db9ae118455c50cc3f17e46f65628f2f064e1bd784",
+      "exists": true
+    },
+    "e06/e06_formal_holdout.py": {
+      "sha256": "5d3f3a393e953bc75ff86879243a4a14136b58c79f1607e1a7221d147a3c7cf2",
+      "exists": true
+    },
+    "data/registry/models/onfm-pipeline-v1.0.0.json": {
+      "sha256": "8358cd8da81c2b45a3a0b3bfae2c3cc2b87c69f528600f78ad28611fbb1b3c8b",
+      "exists": true
+    },
+    "models/onfm-fundus-a0-v1/manifest.json": {
+      "sha256": "6cb8f6f073a690f3cc4747e429c7f60890af31b7a5ff3724cfb544f55c0cc2be",
+      "exists": true
+    },
+    "models/onfm-fundus-a0-v1/calibration.json": {
+      "sha256": "6f167a43328e860b963ecf8f11096f33f606e18cdbf5d9d9826c659aacccc0a7",
+      "exists": true
+    },
+    "onfm/flag_thresholds.json": {
+      "sha256": "87b701072d4410070a2a528000838c043305b99050d56f541c448260549d37fc",
+      "exists": true
+    },
+    "onfm/MODEL_CARD.md": {
+      "sha256": "a92223af15dacaa80ef1f028dfbdec1d63a4b03e633e8f6579dc42538ce63708",
+      "exists": true
+    },
+    "onfm/run.py": {
+      "sha256": "6adc818c3a31a791acfa0dc09430973325fc14515dd2033ef60cced090a3cf9c",
+      "exists": true
+    },
+    "onfm/frame.py": {
+      "sha256": "4893da26151eea294eb035725be760d9d5918afd2881bd81bd427b25d92e604d",
+      "exists": true
+    },
+    "onfm/fundus.py": {
+      "sha256": "5fd5106f182d486c104adb16d35e1c52a7361b3a6fd4c45a232ac509eff03374",
+      "exists": true
+    },
+    "onfm/preprocess.py": {
+      "sha256": "e71ddc36d17bc565ef58e6a1389772a4e1c0bddef0793b27e8c737a888d18298",
+      "exists": true
+    },
+    "onfm/cme.py": {
+      "sha256": "ef3b3a63459a146836a280ee28a78578a3445789102586827865c6758b8adb6d",
+      "exists": true
+    },
+    "onfm/report.py": {
+      "sha256": "ab35ab21ae142c909592bf6508f0ff2917fee21cc6bfd854c8609830348160c9",
+      "exists": true
+    },
+    "results/onfm_calibrate_flags.log": {
+      "sha256": "6484e263e531e906e7ae0c1605a32a7ace44372bfb864bd3bb3020d8d0c6baa9",
+      "exists": true
+    },
+    "results/e20_release.log": {
+      "sha256": "5430378c2372d3de0825592904c28d81dc34ec45bd238f825f36afd3ad88543b",
+      "exists": true
+    },
+    "results/fe/idrid_rfmid_duplicate_audit.json": {
+      "sha256": "8f11964ace7c24186ad36ab095e6a79ad63d7db2a034c82bcee13df272db2e93",
+      "exists": true
+    },
+    "results/fe/idrid_internal_leak.json": {
+      "sha256": "7ca2626d6a48538dee29cd4dd49fa9ae5778d776e7012cbb374e82e028186b29",
+      "exists": true
+    },
+    "results/fe/idrid_test_clean.json": {
+      "sha256": "330205170eee7111fb5660714b6c70273283bc812bdb27f37719b499aa5fbe51",
+      "exists": true
+    },
+    "results/fe/radius_basis.json": {
+      "sha256": "a9d677a99adcbe81a34acb2cfa0a0e68110338ba04987735c90d13d95d6008fe",
+      "exists": true
+    },
+    "results/fe/review/e21_crossfit.json": {
+      "sha256": "4fdee8cbbc933595ce9fdb503a9a925a632300ef62e084cf35deaf5113e68791",
+      "exists": true
+    },
+    "results/fe/review/summary_all_models.json": {
+      "sha256": "21e243979034501744d21aaddda9e6c07a5c41278fcebc7da9d53612affeb9ab",
+      "exists": true
+    },
+    "results/fe/review/seed_ensemble.json": {
+      "sha256": "4cffa3b3a564dc67dd2b20efe9e923097ceed99db4f2cb98f90a12cafc35a3b6",
+      "exists": true
+    },
+    "results/fe/review/review_steps_3_5.json": {
+      "sha256": "bfe2f1974337d2134842ad46e9898c0bae717fbfbf83c610473b2950b8e7ff01",
+      "exists": true
+    },
+    "fe/fe_audit_idrid_rfmid.py": {
+      "sha256": "461228142ffacf628f55779ae8b26e40530ab62b7d472918e38590dfb0eef9be",
+      "exists": true
+    },
+    "fe/fe_audit_idrid_internal.py": {
+      "sha256": "b26284b9799b8992a5b90a719ea277db7feb572146fcfd2b8cd1681bd1173d81",
+      "exists": true
+    },
+    "fe/fe_radius_basis.py": {
+      "sha256": "a3264956101bf55710fa780c320c05f62e7f86f1c58796a834e05d23adb7f4d4",
+      "exists": true
+    },
+    "fe/fe_e21_crossfit.py": {
+      "sha256": "4317a32b2c527d117fe7fc7159678fd384d130621c010229cb3e18d435477f0c",
+      "exists": true
+    },
+    "fe/fe_review_summary.py": {
+      "sha256": "d30160d3549ba0ba7cf6bcc1ba79958615bea254c9a1472c481aeb80c3ebb6b0",
+      "exists": true
+    },
+    "fe/fe_seed_ensemble.py": {
+      "sha256": "a4f6c1146f86f0695610a66a0191df818bfd1e42c77f3406dcadacd4c610a2d5",
+      "exists": true
+    },
+    "fe/run_fe_review.sh": {
+      "sha256": "a8b4634ab5f1db489105b5b196add7e41da441278c255d561ea0e41d31388311",
+      "exists": true
+    },
+    "tools/progress.py": {
+      "sha256": "526ff49632bd59a8d778ebdb10515e8ce90f9935e05a3b0a3de9283c26840e56",
+      "exists": true
+    },
+    "results/e09/finetune_summary_ep30.json": {
+      "sha256": "aab9ab45fe63eef7e63b1475f80f713df4b83350fd0427c089f8aacd199540c3",
+      "exists": true
+    },
+    "results/e09/finetune_summary_ep50.json": {
+      "sha256": "8d6890060a975ba371c84a088f2b3c04aca48efc8c3fce484b87befaf0a60c1a",
+      "exists": true
+    },
+    "results/e13/e22_label_check.json": {
+      "sha256": "0acdf806c4d2e14d178b8234cd67f699ca60199c1d144408ef27e90040bde429",
+      "exists": true
+    },
+    "results/e19/negative_flips.json": {
+      "sha256": "480f4ab0cf1196a38995822a6c8e98363514ef404affae8cabcfb9afdfcb865f",
+      "exists": true
+    },
+    "results/e19/paper3_results_all.json": {
+      "sha256": "2863caa1d9c2d6854777aa5692af5c9a4e7a2b57e28060d53c737615fc4d4806",
+      "exists": true
+    },
+    "results/e19/learning_curves.csv": {
+      "sha256": "3b7aa496b2bca7667ee5c59f5ef8f6310d03dd8d1cdd84a7ce7046a19cbf6d53",
+      "exists": true
+    },
+    "results/e19/architecture_source.txt": {
+      "sha256": "02cb57e7897d663e201c6080539e2b19b67bfabbcc434f8cf3279d827810e949",
+      "exists": true
+    },
+    "results/e19/negative_flips_valthr.json": {
+      "sha256": "fc243874498032df82701267e0ae53c60e9d9679d523b414e70ea5b0ad86b87f",
+      "exists": true
+    },
+    "results/e19/negative_flips_valthr.log": {
+      "sha256": "0909df927d6b4ff8d22f5002b8b1c64dd0b6f08b4ebff4ffa1dbe5c7d808370a",
+      "exists": true
+    },
+    "e19/e19_flips_valthr.py": {
+      "sha256": "711c6e25214f78c45c6cb49cf2e4761eaac87bd66894025dc6602d33f20d64ca",
+      "exists": true
+    },
+    "results/e19/paper3_tableS2_pvalues.csv": {
+      "sha256": "430b586a7cce69ca5788830f26c62491e07c6a896eef4e6ebfc51c3df082f18d",
+      "exists": true
+    },
+    "results/e19/paper3_tableS4_timeline.csv": {
+      "sha256": "b9fbd559ff923e9d3d59918c939b9932e5b7c65731bd35278cc3f35ed753f4d8",
+      "exists": true
+    },
+    "results/e19/paper3_calibration.json": {
+      "sha256": "6ff853cc7c5ac0ff98644ab76fa224a19507d5b21b513ae1d66aefb36fd8080f",
+      "exists": true
+    },
+    "results/e23/e23a_summary.json": {
+      "sha256": "fcecf294e22c0dcb37ab25ed1ed4e2d2634ce0ed129036d945c5e4d0d4561eeb",
+      "exists": true
+    },
+    "results/e23/e23b_summary.json": {
+      "sha256": "9d0fe191594909b023fb8aa6ee1500e1ce307d2aa0456ae661a1513c107fa1d3",
+      "exists": true
+    },
+    "e23/run_e23a.sh": {
+      "sha256": "52961315e8e10117d2913fd0f586b0d8870b120642233805f6e09100d89bc1b1",
+      "exists": true
+    },
+    "e23/run_e23b.sh": {
+      "sha256": "dda3f697e2182a134e1af8b9ec0b0d7730efef183ed53d45d0ea1cb472fd930f",
+      "exists": true
+    },
+    "e23/e23a_summary.py": {
+      "sha256": "575353bd6564dc5c92313a50a2fe3dda4c9f3995f694b224e50962eac659db01",
+      "exists": true
+    },
+    "e23/e23b_pct.py": {
+      "sha256": "b304a70b10e51cb7779fed61564dfdf058935a28028dc9bf68fd60eea418039c",
+      "exists": true
+    },
+    "e23/e23b_eval.py": {
+      "sha256": "e97199f09e4f10745547943acfc8ccf261ccff18c5ab013d59e0b47608072cd5",
+      "exists": true
+    },
+    "results/e23_a.log": {
+      "sha256": "5bb8c4fb2a3ecc858340eea214600b12faae60c1d3c1900b497145bcd5d99620",
+      "exists": true
+    },
+    "results/e23_b.log": {
+      "sha256": "1a437bb12905e31ff1137d29753447643c18aece4b9201df25a5a08ac382d896",
+      "exists": true
+    },
+    "results/e19/paper3_Figure3.png": {
+      "sha256": "add39b873392be3f4a4310b363667fd9b6548190888a373fc179323562342edd",
+      "exists": true
+    },
+    "results/e19/paper3_review4_checks.json": {
+      "sha256": "224a4409d176a3e9c307c6f019cd80e14e0adf10e887ac767deedd4420b193c4",
+      "exists": true
+    },
+    "results/e19/paper3_compute_cost.json": {
+      "sha256": "e2352b2f813f9f38ce4be8a018ecc0e25fb842711ce63889fb4a2d5e7241c558",
+      "exists": true
+    },
+    "results/e19/paper3_review5.json": {
+      "sha256": "7bc093cabf965e32e3d714311c2a66c875c26e0e9b7440c836bbb75df06773d1",
+      "exists": true
+    },
+    "results/e23/e23b_summary_1v.json": {
+      "sha256": "d97e2a5a50c43daceec14cf130b8e074f1f4f6083421fe85fe91c78f38bbac9b",
+      "exists": true
+    },
+    "results/e05/formal_test/confusion_from_predictions.json": {
+      "sha256": "2ab9a9c413e133da962457989301876742ba0bb4b348ac7288ad514b490c655b",
+      "exists": true
+    },
+    "e19/e19_paper3_review4.py": {
+      "sha256": "b9ef472036890b4f91423afc5b4095de366d21a6d7237de1d08ce38ce4f69296",
+      "exists": true
+    },
+    "e19/e19_compute_cost.py": {
+      "sha256": "acada09b6ba263514ac11eec61a1d723791163a7663f9318f9e94f207a0c7831",
+      "exists": true
+    },
+    "e19/e19_paper3_review5.py": {
+      "sha256": "2c7d48b9f0eae0162d4a4e457368176dc79c115cd508df1bf72f3e14c0f4b815",
+      "exists": true
+    },
+    "e23/run_e23c.sh": {
+      "sha256": "da67b23e60bdd8fca4f36048b4614fd39fa5a8df083348950aaed1fb1959793a",
+      "exists": true
+    },
+    "results/e23_c.log": {
+      "sha256": "5baf7b740dcd7c148eeb6a159115ad68c21527d9bb1b7fce1d83daf72f5fa6ab",
+      "exists": true
+    },
+    "results/e24/e24_designmap.json": {
+      "sha256": "301f5e665921aaedee080e543e81a791274b31be39108a755f2254219b833d2b",
+      "exists": true
+    },
+    "results/e24/e24_protocol.json": {
+      "sha256": "cf1276848bdd6d12984803bdee51c1e9d2a8d9aba5352849a910f05df257f5c2",
+      "exists": true
+    },
+    "results/e24/e24a_tradeoff.json": {
+      "sha256": "2ad5472b0db7a33d5361d5c624364053ffd71cffb7768d98a82022a7830212b9",
+      "exists": true
+    },
+    "results/e24/e24b_decision.json": {
+      "sha256": "f0c460f9574d64b730659884d17720c730fc1efa1e85f4e720e8d0f3b4659db6",
+      "exists": true
+    },
+    "results/e24/e24b_summary.json": {
+      "sha256": "bc96141d0dd31e0db19727ca88b689d69c50b3e1d4cb5912dfb5904b916a822d",
+      "exists": true
+    },
+    "results/e24/e24c_crosseval.json": {
+      "sha256": "bf18f1507a565e00fb152bc5f3ca6deb6b7045d4f3c8331f6cf54148ca841b4b",
+      "exists": true
+    },
+    "results/e24/e24c_decision.json": {
+      "sha256": "ea1ff7a14af4e80411a12ac89dfe998d8f95036cd9be9d8ad8e8a3ada62fb4dd",
+      "exists": true
+    },
+    "results/e24/e24c_summary.json": {
+      "sha256": "ce2b38b0ade45425246e398ea111ff03bcd86a5e6d3149a5397614d22069ea38",
+      "exists": true
+    },
+    "e24/e24_designmap.py": {
+      "sha256": "4675fd2aaca5f91b3d4e74abb06822786a081d305ab839d624743a13f441483e",
+      "exists": true
+    },
+    "e24/e24a_tradeoff.py": {
+      "sha256": "2fcd572331c71bf6f803bed3b130d1978770ecc1ca78c2f1cef3db4982f460fc",
+      "exists": true
+    },
+    "e24/e24b_octonly_adapter.py": {
+      "sha256": "ac30ab642d1634d0aa1f2a4fa4c9004d6c6c7c5837ef02c2211f9b040bc8efd9",
+      "exists": true
+    },
+    "e24/e24b_summary.py": {
+      "sha256": "c9c6a66df842c02d755d9f61fe2518886ebf2eee3747634bae0c0992b256f8b3",
+      "exists": true
+    },
+    "e24/e24b_variants.py": {
+      "sha256": "e4b9341d815376a8f44fbd6e7df9771aa04e51d5a6f3a8c48072f40e6db28a74",
+      "exists": true
+    },
+    "e24/e24c_bscan.py": {
+      "sha256": "78f0d2a61dfdd5fcaa03831f8c375180cc92df6ad9c4dc7c8cfb0231bba1d0f4",
+      "exists": true
+    },
+    "e24/e24c_crosseval.py": {
+      "sha256": "f6564deebc9dcf1ef51d762e9c8105d48df7a4d70ecd7e96d0f23e333e49ca5f",
+      "exists": true
+    },
+    "e24/e24c_roleswap.py": {
+      "sha256": "6081b2d6e9cfd112df5a7336351409985250c133203bd928faee7185fcb06b6f",
+      "exists": true
+    },
+    "e24/e24c_summary.py": {
+      "sha256": "034fa75fd11f621a9b9c16a86d11c44836f848001c6ea1c9ce24b3227c73999b",
+      "exists": true
+    },
+    "e24/run_e24b.sh": {
+      "sha256": "e296256f31a0cf563751eacd916ab9c5a5ab6ab474344f0fadb9ca12e3881d5e",
+      "exists": true
+    },
+    "e24/run_e24bc.sh": {
+      "sha256": "1e2a1baa5ee1f2ad81d19394e5b0c519d3dbd9492c1df4fe5b6023417244d131",
+      "exists": true
+    },
+    "data/registry/registry.json": {
+      "sha256": "3607e6a8f7237aa816717a1b721faf8ab891f44feb783d93df8c24af9576214c",
+      "exists": true
+    }
+  },
+  "key_numbers": [
+    {
+      "experiment": "E09",
+      "number": "ODC val-B AUROC, P0 ImageNet ViT-B",
+      "value": 0.9242806663301363,
+      "source": "results/e09/e09_eval_summary.json",
+      "where": "auroc.vitb_P0_imagenet.ODC",
+      "found": true
+    },
+    {
+      "experiment": "E09",
+      "number": "ODC val-B AUROC, P2 continued MAE",
+      "value": 0.8930843008581525,
+      "source": "results/e09/e09_eval_summary.json",
+      "where": "auroc.vitb_P2_cont.ODC",
+      "found": true
+    },
+    {
+      "experiment": "E09",
+      "number": "ODC val-B AUROC, P1 MAE from scratch",
+      "value": 0.8701665825340736,
+      "source": "results/e09/e09_eval_summary.json",
+      "where": "auroc.vitb_P1_scratch.ODC",
+      "found": true
+    },
+    {
+      "experiment": "E09",
+      "number": "ODC delta P2 - P0 [95% CI]",
+      "value": {
+        "delta": -0.03119636547198379,
+        "ci95": [
+          -0.06340484603735497,
+          -0.002019182231196348
+        ]
+      },
+      "source": "results/e09/e09_eval_summary.json",
+      "where": "delta_vs_P0.vitb_P2_cont.ODC",
+      "found": true
+    },
+    {
+      "experiment": "E09",
+      "number": "ODC delta P1 - P0 [95% CI]",
+      "value": {
+        "delta": -0.05411408379606264,
+        "ci95": [
+          -0.09904088844018166,
+          -0.017564361433619426
+        ]
+      },
+      "source": "results/e09/e09_eval_summary.json",
+      "where": "delta_vs_P0.vitb_P1_scratch.ODC",
+      "found": true
+    },
+    {
+      "experiment": "E09",
+      "number": "ON_any delta P1 - P0 [95% CI]",
+      "value": {
+        "delta": -0.05585851142225484,
+        "ci95": [
+          -0.1213006632277082,
+          0.0026565954310978513
+        ]
+      },
+      "source": "results/e09/e09_eval_summary.json",
+      "where": "delta_vs_P0.vitb_P1_scratch.ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E09",
+      "number": "pool v3 size",
+      "value": 104323,
+      "source": "results/e09/pool_v3_lock.json",
+      "where": "pool_size",
+      "found": true
+    },
+    {
+      "experiment": "E11",
+      "number": "test positives (ON_any)",
+      "value": 45,
+      "source": "results/e11/locked_test_results.json",
+      "where": "positives.ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E11",
+      "number": "ON_any test AUROC, A0-384",
+      "value": 0.9117460317460317,
+      "source": "results/e11/locked_test_results.json",
+      "where": "auroc.a0_384.ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E11",
+      "number": "ON_any test AUROC, residual ACR-384",
+      "value": 0.9167880485527544,
+      "source": "results/e11/locked_test_results.json",
+      "where": "auroc.racr_384.ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E11",
+      "number": "ON_any delta ACR - A0 [95% CI] (primary)",
+      "value": {
+        "delta": 0.005042016806722671,
+        "ci95": [
+          -0.006386554621848672,
+          0.01856209150326793
+        ]
+      },
+      "source": "results/e11/locked_test_results.json",
+      "where": "delta['racr_384 - a0_384'].ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E11",
+      "number": "ON_any delta ACR - shuffled frames [95% CI]",
+      "value": {
+        "delta": -0.0008216619981324946,
+        "ci95": [
+          -0.012063492063492113,
+          0.010084967320261604
+        ]
+      },
+      "source": "results/e11/locked_test_results.json",
+      "where": "delta['racr_384 - racr_384_shuffle'].ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E11",
+      "number": "primary criterion met",
+      "value": false,
+      "source": "results/e11/locked_test_results.json",
+      "where": "primary_success",
+      "found": true
+    },
+    {
+      "experiment": "E10",
+      "number": "config A (v1.3) on 56 dev images",
+      "value": {
+        "median_centre_err_rd": 0.151,
+        "n_gt_0p2": 24,
+        "n": 56
+      },
+      "source": "data/annotation/fe_disc_v1/e10_eval.json",
+      "where": "A (computed: median e, count e>0.2)",
+      "found": true
+    },
+    {
+      "experiment": "E10",
+      "number": "config C (v1.2+v1.3 ensemble + TTA) on 56 dev images",
+      "value": {
+        "median_centre_err_rd": 0.109,
+        "n_gt_0p2": 13,
+        "n": 56
+      },
+      "source": "data/annotation/fe_disc_v1/e10_eval.json",
+      "where": "C (computed: median e, count e>0.2)",
+      "found": true
+    },
+    {
+      "experiment": "FE v1.3",
+      "number": "RIM-ONE external hospitals disc Dice",
+      "value": 0.9543750428116469,
+      "source": "results/fe/fe_v13_seed42/metrics.json",
+      "where": "test.rimone.dice_disc",
+      "found": true
+    },
+    {
+      "experiment": "FE v1.3",
+      "number": "PAPILA test disc Dice",
+      "value": 0.9548625719207848,
+      "source": "results/fe/fe_v13_seed42/metrics.json",
+      "where": "test.papila.dice_disc",
+      "found": true
+    },
+    {
+      "experiment": "E08b",
+      "number": "result record (seed-wise ODC deltas, internals)",
+      "value": [
+        0.002,
+        0.005,
+        0.018
+      ],
+      "source": "results/e08/e08_record_and_prereg.json",
+      "where": "E08b_result.odc_racr_minus_a0_per_seed",
+      "found": true
+    },
+    {
+      "experiment": "FE v1.4",
+      "number": "IDRiD test (103) decoded centre error median (r_d)",
+      "value": 0.07992767342215576,
+      "source": "results/fe/fe_v14_seed42/metrics.json",
+      "where": "test.idrid_loc.decode_err_median",
+      "found": true
+    },
+    {
+      "experiment": "FE v1.4",
+      "number": "IDRiD test (103) images > 0.2 r_d",
+      "value": 1,
+      "source": "results/fe/fe_v14_seed42/metrics.json",
+      "where": "test.idrid_loc.decode_gt_0p2",
+      "found": true
+    },
+    {
+      "experiment": "FE v1.4",
+      "number": "IDRiD segmentation test disc Dice",
+      "value": 0.9688851424717823,
+      "source": "results/fe/fe_v14_seed42/metrics.json",
+      "where": "test.idrid_seg.dice_disc",
+      "found": true
+    },
+    {
+      "experiment": "E12",
+      "number": "RFMiD 2.0 kept images",
+      "value": 832,
+      "source": "results/e12/rfmid2_lock.json",
+      "where": "n_kept",
+      "found": true
+    },
+    {
+      "experiment": "E12",
+      "number": "RFMiD 2.0 ON_any2 positives",
+      "value": 43,
+      "source": "results/e12/rfmid2_lock.json",
+      "where": "positives_kept.ON_any2",
+      "found": true
+    },
+    {
+      "experiment": "E13b",
+      "number": "ON_any2 delta disc-zoom - A0 [95% CI] (primary)",
+      "value": {
+        "delta": 0.01078786806967913,
+        "ci95": [
+          -0.029478733751878997,
+          0.05049297020072498
+        ],
+        "n_pos": 43
+      },
+      "source": "results/e13/e13b_locked_results.json",
+      "where": "delta['dz_384 - a0_384'].ON_any2",
+      "found": true
+    },
+    {
+      "experiment": "E13b",
+      "number": "ON_any2 AUROC, A0 on RFMiD 2.0",
+      "value": 0.7690924632298759,
+      "source": "results/e13/e13b_locked_results.json",
+      "where": "auroc.a0_384.ON_any2",
+      "found": true
+    },
+    {
+      "experiment": "E13b",
+      "number": "primary criterion met",
+      "value": false,
+      "source": "results/e13/e13b_locked_results.json",
+      "where": "primary_success",
+      "found": true
+    },
+    {
+      "experiment": "E14",
+      "number": "R0 ON_any on unseen camera B",
+      "value": 0.848,
+      "source": "results/e14/e14_decision.json",
+      "where": "R0_unseen_camera.foldB_ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E14",
+      "number": "R3 - R0 Disease_Risk on camera C",
+      "value": -0.089,
+      "source": "results/e14/e14_decision.json",
+      "where": "deltas_vs_R0.foldC.R3.Disease_Risk",
+      "found": true
+    },
+    {
+      "experiment": "E15",
+      "number": "v1.4p IDRiD test decoded centre error median (r_d)",
+      "value": 0.07705965995919538,
+      "source": "results/fe/fe_v14p_seed42/metrics.json",
+      "where": "test.idrid_loc.decode_err_median",
+      "found": true
+    },
+    {
+      "experiment": "E15",
+      "number": "v1.4p RIM-ONE test images > 0.2 r_d (of 174)",
+      "value": 87,
+      "source": "results/fe/fe_v14p_seed42/metrics.json",
+      "where": "test.rimone.decode_gt_0p2",
+      "found": true
+    },
+    {
+      "experiment": "E15b",
+      "number": "v1.4p RIM-ONE failure detection AUROC, combined signal",
+      "value": 0.7472912262156448,
+      "source": "results/fe/e15b_failure_detection.json",
+      "where": "['v14p/rimone'].combo.auroc",
+      "found": true
+    },
+    {
+      "experiment": "E15b",
+      "number": "v1.4p RIM-ONE failure detection AUROC, q_frame",
+      "value": 0.7054704016913319,
+      "source": "results/fe/e15b_failure_detection.json",
+      "where": "['v14p/rimone'].inv_q.auroc",
+      "found": true
+    },
+    {
+      "experiment": "E16",
+      "number": "RFMiD 2.0 512x512 subset: ON positives / within-source AUROC",
+      "value": {
+        "n": 511,
+        "on_pos": 43,
+        "auroc": 0.718,
+        "fe_valid": 0.93
+      },
+      "source": "results/e13/e16_analysis.json",
+      "where": "by_resolution['512x512']",
+      "found": true
+    },
+    {
+      "experiment": "E17",
+      "number": "A0 ON_any original vs matched blur",
+      "value": {
+        "original": 0.923,
+        "512": 0.922,
+        "512_jpeg75": 0.921,
+        "matched": 0.92
+      },
+      "source": "results/e17/e17_decision.json",
+      "where": "A0_ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E17",
+      "number": "resolution augmentation effect on ON_any (matched) [95% CI]",
+      "value": [
+        -0.027,
+        -0.049,
+        -0.006
+      ],
+      "source": "results/e17/e17_decision.json",
+      "where": "RES_minus_A0_ON_any.matched",
+      "found": true
+    },
+    {
+      "experiment": "E18",
+      "number": "ON_any delta ACR true - mirrored frame [95% CI]",
+      "value": [
+        -0.002,
+        -0.015,
+        0.011
+      ],
+      "source": "results/e18/e18_decision.json",
+      "where": "acr_minus_mirror.ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E18",
+      "number": "ON_any delta ACR - A0 [95% CI]",
+      "value": [
+        -0.004,
+        -0.018,
+        0.009
+      ],
+      "source": "results/e18/e18_decision.json",
+      "where": "acr_minus_a0.ON_any",
+      "found": true
+    },
+    {
+      "experiment": "E19",
+      "number": "AMD primary: two-stage - additive CME [delta, lo, hi, holm p]",
+      "value": [
+        0.0249,
+        0.0177,
+        0.0322,
+        0.0016
+      ],
+      "source": "results/e19/e19_decision.json",
+      "where": "AMD.primary (from results/e19/AMD/formal_holdout/results.json)",
+      "found": true
+    },
+    {
+      "experiment": "E19",
+      "number": "DR primary: two-stage - additive CME [delta, lo, hi, holm p]",
+      "value": [
+        0.0274,
+        0.0183,
+        0.0365,
+        0.0016
+      ],
+      "source": "results/e19/e19_decision.json",
+      "where": "DR.primary (from results/e19/DR/formal_holdout/results.json)",
+      "found": true
+    },
+    {
+      "experiment": "E19",
+      "number": "AMD two-stage - OCT only [delta, lo, hi, holm p]",
+      "value": [
+        0.0075,
+        0.0046,
+        0.0105,
+        0.0016
+      ],
+      "source": "results/e19/e19_decision.json",
+      "where": "AMD.2stage_minus_oct",
+      "found": true
+    },
+    {
+      "experiment": "E19",
+      "number": "replication criterion met",
+      "value": true,
+      "source": "results/e19/e19_decision.json",
+      "where": "replication_criterion_met",
+      "found": true
+    },
+    {
+      "experiment": "E19",
+      "number": "AMD primary: two-stage - additive CME [delta, lo, hi, holm p]",
+      "value": [
+        0.0249,
+        0.0177,
+        0.0322,
+        0.0016
+      ],
+      "source": "results/e19/e19_decision.json",
+      "where": "AMD.primary (from results/e19/AMD/formal_holdout/results.json)",
+      "found": true
+    },
+    {
+      "experiment": "E19",
+      "number": "DR primary: two-stage - additive CME [delta, lo, hi, holm p]",
+      "value": [
+        0.0274,
+        0.0183,
+        0.0365,
+        0.0016
+      ],
+      "source": "results/e19/e19_decision.json",
+      "where": "DR.primary (from results/e19/DR/formal_holdout/results.json)",
+      "found": true
+    },
+    {
+      "experiment": "E19",
+      "number": "AMD two-stage - OCT only [delta, lo, hi, holm p]",
+      "value": [
+        0.0075,
+        0.0046,
+        0.0105,
+        0.0016
+      ],
+      "source": "results/e19/e19_decision.json",
+      "where": "AMD.2stage_minus_oct",
+      "found": true
+    },
+    {
+      "experiment": "E19",
+      "number": "replication criterion met",
+      "value": true,
+      "source": "results/e19/e19_decision.json",
+      "where": "replication_criterion_met",
+      "found": true
+    },
+    {
+      "experiment": "E19 review",
+      "number": "additive CME - OCT, DR [delta, ci]",
+      "value": {
+        "delta": -0.02624080438787557,
+        "ci95": [
+          -0.039159214356555526,
+          -0.015230094883190031
+        ]
+      },
+      "source": "results/e19/review_checks.json",
+      "where": "DR.cme_orig_minus_oct",
+      "found": true
+    },
+    {
+      "experiment": "E19 review",
+      "number": "adapter contribution vs OCT gap, AMD",
+      "value": {
+        "median_abs_cme_minus_s0": 3.3188533782958984,
+        "median_abs_oct_minus_s0": 1.818633794784546,
+        "corr_with_oct_gap": 0.024249618359505044
+      },
+      "source": "results/e19/review_checks.json",
+      "where": "AMD.adapter_contribution",
+      "found": true
+    },
+    {
+      "experiment": "FE review",
+      "number": "TTA flag cross-fitted sensitivity, product",
+      "value": 0.7078651685393258,
+      "source": "results/fe/review/e21_crossfit.json",
+      "where": "product.sensitivity",
+      "found": true
+    },
+    {
+      "experiment": "FE review",
+      "number": "RFMiD validity A/B/C, v1.4 seed 44",
+      "value": {
+        "A": 0.3948692152917505,
+        "B": 0.9376947040498442,
+        "C": 0.33497536945812806
+      },
+      "source": "results/fe/review/review_steps_3_5.json",
+      "where": "models.fe_v14_seed44.rfmid.valid",
+      "found": true
+    },
+    {
+      "experiment": "FE review",
+      "number": "IDRiD-RFMiD duplicate pairs",
+      "value": 65,
+      "source": "results/fe/idrid_rfmid_duplicate_audit.json",
+      "where": "len(pairs_ge_0p985)",
+      "found": true
+    }
+  ],
+  "changed_since_last_ledger": [],
+  "missing": [],
+  "notes": [
+    "RFMiD official test consumed by E11",
+    "RFMiD 2.0 (832) consumed by E13b",
+    "RFMiD MS = macular scar (not optic neuropathy)",
+    "E08-E11 ACR results used FE v1.2 frames that were mostly wrong on RFMiD: anatomy not tested",
+    "FE 56-image annotation set is a reused development set",
+    "AIROGS (CC BY-NC-ND) affects only pool-v3 pretrained checkpoints; the chosen backbone (ImageNet ViT-B) contains no non-commercial data"
+  ]
+}

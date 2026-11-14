@@ -1,0 +1,24 @@
+{
+  "research": {
+    "threshold_rd": 0.13795348672455082,
+    "n": 376,
+    "failures": 5,
+    "failures_caught": 0.6,
+    "good_flagged": 0.09973045822102426,
+    "old_0p5": {
+      "good_flagged": 0.0,
+      "failures_caught": 0.0
+    }
+  },
+  "product": {
+    "threshold_rd": 0.296686789541869,
+    "n": 376,
+    "failures": 89,
+    "failures_caught": 0.7078651685393258,
+    "good_flagged": 0.10104529616724739,
+    "old_0p5": {
+      "good_flagged": 0.04529616724738676,
+      "failures_caught": 0.3595505617977528
+    }
+  }
+}

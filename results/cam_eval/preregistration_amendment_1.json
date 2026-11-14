@@ -1,0 +1,13 @@
+{
+  "created": "2026-11-13T10:07:08",
+  "amends": "results/fe/cam_eval/preregistration.json",
+  "amends_sha256": "7ef1f6df958b8c06ec02e74f4eed51f5e5cf8e62d841cee00bfcb16c0048e44e",
+  "status_at_amendment": "no annotation exists; annotation package not delivered; reference not locked; evaluation not run",
+  "reason": "the paper is an engineering study; a single resident reference may not be accepted as ground truth",
+  "change": [
+    "The RFMiD 1.0 Test camera A/B/C annotation study becomes an optional secondary sub-study. Its analysis plan, scripts and hashes are unchanged and still apply if it is conducted.",
+    "If conducted, the annotator is described as a trained annotator (ophthalmology resident), and the same annotator also annotates a calibration subset of a public multi-expert dataset so that agreement with experts is reported; the calibration subset is defined in the new pre-registration before any annotation.",
+    "The primary ground-truth evaluation moves to public multi-device datasets with expert optic-disc annotations (candidates: Chaksu, REFUGE, Drishti-GS), under a separate pre-registration locked before any FE output on those datasets is viewed."
+  ],
+  "unchanged": "RFMiD 1.0 camera validity and seed-agreement analyses (no ground truth) remain the observational evidence"
+}

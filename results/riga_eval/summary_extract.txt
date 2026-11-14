@@ -1,0 +1,29 @@
+n: 747 {'Messidor': 460, 'BinRushed': 195, 'Magrabi': 92}
+G1: {'rho': 0.43333333333333335, 'p_exact': 0.24991732804232805, 'success': False}
+G3 research: seeds {'42': '15.3%', '43': '41.1%', '44': '77.5%'} max-min 0.622 Q 651.0 p_holm 4.3e-142 meaningful True
+G3 product: seeds {'42': '11.9%', '43': '85.0%', '44': '80.3%'} max-min 0.731 Q 976.4 p_holm 1.9e-212 meaningful True
+G4 research: fail R0 45.1% -> R1m 19.4% | discordant 193 vs 1 | p_holm 3.1e-56 | coverage 41.9% -> 64.4% | fail among valid 0/481
+G4 product: fail R0 39.6% -> R1m 21.2% | discordant 142 vs 4 | p_holm 4.2e-37 | coverage 61.3% -> 79.4% | fail among valid 7/593
+G2 TTA choice (all): {'research': ('fe_v14_seed42', '19.4%', 'fe_v14_seed42'), 'product': ('fe_v14p_seed42', '21.2%', 'fe_v14p_seed42')}
+G2 other research: {'idrid_centre_err': ('fe_v14_seed43', 0.232), 'neg_papila_dice': ('fe_v14_seed43', 0.232), 'neg_rfmid_valid_AC': ('fe_v14_seed42', 0.0), 'rfmid_labelfree_record': ('fe_v14_seed42', 0.0), 'random': (None, 0.278)}
+G2 other product: {'idrid_centre_err': ('fe_v14p_seed42', 0.0), 'neg_papila_dice': ('fe_v14p_seed44', 0.613), 'neg_rfmid_valid_AC': ('fe_v14p_seed42', 0.0), 'rfmid_labelfree_record': ('fe_v14p_seed44', 0.613), 'random': (None, 0.418)}
+
+TTA flag rate / failure by model (all):
+  fe_v14_seed42      flag 35.6%  fail 19.4%  fail|kept 0.0
+  fe_v14_seed43      flag 61.4%  fail 42.6%  fail|kept 0.020833333333333332
+  fe_v14_seed44      flag 83.8%  fail 79.5%  fail|kept 0.05785123966942149
+  fe_v14p_seed42     flag 20.5%  fail 21.2%  fail|kept 0.013468013468013467
+  fe_v14p_seed43     flag 81.5%  fail 85.1%  fail|kept 0.21739130434782608
+  fe_v14p_seed44     flag 34.9%  fail 82.5%  fail|kept 0.7345679012345679
+  fe_v14_f10_seed42  flag 53.1%  fail 77.0%  fail|kept 0.6628571428571428
+  fe_v14_f25_seed42  flag 57.4%  fail 72.4%  fail|kept 0.5251572327044025
+  fe_v14_f50_seed42  flag 65.7%  fail 70.4%  fail|kept 0.25390625
+
+[Messidor] spearman: {'flag_rate': (0.64, 0.06769179894179894), 'median_spread': (0.82, 0.009501763668430335)} | choice: {'research': ('fe_v14_seed42', '10.2%', 'fe_v14_seed42'), 'product': ('fe_v14p_seed42', '11.7%', 'fe_v14p_seed42')}
+  R1m single-pass fail: {'fe_v14_seed42': '7.6%', 'fe_v14_seed43': '40.2%', 'fe_v14_seed44': '86.3%', 'fe_v14p_seed42': '4.1%', 'fe_v14p_seed43': '97.8%', 'fe_v14p_seed44': '92.4%', 'pipeline_research': '10.2%', 'pipeline_product': '11.7%'}
+
+[BinRushed] spearman: {'flag_rate': (0.33, 0.3853229717813051), 'median_spread': (0.22, 0.5809413580246914)} | choice: {'research': ('fe_v14_seed42', '49.7%', 'fe_v14_seed42'), 'product': ('fe_v14p_seed44', '90.3%', 'fe_v14p_seed42')}
+  R1m single-pass fail: {'fe_v14_seed42': '40.0%', 'fe_v14_seed43': '62.6%', 'fe_v14_seed44': '93.3%', 'fe_v14p_seed42': '35.9%', 'fe_v14p_seed43': '94.9%', 'fe_v14p_seed44': '89.7%', 'pipeline_research': '49.7%', 'pipeline_product': '53.3%'}
+
+[Magrabi] spearman: {'flag_rate': (0.26, 0.5277777777777778), 'median_spread': (-0.1, 0.8888888888888888)} | choice: {'research': ('fe_v14_seed42', '1.1%', 'fe_v14_seed43'), 'product': ('fe_v14p_seed42', '0.0%', 'fe_v14p_seed42')}
+  R1m single-pass fail: {'fe_v14_seed42': '1.1%', 'fe_v14_seed43': '0.0%', 'fe_v14_seed44': '0.0%', 'fe_v14p_seed42': '0.0%', 'fe_v14p_seed43': '0.0%', 'fe_v14p_seed44': '0.0%', 'pipeline_research': '1.1%', 'pipeline_product': '0.0%'}

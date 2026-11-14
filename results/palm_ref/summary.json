@@ -1,0 +1,76 @@
+{
+  "created": "2026-11-13T18:31:44",
+  "fe_outputs_read": false,
+  "rules": "PALM reference standard (no FE model). Rules fixed before any FE output on PALM exists:\n - disc mask (Disc Masks/*.bmp): disc = grey < 128 (disc is black in PALM); largest component: centroid and sqrt(area/pi);\n - images without a disc mask are kept without reference (label-free stage only); mask and image sizes must match;\n - device (1 Zeiss, 2 Canon), shooting centre (1 OD, 2 fovea, 3 midpoint), pathologic-myopia label and split recorded;\n - reference radius mapped to the R0 crop (fe_external_check.box) and the R1m crop (fe/p2c_crop.py) at 384.\nRun once; inspect the summary before locking.",
+  "script_sha256": "4669cd6a9f37c4b8d89568e730326be162f8f5d78409282aaa442fd16b92c081",
+  "summary": {
+    "Zeiss": {
+      "images": 1047,
+      "with_mask": 1024,
+      "without_mask": 23,
+      "pm_label": {
+        "0": 537,
+        "1": 510
+      },
+      "pm_among_without_mask": 22,
+      "shooting_centre": {
+        "fovea": 766,
+        "OD": 7,
+        "midpoint": 274
+      },
+      "multi_component": 0,
+      "minor_frac_p99": 0.0,
+      "ref_r_px_p5_50_95": [
+        118.46899825370483,
+        148.77284571226681,
+        181.6543681529964
+      ],
+      "gt_r384_R0_p5_50_95": [
+        21.032707043415925,
+        26.427441688885374,
+        32.25726922371918
+      ],
+      "R0_in_rule": 1022,
+      "gt_r384_R1m_p5_50_95": [
+        21.037989351267374,
+        26.498534175312244,
+        32.4088947487022
+      ],
+      "R1m_in_rule": 1022
+    },
+    "Canon": {
+      "images": 153,
+      "with_mask": 120,
+      "without_mask": 33,
+      "pm_label": {
+        "0": 26,
+        "1": 127
+      },
+      "pm_among_without_mask": 27,
+      "shooting_centre": {
+        "fovea": 34,
+        "OD": 116,
+        "midpoint": 3
+      },
+      "multi_component": 0,
+      "minor_frac_p99": 0.0,
+      "ref_r_px_p5_50_95": [
+        109.29396663989253,
+        141.82944830373037,
+        186.89278186247492
+      ],
+      "gt_r384_R0_p5_50_95": [
+        28.572616206940715,
+        37.06672575661952,
+        49.08748208331645
+      ],
+      "R0_in_rule": 105,
+      "gt_r384_R1m_p5_50_95": [
+        28.572616206940715,
+        37.06672575661952,
+        49.3829961630928
+      ],
+      "R1m_in_rule": 104
+    }
+  }
+}

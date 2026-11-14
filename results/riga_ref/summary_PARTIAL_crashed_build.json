@@ -1,0 +1,45 @@
+{
+  "created": "2026-11-13T16:53:47",
+  "fe_outputs_read": false,
+  "rules": "Paper 2 E2 (RIGA): reference standard from six ophthalmologists' markings. No FE model is loaded.\nRules fixed before any FE output on RIGA exists:\n - sources: Messidor (MESSIDOR.zip); BinRushed (BinRushedcorrected.zip: BinRushed1-Corrected, BinRushed2-4; the old BinRushed1\n   folder and BinRushed.zip are superseded); Magrabi (Magrabia.zip: MagrabiaMale, MagrabiFemale);\n - original = imageNprime; marking k = imageN-k (k = 1..6); a group needs the original and all six markings;\n - marking pixels = max channel |marked - original| > 40; components smaller than 20 px removed;\n - rater disc = filled convex hull of the marking pixels (the disc contour encloses the cup contour);\n - a rater is valid if its disc area lies within 0.5-2.0 x the median of the six; an image is used with >= 4 valid raters;\n - primary reference = majority vote of valid rater discs (pixel in more than half), largest component: centroid, sqrt(area/pi);\n - sensitivity reference = mean of valid rater centres and radii;\n - inter-rater baseline = each valid rater centre vs the majority centre, divided by the majority radius;\n - originals extracted unchanged to data/eval/riga/extracted/; reference radius also mapped to the R0 crop\n   (fe_external_check.box) and the R1m crop (fe/p2c_crop.py) at 384.\nRun once; inspect the summary before locking.",
+  "script_sha256": "cda07c793fa30e4c6177b8e99fabe0bc0004b2c750af4ad3462d0bb22d385ba4",
+  "summary": {
+    "Messidor": {
+      "images_used": 460,
+      "excluded": 0,
+      "n_valid_raters": {
+        "4": 0,
+        "5": 1,
+        "6": 459
+      },
+      "image_sizes": {
+        "1440x960": 212,
+        "2240x1488": 173,
+        "2304x1536": 75
+      },
+      "expert_vs_majority_rd_p50_90_99": [
+        0.023055156088619865,
+        0.05175891803170073,
+        0.10563918178649638
+      ],
+      "expert_gt_0p2_rd": 11,
+      "expert_pairs": 2759,
+      "mean_vs_majority_rd_p50_99": [
+        0.005820881875982618,
+        0.05711212200177828
+      ],
+      "fill_hull_ratio_p5_p50": [
+        0.9931823953200488,
+        0.9952309192252977
+      ],
+      "ref_r_px_p5_50_95": [
+        64.23973103521823,
+        94.3470821554393,
+        116.86503099371811
+      ],
+      "gt_r384_R0_p5_50_95": [
+        17.50545087751568,
+        24.662286907724756,
+        31.200836699426567
+      ],
+      "R0_in_rule": 

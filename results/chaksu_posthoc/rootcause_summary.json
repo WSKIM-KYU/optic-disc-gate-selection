@@ -1,0 +1,340 @@
+{
+ "note": "POST HOC (development, Chaksu Train): image-level factors behind FE failures. No new FE inference; FE centres come\nfrom the locked results. Factors: fundus component vs the 384 crop (labels/text inflating the crop), brightness, contrast,\nvignetting, reference-disc position, and where predicted centres land (outside the fundus, near its rim, inside).",
+ "summary": {
+  "device_medians": {
+   "Bosch": {
+    "fundus_area_frac": 0.6400417751736112,
+    "fundus_r_rel": 0.9027327945802464,
+    "fundus_offset_rel": 0.003373157487832512,
+    "outside_bright_px": 0.0,
+    "brightness": 84.72394561767578,
+    "contrast": 26.376903533935547,
+    "vignetting_outer_inner": 0.7822249233722687,
+    "gt_offset_from_fundus_centre": 0.30467664173264997,
+    "gt_r384": 28.909347311662064
+   },
+   "Forus": {
+    "fundus_area_frac": 0.6631334092881944,
+    "fundus_r_rel": 0.9188730489794424,
+    "fundus_offset_rel": 0.01947419789978235,
+    "outside_bright_px": 0.0,
+    "brightness": 49.676849365234375,
+    "contrast": 24.698209762573242,
+    "vignetting_outer_inner": 0.6313930153846741,
+    "gt_offset_from_fundus_centre": 0.36913356516809137,
+    "gt_r384": 31.48943833829349
+   },
+   "Remidio": {
+    "fundus_area_frac": 0.3880954318576389,
+    "fundus_r_rel": 0.7029498000559586,
+    "fundus_offset_rel": 0.09762692377161807,
+    "outside_bright_px": 508.5,
+    "brightness": 52.96297073364258,
+    "contrast": 21.564048767089844,
+    "vignetting_outer_inner": 0.5520423948764801,
+    "gt_offset_from_fundus_centre": 0.46190138111867146,
+    "gt_r384": 27.878615907121798
+   }
+  },
+  "fail_vs_success": {
+   "Bosch/fe_v14_seed42": {
+    "fundus_area_frac": {
+     "fail_median": 0.47853597005208337,
+     "ok_median": 0.6400892469618056,
+     "p_mw": 0.03136194135668533
+    },
+    "fundus_r_rel": {
+     "fail_median": 0.7805708808098015,
+     "ok_median": 0.9027662716260969,
+     "p_mw": 0.03136194135668533
+    },
+    "fundus_offset_rel": {
+     "fail_median": 0.14725658130450747,
+     "ok_median": 0.0032569776275568644,
+     "p_mw": 0.17777400088770512
+    },
+    "outside_bright_px": {
+     "fail_median": 83.0,
+     "ok_median": 0.0,
+     "p_mw": 0.006650133500749869
+    },
+    "brightness": {
+     "fail_median": 110.05678939819336,
+     "ok_median": 83.67340469360352,
+     "p_mw": 0.00673710615948035
+    },
+    "contrast": {
+     "fail_median": 29.61840057373047,
+     "ok_median": 26.124999046325684,
+     "p_mw": 0.10854055862791716
+    },
+    "vignetting_outer_inner": {
+     "fail_median": 0.7695766985416412,
+     "ok_median": 0.7871114909648895,
+     "p_mw": 0.7641734934325433
+    },
+    "gt_offset_from_fundus_centre": {
+     "fail_median": 0.18377515542299358,
+     "ok_median": 0.321692481525623,
+     "p_mw": 0.013103187665506102
+    },
+    "gt_r384": {
+     "fail_median": 25.578104506468755,
+     "ok_median": 29.07131530723074,
+     "p_mw": 0.007552914533339357
+    }
+   },
+   "Bosch/fe_v14p_seed42": {
+    "fundus_area_frac": {
+     "fail_median": 0.5588412814670138,
+     "ok_median": 0.6400587293836806,
+     "p_mw": 0.24696946292945843
+    },
+    "fundus_r_rel": {
+     "fail_median": 0.8413457621924916,
+     "ok_median": 0.9027447508309212,
+     "p_mw": 0.24696946292945843
+    },
+    "fundus_offset_rel": {
+     "fail_median": 0.07558613997210782,
+     "ok_median": 0.003229115795664988,
+     "p_mw": 0.19919219441038338
+    },
+    "outside_bright_px": {
+     "fail_median": 49.5,
+     "ok_median": 0.0,
+     "p_mw": 0.012911147347927117
+    },
+    "brightness": {
+     "fail_median": 116.2218132019043,
+     "ok_median": 83.6081428527832,
+     "p_mw": 0.001199823755408776
+    },
+    "contrast": {
+     "fail_median": 36.86645698547363,
+     "ok_median": 25.211841583251953,
+     "p_mw": 0.0016392730645240505
+    },
+    "vignetting_outer_inner": {
+     "fail_median": 0.7873019278049469,
+     "ok_median": 0.7817686200141907,
+     "p_mw": 0.6556180632738762
+    },
+    "gt_offset_from_fundus_centre": {
+     "fail_median": 0.31760521081373705,
+     "ok_median": 0.30467664173264997,
+     "p_mw": 0.9604797483380857
+    },
+    "gt_r384": {
+     "fail_median": 26.08762771874617,
+     "ok_median": 29.02359990348971,
+     "p_mw": 0.023460096089343536
+    }
+   },
+   "Remidio/fe_v14_seed42": {
+    "fundus_area_frac": {
+     "fail_median": 0.3711480034722222,
+     "ok_median": 0.4787122938368056,
+     "p_mw": 1.3952267871432145e-22
+    },
+    "fundus_r_rel": {
+     "fail_median": 0.6874302030362367,
+     "ok_median": 0.780714685404218,
+     "p_mw": 1.3952267871432145e-22
+    },
+    "fundus_offset_rel": {
+     "fail_median": 0.09253815869736874,
+     "ok_median": 0.12275673672744902,
+     "p_mw": 0.0001441137162487083
+    },
+    "outside_bright_px": {
+     "fail_median": 488.0,
+     "ok_median": 528.0,
+     "p_mw": 3.658589629430918e-05
+    },
+    "brightness": {
+     "fail_median": 52.09088897705078,
+     "ok_median": 55.2171516418457,
+     "p_mw": 0.009275153309613593
+    },
+    "contrast": {
+     "fail_median": 21.207011222839355,
+     "ok_median": 22.223220825195312,
+     "p_mw": 0.034333276759070414
+    },
+    "vignetting_outer_inner": {
+     "fail_median": 0.5518089234828949,
+     "ok_median": 0.5522719621658325,
+     "p_mw": 0.9835659008872483
+    },
+    "gt_offset_from_fundus_centre": {
+     "fail_median": 0.46389983548480074,
+     "ok_median": 0.4565030829082891,
+     "p_mw": 0.8076551886551128
+    },
+    "gt_r384": {
+     "fail_median": 26.99367281946038,
+     "ok_median": 29.841496358630266,
+     "p_mw": 3.558021135346132e-18
+    }
+   },
+   "Remidio/fe_v14p_seed42": {
+    "fundus_area_frac": {
+     "fail_median": 0.373809814453125,
+     "ok_median": 0.4455023871527778,
+     "p_mw": 5.424313736709293e-15
+    },
+    "fundus_r_rel": {
+     "fail_median": 0.6898908816348803,
+     "ok_median": 0.7531475592139987,
+     "p_mw": 5.424313736709293e-15
+    },
+    "fundus_offset_rel": {
+     "fail_median": 0.09565560854896407,
+     "ok_median": 0.10002493312131931,
+     "p_mw": 0.12998457727331006
+    },
+    "outside_bright_px": {
+     "fail_median": 508.0,
+     "ok_median": 508.5,
+     "p_mw": 0.15248584650839697
+    },
+    "brightness": {
+     "fail_median": 49.995046615600586,
+     "ok_median": 58.309499740600586,
+     "p_mw": 7.722281697824864e-16
+    },
+    "contrast": {
+     "fail_median": 20.239705085754395,
+     "ok_median": 23.11535358428955,
+     "p_mw": 2.556699783430017e-09
+    },
+    "vignetting_outer_inner": {
+     "fail_median": 0.5391108393669128,
+     "ok_median": 0.5641979873180389,
+     "p_mw": 0.24662973296944102
+    },
+    "gt_offset_from_fundus_centre": {
+     "fail_median": 0.4316823157785826,
+     "ok_median": 0.49562864542121954,
+     "p_mw": 1.0757457658289542e-07
+    },
+    "gt_r384": {
+     "fail_median": 27.12032887021404,
+     "ok_median": 29.076788810668187,
+     "p_mw": 4.482706818352247e-08
+    }
+   }
+  },
+  "where_failures_land": {
+   "Bosch/fe_v14_seed42": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 14,
+    "none": 0
+   },
+   "Bosch/fe_v14_seed43": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 21,
+    "none": 0
+   },
+   "Bosch/fe_v14_seed44": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 73,
+    "none": 0
+   },
+   "Bosch/fe_v14p_seed42": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 16,
+    "none": 0
+   },
+   "Bosch/fe_v14p_seed43": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 99,
+    "none": 0
+   },
+   "Bosch/fe_v14p_seed44": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 57,
+    "none": 0
+   },
+   "Forus/fe_v14_seed42": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 0,
+    "none": 0
+   },
+   "Forus/fe_v14_seed43": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 0,
+    "none": 0
+   },
+   "Forus/fe_v14_seed44": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 0,
+    "none": 0
+   },
+   "Forus/fe_v14p_seed42": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 0,
+    "none": 0
+   },
+   "Forus/fe_v14p_seed43": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 0,
+    "none": 0
+   },
+   "Forus/fe_v14p_seed44": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 0,
+    "none": 0
+   },
+   "Remidio/fe_v14_seed42": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 558,
+    "none": 0
+   },
+   "Remidio/fe_v14_seed43": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 524,
+    "none": 0
+   },
+   "Remidio/fe_v14_seed44": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 771,
+    "none": 0
+   },
+   "Remidio/fe_v14p_seed42": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 486,
+    "none": 0
+   },
+   "Remidio/fe_v14p_seed43": {
+    "outside_fundus": 0,
+    "fundus_rim": 0,
+    "inside": 771,
+    "none": 0
+   },
+   "Remidio/fe_v14p_seed44": {
+    "outside_fundus": 6,
+    "fundus_rim": 0,
+    "inside": 678,
+    "none": 0
+   }
+  }
+ }
+}

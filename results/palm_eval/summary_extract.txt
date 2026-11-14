@@ -1,0 +1,10 @@
+P2 Zeiss: {'research': ('fe_v14_seed42', 0.0, 'fe_v14_seed42', 0.0, {'seed42': 0.359, 'seed43': 0.679, 'seed44': 0.924}), 'product': ('fe_v14p_seed42', 0.0, 'fe_v14p_seed42', 0.0, {'seed42': 0.476, 'seed43': 0.933, 'seed44': 0.851})}
+P2 Canon: {'research': ('fe_v14_seed42', 0.0, 'fe_v14_seed42', 0.0, {'seed42': 0.2, 'seed43': 0.733, 'seed44': 0.883}), 'product': ('fe_v14p_seed42', 0.0, 'fe_v14p_seed44', 0.292, {'seed42': 0.583, 'seed43': 0.783, 'seed44': 0.875})}
+P3 Zeiss: {'research': ('fe_v14_seed42', 210, 3, 0.0329), 'product': ('fe_v14p_seed42', 461, 40, 0.1136)}
+P3 Canon: {'research': ('fe_v14_seed42', 62, 0, 0.0578), 'product': ('fe_v14p_seed42', 50, 6, 0.22)}
+P4 research: {"device": {"Canon": [153, 0.405, 0.2], "Zeiss": [958, 0.219, 0.359]}, "pm_label": {"0": [475, 0.438, 0.062], "1": [636, 0.101, 0.564]}, "shooting_centre": {"OD": [123, 0.496, 0.211], "fovea": [720, 0.244, 0.3], "midpoint": [268, 0.131, 0.506]}, "has_mask": {"False": [56, 0.0, null], "True": [1055, 0.258, 0.341]}}
+P4 product: {"device": {"Canon": [153, 0.366, 0.583], "Zeiss": [958, 0.485, 0.476]}, "pm_label": {"0": [475, 0.872, 0.077], "1": [636, 0.168, 0.816]}, "shooting_centre": {"OD": [123, 0.415, 0.577], "fovea": [720, 0.55, 0.381], "midpoint": [268, 0.276, 0.717]}, "has_mask": {"False": [56, 0.179, null], "True": [1055, 0.484, 0.488]}}
+seed dependence R1m: {'research': (0.566, {'seed42': 0.323, 'seed43': 0.616, 'seed44': 0.889}, '3.6e-182'), 'product': (0.463, {'seed42': 0.446, 'seed43': 0.909, 'seed44': 0.826}, '6.1e-164')}
+crop R1m vs R0: {'research': (0.342, 0.341, 14, 13, '1.0e+00'), 'product': (0.482, 0.488, 10, 16, '6.5e-01')}
+failure by model (pooled): {'e_v14_seed42': 0.341, 'e_v14_seed43': 0.685, 'e_v14_seed44': 0.919, '_v14p_seed42': 0.488, '_v14p_seed43': 0.916, '_v14p_seed44': 0.854, '4_f10_seed42': 0.953, '4_f25_seed42': 0.842, '4_f50_seed42': 0.694}
+sensitivity incl. duplicates: P1 {'rho': 0.8666666666666667, 'p_exact': 0.004508377425044092, 'met': True} | P2 met True | P3 research (3, 306, 0.0228) | P3 met True

@@ -1,0 +1,79 @@
+{
+  "created": "2026-11-13T09:54:01",
+  "title": "Paper 2: seed-dependent camera generalisation of the optic-disc frame estimator (FE), ground-truth evaluation",
+  "nature": "engineering localisation-accuracy study; not a diagnostic accuracy study",
+  "data": {
+    "source": "RFMiD 1.0 official Test (640 images), camera by native resolution: A TOPCON 3D OCT-2000 (2144x1424), B Kowa VX-10 alpha (4288x2848, control), C TOPCON TRC-NW300 (2048x1536)",
+    "sample": "A 50, B 30, C 50 originals drawn by fe/p2_select_annotation_sample.py (seed 20261112) after excluding 12 Test images duplicated in IDRiD (FE training data); 13 blinded intra-rater repeats (A 5, B 3, C 5); no replacement of ungradable images",
+    "prior_exposure_of_test": [
+      "E11: FE v1.2 frames generated as model input; no per-image or per-camera output viewed",
+      "E18: FE v1.4 frames generated as model input; one aggregate printed (valid 82% over val-B 318 + Test 640 = 958)",
+      "E13 frame files and 16-image figures used train+validation only"
+    ]
+  },
+  "reference_standard": {
+    "annotator": "kim_md (ophthalmology resident), same protocol as fe_disc_v1: 6-8 boundary points per disc, ellipse fit, inner edge of Elschnig ring, peripapillary atrophy excluded, blurred edge of swollen discs included",
+    "blinding": "blinded to FE output, dataset labels and sample codes; no AI preliminary annotation; camera cannot be blinded (resolution and colour are visible)",
+    "senior_review": "images flagged uncertain are reviewed by a senior ophthalmologist before the reference lock; the outcome is written into the annotation file and documented in review_note*",
+    "lock": "fe/p2_lock_reference.py records annotation file hashes before any comparison with FE",
+    "limitation": "single annotator; intra-rater agreement from 13 repeats"
+  },
+  "definitions": {
+    "failure": "predicted centre more than 0.2 r_d from the reference centre (r_d = reference equivalent radius after mapping to the 384 crop), or no centre",
+    "valid_frame": "status ok and radius 15-46 px at 384 (single forward pass, as in the seed review)",
+    "cells": "valid-correct, valid-failure (silent failure), rejected-correct (rule false rejection), rejected-failure",
+    "models": "nine checkpoints (fe_v14 and fe_v14p seeds 42-44; fe_v14 IDRiD fractions 10/25/50% seed 42) by single forward pass; 3-seed probability ensembles per track; deployed pipeline onfm/frame.py (6-view TTA; valid also requires no TTA-spread flag) for both tracks with the deployed thresholds (research 0.138, product 0.297 r_d), not recalibrated"
+  },
+  "primary": {
+    "hypothesis": "within a track, models differing only in training seed differ in failure on unseen cameras",
+    "test": "Cochran Q across seeds 42/43/44 on assessable camera A and C originals (n about 100), separately for research (fe_v14) and product (fe_v14p); Holm adjustment over the two tracks; significant if adjusted p < 0.05",
+    "reporting": "failure proportion per seed with Wilson 95% CI; a non-significant result is reported as such"
+  },
+  "control": {
+    "criterion": "camera B failure <= 10% for all six seed models",
+    "if_unmet": "reported as unmet; camera A/C results interpreted with caution"
+  },
+  "secondary": [
+    "failure, valid rate, median centre error and radius absolute error per camera and model (Wilson 95% CI)",
+    "four-cell table per model and camera; silent-failure and false-rejection proportions; correctness of radius < 15 px rejections",
+    "self-detection on A and C: sensitivity and specificity of the TTA-spread flag and of any pipeline flag for failures",
+    "intra-rater agreement: median centre difference (r_d) and relative radius difference of repeat pairs"
+  ],
+  "sensitivity": "primary test and failure rates repeated excluding images flagged uncertain",
+  "exclusions": "not-assessable images excluded from FE metrics and counted per camera",
+  "sample_size_rationale": "50 per camera gives a Wilson 95% CI half-width of at most about 14 percentage points; A and C pooled (about 100) for the paired seed comparison",
+  "single_evaluation": "fe/p2_cam_locked_eval.py runs once; it refuses to run on any hash mismatch or if results exist; deviations are reported",
+  "evaluation_script": "fe/p2_cam_locked_eval.py",
+  "evaluation_script_sha256": "8107871441691549389b14e718b5c62a820619713049975b1ac709b91220a309",
+  "checkpoint_sha256": {
+    "fe_v14_seed42": "a7cf7f0fe92a15280ceed72267b231e6b82463652e3221a3fe59332132b62c9d",
+    "fe_v14_seed43": "e4bd7b434b274c3639f836548b450517c635b881307cbffae061b653a4df0969",
+    "fe_v14_seed44": "ba725b797df8131305c17567f9296ef87dc2b3b0a8b7bb6c4c0880a7480a66d9",
+    "fe_v14p_seed42": "fa7ee5f3fbd322eb4ab2a859c409660b33a17a00270d09adde063c82d27700d2",
+    "fe_v14p_seed43": "23102f5f9097e89c8e2819a926698ce44a39c858de73299344586c01f42776eb",
+    "fe_v14p_seed44": "45a2c4a4c19ff954466e5fd4460b6f22ef209e9b9c3bbf1e89ee6d18e51632a9",
+    "fe_v14_f10_seed42": "495f9637384f5256bdec04c4f4ad8d7688ad21884c9df2c4e0b6d93fbace31ce",
+    "fe_v14_f25_seed42": "705e193d15fcab8f5cfaec34610983833ad6e01216a457a44e1808601d83a56b",
+    "fe_v14_f50_seed42": "f4269d0a5cb6a79f2b83be789f5cb32e14eb56f7adff03767a3b54bb6d4adca0"
+  },
+  "dependency_sha256": {
+    "onfm/frame.py": "4893da26151eea294eb035725be760d9d5918afd2881bd81bd427b25d92e604d",
+    "onfm/flag_thresholds.json": "87b701072d4410070a2a528000838c043305b99050d56f541c448260549d37fc",
+    "fe/fe_decode.py": "2b5b20b562ee594b3322a8c23ee19d02831c312e977e31ad3b3ffd3e9e3581c8",
+    "fe/fe_train.py": "6b660589ef98882f28b10e1ee39f6dc40ac2b012000193376e3528542530ecea",
+    "fe/fe_external_check.py": "e4bb974896b5dff09032c46f726a70360eb3441616eb1bb9149f703873b65d34",
+    "fe/p2_lock_reference.py": "76037ba9f6fd175f0d28233129654a9ff970eb124947c64db46fa580977f5241"
+  },
+  "package_sha256": {
+    "results/fe/cam_annot/manifest.csv": "5c077494efa10f1ce25bbb22e4297e9700653cc6fc8996c203ae2b3be1689da5",
+    "results/fe/cam_annot/selection_log.json": "095b125764789c8d02d535c7e0a4a56de447af39e9d5409b5bd10591334988df",
+    "data/annotation/fe_cam_p2/key.csv": "acd697a339f048ff3fa5229eebddbb9de6d26f3d3a4db92425d65c36a776d69a",
+    "data/annotation/fe_cam_p2/fe_cam_p2_images.zip": "85ebb7449179cf27eb4fa759ab44c14d60b91a5cc1c39758bb4ffb29035d4c48",
+    "data/annotation/fe_cam_p2/package_log.json": "e6000aa2686bcb2f5be3e0c23f99ebdfb85e5ff3766714b4ffc28b4b651c778f"
+  },
+  "selftest": {
+    "script_sha256": "3ebf1cd7c361c282acf3af1aee20d3e61daf6c965b7eec21bf18fb9a40ac7a52",
+    "log_sha256": "f2338296e6046757585c9584bc799f2e1a16bfc234ef92170997b8a548f65f0c",
+    "result": "preprocessing parity 0.00 on 20 training images; plumbing on fe_disc_v1 (61 images); synthetic tests as expected"
+  }
+}

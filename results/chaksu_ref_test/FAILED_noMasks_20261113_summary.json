@@ -1,0 +1,123 @@
+{
+  "created": "2026-11-13T14:13:31",
+  "fe_outputs_read": false,
+  "rules": "Paper 2 (Chaksu): reference standard for the Chaksu Test split from the published expert masks. No FE model is loaded.\nRules fixed before any FE output on Chaksu exists:\n - primary reference: STAPLE optic-disc mask (5.0_OD_OC_Mean_Median_Majority_STAPLE/<device>/Disc/STAPLE);\n   centre = centroid of the largest foreground component, radius = sqrt(area / pi), in original-image pixels;\n - sensitivity reference: Majority disc mask (same folder, Majority);\n - inter-expert baseline: each expert's binary disc mask (3.0_Doctors_Annotations_Binary_OD_OC/Expert k/<device>/Disc),\n   centroid distance to the STAPLE centre divided by the STAPLE radius;\n - images are read without EXIF rotation, as the FE pipeline reads them; mask and image sizes must match.\nWrites results/fe/chaksu_ref_test/reference_test.csv and summary.json. Run once; inspect the summary before locking.",
+  "script_sha256": "0afef3f885096ed9ec045e72ea2238768d10dd9a4ddf80c009098c65b401d1a7",
+  "summary": {
+    "Bosch": {
+      "images": 41,
+      "staple_ok": 0,
+      "size_match": 0,
+      "size_match_only_if_transposed": 0,
+      "exif_orientation_counts": {
+        "1": 41
+      },
+      "image_sizes": {
+        "1920x1440": 41
+      },
+      "multi_component_staple": 0,
+      "minor_component_frac_p99": null,
+      "ref_radius_px_p5_50_95": [
+        null,
+        null,
+        null
+      ],
+      "ref_radius_rel_to_short_side_median": null,
+      "experts_available": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "expert_vs_staple_centre_rd_p50_90_99": [
+        null,
+        null,
+        null
+      ],
+      "expert_centre_gt_0p2_rd": 0,
+      "expert_pairs": 0,
+      "majority_vs_staple_centre_rd_p50_99": [
+        null,
+        null
+      ]
+    },
+    "Forus": {
+      "images": 31,
+      "staple_ok": 0,
+      "size_match": 0,
+      "size_match_only_if_transposed": 0,
+      "exif_orientation_counts": {
+        "1": 31
+      },
+      "image_sizes": {
+        "2048x1536": 31
+      },
+      "multi_component_staple": 0,
+      "minor_component_frac_p99": null,
+      "ref_radius_px_p5_50_95": [
+        null,
+        null,
+        null
+      ],
+      "ref_radius_rel_to_short_side_median": null,
+      "experts_available": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "expert_vs_staple_centre_rd_p50_90_99": [
+        null,
+        null,
+        null
+      ],
+      "expert_centre_gt_0p2_rd": 0,
+      "expert_pairs": 0,
+      "majority_vs_staple_centre_rd_p50_99": [
+        null,
+        null
+      ]
+    },
+    "Remidio": {
+      "images": 264,
+      "staple_ok": 0,
+      "size_match": 0,
+      "size_match_only_if_transposed": 0,
+      "exif_orientation_counts": {
+        "1": 264
+      },
+      "image_sizes": {
+        "1969x2166": 1,
+        "2448x3264": 263
+      },
+      "multi_component_staple": 0,
+      "minor_component_frac_p99": null,
+      "ref_radius_px_p5_50_95": [
+        null,
+        null,
+        null
+      ],
+      "ref_radius_rel_to_short_side_median": null,
+      "experts_available": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "expert_vs_staple_centre_rd_p50_90_99": [
+        null,
+        null,
+        null
+      ],
+      "expert_centre_gt_0p2_rd": 0,
+      "expert_pairs": 0,
+      "majority_vs_staple_centre_rd_p50_99": [
+        null,
+        null
+      ]
+    }
+  }
+}

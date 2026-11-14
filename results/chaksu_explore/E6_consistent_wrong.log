@@ -1,0 +1,101 @@
+train boxes 200/1009
+train boxes 400/1009
+train boxes 600/1009
+train boxes 800/1009
+train boxes 1000/1009
+reference eccentricity range (Chaksu Train p0.5-p99.5): 0.038-0.749
+
+===== chaksu_train (n=1009)
+  model                fail   flag  invalid  eccOut  consMed
+  fe_v14_seed42        8.3%  19.4%     4.9%    1.0%    0.294
+  fe_v14_seed43       22.2%  43.6%    12.3%    0.9%    0.327
+  fe_v14_seed44       67.8%  78.5%    23.0%    0.7%    0.546
+  fe_v14p_seed42      28.3%  27.2%    14.2%    1.2%    0.406
+  fe_v14p_seed43      73.2%  68.8%    31.8%    0.7%    0.564
+  fe_v14p_seed44      62.7%  42.7%    57.3%    0.8%    0.543
+  fe_v14_f10_seed42   62.9%  59.6%    67.4%    0.5%    0.504
+  fe_v14_f25_seed42   70.7%  63.3%    75.7%    1.0%    0.592
+  fe_v14_f50_seed42   49.8%  51.9%    45.9%    1.0%    0.451
+  signal                   rho9 (p)          | research pick (regret) | product pick (regret)
+  flag_rate                +0.87 (0.005)    | seed42 (0.000)      | seed42 (0.000)
+  invalid_rate             +0.68 (0.050)    | seed42 (0.000)      | seed42 (0.000)
+  ecc_out_rate             -0.53 (0.146)    | seed44 (0.595)      | seed43 (0.449)
+  consensus_median         +0.97 (0.000)    | seed42 (0.000)      | seed42 (0.000)
+  flag+invalid             +0.87 (0.005)    | seed42 (0.000)      | seed42 (0.000)
+  flag+ecc_out             +0.87 (0.005)    | seed42 (0.000)      | seed42 (0.000)
+  flag+consensus(rank)     +0.96 (0.000)    | seed42 (0.000)      | seed42 (0.000)
+  flag+invalid+ecc_out     +0.87 (0.005)    | seed42 (0.000)      | seed42 (0.000)
+  image level, among TTA-unflagged frames: failures caught / correct rejected
+  fe_v14_seed42      unflagged  813, failures    0 | invalid -/0.01 ecc_out -/0.01 cons>0.5 -/0.35 any -/0.36
+  fe_v14_seed43      unflagged  569, failures    0 | invalid -/0.02 ecc_out -/0.01 cons>0.5 -/0.28 any -/0.30
+  fe_v14_seed44      unflagged  217, failures    1 | invalid 0.00/0.02 ecc_out 0.00/0.01 cons>0.5 1.00/0.08 any 1.00/0.10
+  fe_v14p_seed42     unflagged  735, failures   14 | invalid 0.57/0.01 ecc_out 0.07/0.01 cons>0.5 0.43/0.30 any 0.71/0.32
+  fe_v14p_seed43     unflagged  315, failures   48 | invalid 0.40/0.03 ecc_out 0.02/0.01 cons>0.5 0.27/0.07 any 0.52/0.09
+  fe_v14p_seed44     unflagged  578, failures  203 | invalid 0.96/0.09 ecc_out 0.00/0.02 cons>0.5 0.41/0.10 any 0.96/0.17
+  fe_v14_f10_seed42  unflagged  408, failures  194 | invalid 0.99/0.29 ecc_out 0.00/0.02 cons>0.5 0.42/0.12 any 1.00/0.33
+  fe_v14_f25_seed42  unflagged  370, failures  161 | invalid 1.00/0.36 ecc_out 0.00/0.02 cons>0.5 0.39/0.14 any 1.00/0.40
+  fe_v14_f50_seed42  unflagged  485, failures   55 | invalid 1.00/0.07 ecc_out 0.00/0.01 cons>0.5 0.25/0.15 any 1.00/0.20
+
+===== chaksu_test (n=336)
+  model                fail   flag  invalid  eccOut  consMed
+  fe_v14_seed42       12.2%  20.5%     6.5%    2.4%    0.364
+  fe_v14_seed43       29.5%  49.7%    14.6%    2.1%    0.464
+  fe_v14_seed44       68.2%  78.3%    28.9%    0.6%    0.666
+  fe_v14p_seed42      31.2%  30.7%    17.3%    2.1%    0.498
+  fe_v14p_seed43      77.1%  71.4%    39.3%    1.5%    0.602
+  fe_v14p_seed44      59.2%  36.0%    56.2%    1.8%    0.419
+  fe_v14_f10_seed42   67.9%  61.3%    67.9%    1.8%    0.491
+  fe_v14_f25_seed42   67.9%  61.9%    71.7%    1.8%    0.482
+  fe_v14_f50_seed42   60.1%  59.5%    55.7%    0.9%    0.534
+  signal                   rho9 (p)          | research pick (regret) | product pick (regret)
+  flag_rate                +0.93 (0.001)    | seed42 (0.000)      | seed42 (0.000)
+  invalid_rate             +0.58 (0.110)    | seed42 (0.000)      | seed42 (0.000)
+  ecc_out_rate             -0.83 (0.008)    | seed44 (0.560)      | seed43 (0.458)
+  consensus_median         +0.76 (0.022)    | seed42 (0.000)      | seed44 (0.280)
+  flag+invalid             +0.73 (0.031)    | seed42 (0.000)      | seed42 (0.000)
+  flag+ecc_out             +0.93 (0.001)    | seed42 (0.000)      | seed42 (0.000)
+  flag+consensus(rank)     +0.88 (0.003)    | seed42 (0.000)      | seed44 (0.280)
+  flag+invalid+ecc_out     +0.73 (0.031)    | seed42 (0.000)      | seed42 (0.000)
+  image level, among TTA-unflagged frames: failures caught / correct rejected
+  fe_v14_seed42      unflagged  267, failures    0 | invalid -/0.00 ecc_out -/0.02 cons>0.5 -/0.36 any -/0.37
+  fe_v14_seed43      unflagged  169, failures    1 | invalid 1.00/0.01 ecc_out 0.00/0.01 cons>0.5 0.00/0.33 any 1.00/0.33
+  fe_v14_seed44      unflagged   73, failures    1 | invalid 0.00/0.01 ecc_out 0.00/0.00 cons>0.5 0.00/0.14 any 0.00/0.14
+  fe_v14p_seed42     unflagged  233, failures    3 | invalid 0.33/0.01 ecc_out 0.00/0.03 cons>0.5 0.33/0.35 any 0.67/0.36
+  fe_v14p_seed43     unflagged   96, failures   20 | invalid 0.45/0.05 ecc_out 0.00/0.04 cons>0.5 0.35/0.11 any 0.60/0.18
+  fe_v14p_seed44     unflagged  215, failures   78 | invalid 0.96/0.12 ecc_out 0.00/0.04 cons>0.5 0.36/0.17 any 0.97/0.26
+  fe_v14_f10_seed42  unflagged  130, failures   61 | invalid 0.98/0.17 ecc_out 0.02/0.00 cons>0.5 0.30/0.17 any 1.00/0.26
+  fe_v14_f25_seed42  unflagged  128, failures   60 | invalid 0.98/0.31 ecc_out 0.03/0.00 cons>0.5 0.27/0.19 any 1.00/0.37
+  fe_v14_f50_seed42  unflagged  136, failures   26 | invalid 1.00/0.11 ecc_out 0.00/0.00 cons>0.5 0.35/0.09 any 1.00/0.18
+
+===== riga (n=747)
+  model                fail   flag  invalid  eccOut  consMed
+  fe_v14_seed42       19.4%  35.6%     9.0%    5.5%    0.665
+  fe_v14_seed43       42.6%  61.4%    26.8%    4.6%    0.676
+  fe_v14_seed44       79.5%  83.8%    54.9%    1.9%    0.702
+  fe_v14p_seed42      21.2%  20.5%     5.8%    5.8%    0.644
+  fe_v14p_seed43      85.1%  81.5%    43.1%    1.2%    0.706
+  fe_v14p_seed44      82.5%  34.9%    80.9%    2.5%    0.527
+  fe_v14_f10_seed42   77.0%  53.1%    80.6%    2.3%    0.407
+  fe_v14_f25_seed42   72.4%  57.4%    66.1%    5.8%    0.390
+  fe_v14_f50_seed42   70.4%  65.7%    62.7%    3.2%    0.728
+  signal                   rho9 (p)          | research pick (regret) | product pick (regret)
+  flag_rate                +0.43 (0.250)    | seed42 (0.000)      | seed42 (0.000)
+  invalid_rate             +0.63 (0.076)    | seed42 (0.000)      | seed42 (0.000)
+  ecc_out_rate             -0.79 (0.014)    | seed44 (0.601)      | seed43 (0.640)
+  consensus_median         +0.07 (0.880)    | seed42 (0.000)      | seed44 (0.613)
+  flag+invalid             +0.63 (0.076)    | seed42 (0.000)      | seed42 (0.000)
+  flag+ecc_out             +0.43 (0.250)    | seed42 (0.000)      | seed42 (0.000)
+  flag+consensus(rank)     +0.19 (0.627)    | seed42 (0.000)      | seed42 (0.000)
+  flag+invalid+ecc_out     +0.57 (0.121)    | seed42 (0.000)      | seed42 (0.000)
+  image level, among TTA-unflagged frames: failures caught / correct rejected
+  fe_v14_seed42      unflagged  481, failures    0 | invalid -/0.00 ecc_out -/0.03 cons>0.5 -/0.51 any -/0.53
+  fe_v14_seed43      unflagged  288, failures    6 | invalid 0.83/0.02 ecc_out 0.00/0.04 cons>0.5 0.33/0.38 any 1.00/0.40
+  fe_v14_seed44      unflagged  121, failures    7 | invalid 0.71/0.04 ecc_out 0.00/0.04 cons>0.5 0.29/0.07 any 0.86/0.15
+  fe_v14p_seed42     unflagged  594, failures    8 | invalid 0.12/0.00 ecc_out 0.00/0.06 cons>0.5 0.12/0.57 any 0.25/0.59
+  fe_v14p_seed43     unflagged  138, failures   30 | invalid 0.37/0.04 ecc_out 0.00/0.07 cons>0.5 0.30/0.03 any 0.57/0.12
+  fe_v14p_seed44     unflagged  486, failures  357 | invalid 0.99/0.12 ecc_out 0.00/0.08 cons>0.5 0.41/0.05 any 1.00/0.23
+  fe_v14_f10_seed42  unflagged  350, failures  232 | invalid 1.00/0.24 ecc_out 0.00/0.04 cons>0.5 0.21/0.07 any 1.00/0.29
+  fe_v14_f25_seed42  unflagged  318, failures  167 | invalid 0.98/0.27 ecc_out 0.01/0.03 cons>0.5 0.28/0.12 any 0.98/0.34
+  fe_v14_f50_seed42  unflagged  256, failures   65 | invalid 1.00/0.16 ecc_out 0.00/0.07 cons>0.5 0.15/0.19 any 1.00/0.39
+
+saved results/fe/chaksu_explore/E6_consistent_wrong.json

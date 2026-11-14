@@ -1,0 +1,6 @@
+== (1) PALM crop parity on 15 images: R0 0.00e+00, R1m 0.00e+00
+/home/test/OpticNeuroFusion_Starter/fe/p2_cam_locked_eval.py:36: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  t = (torch.from_numpy(np.ascontiguousarray(x)).to(dev()).permute(2, 0, 1)[None].float().div(255) - MEAN.to(dev())) / STD.to(dev())
+== (2) equivalence on 6 Chaksu Train images: max |R0 error diff| 0.00e+00, max |R1m spread diff| 0.00e+00, fail mismatches 0
+== (3) sections: ['P1', 'P2', 'P3', 'P4', 'secondary'] | P1 (6 images, not interpretable): {'rho': 0.6091095901015049, 'p_exact': 0.09523809523809523, 'met': False} | P3 research: Clopper-Pearson, n = clusters (no failure observed)
+SELF-TEST DONE (nothing written)

@@ -1,0 +1,19 @@
+{
+  "created": "2026-11-13T11:39:41",
+  "fe_outputs_read": false,
+  "files_sha256": {
+    "results/fe/chaksu_ref/reference_train.csv": "73fc75f7506eeedfaf4092da01a962bc143316c4e66b9d27bf9da811d0cf5726",
+    "results/fe/chaksu_ref/summary.json": "642ac677a28aa4f7a156c7ac096242f929ecd2b10d8fbbf4b950cb1a724d6154",
+    "results/fe/chaksu_ref/reference_scale_train.csv": "af9944cba762eae70816b59762130c177eb0b1a6b2b3cfa4b7356f2494071156",
+    "results/fe/chaksu_ref/scale_summary.json": "6b82c1ede7a38c12bff539e76a67028c47845b2993efc26e342195ab54ff9eef",
+    "fe/p2c_build_reference.py": "df1dbe82ff32b812976f02def5c49f168b73759bb653ea05b2f1621119ff1a6c",
+    "fe/p2c_ref_scale.py": "5bd7e94a5a41bf97ba5c4a8514844416d49b7ebcb25d924e8238d26cbcd3755d",
+    "data/eval/chaksu/provenance.json": "4d774661eddc6e255b8d49a962e8ba7944d90a36a1bac2aeaaeee84e9545f30e",
+    "data/eval/chaksu/extracted/UNZIP_DONE.txt": "528ea8fb1eb8680edbedeb37bff5865080709434694b72a697d0fb0a43498142"
+  },
+  "notes": [
+    "all 1,009 Train images: mask size equals image size, no EXIF rotation, STAPLE present",
+    "inter-expert centre distance to STAPLE: 2 of 5,045 expert-image pairs above 0.2 r_d",
+    "reference disc radius at 384: 22-36 px (p5-p95); all 1,009 inside the 15-46 px rule"
+  ]
+}

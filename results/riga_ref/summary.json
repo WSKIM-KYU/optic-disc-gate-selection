@@ -1,0 +1,149 @@
+{
+  "created": "2026-11-13T17:04:58",
+  "fe_outputs_read": false,
+  "note": "the build script completed all images and wrote reference_riga.csv and excluded.json, then failed at its summary (numpy int64 in json.dump); this summary is computed from those files",
+  "build_script_sha256": "cda07c793fa30e4c6177b8e99fabe0bc0004b2c750af4ad3462d0bb22d385ba4",
+  "summary_script_sha256": "adcabce9289d3d5fcf1e0fb0986ec4b947c778b2e948fddcd701c38a66f28307",
+  "summary": {
+    "Messidor": {
+      "images_used": 460,
+      "excluded": 0,
+      "excluded_reasons": [],
+      "n_valid_raters": {
+        "4": 0,
+        "5": 1,
+        "6": 459
+      },
+      "image_sizes": {
+        "1440x960": 212,
+        "2240x1488": 173,
+        "2304x1536": 75
+      },
+      "expert_vs_majority_rd_p50_90_99": [
+        0.023055156088619865,
+        0.05175891803170073,
+        0.10563918178649638
+      ],
+      "expert_gt_0p2_rd": 11,
+      "expert_pairs": 2759,
+      "mean_vs_majority_rd_p50_99": [
+        0.005820881875982618,
+        0.05711212200177828
+      ],
+      "fill_hull_ratio_p5_p50": [
+        0.9931823953200488,
+        0.9952309192252977
+      ],
+      "ref_r_px_p5_50_95": [
+        64.23973103521823,
+        94.3470821554393,
+        116.86503099371811
+      ],
+      "gt_r384_R0_p5_50_95": [
+        17.50545087751568,
+        24.662286907724756,
+        31.200836699426567
+      ],
+      "R0_in_rule": 460,
+      "gt_r384_R1m_p5_50_95": [
+        25.55025573373575,
+        28.62399427993399,
+        32.59083296990478
+      ],
+      "R1m_in_rule": 460
+    },
+    "BinRushed": {
+      "images_used": 195,
+      "excluded": 0,
+      "excluded_reasons": [],
+      "n_valid_raters": {
+        "4": 0,
+        "5": 0,
+        "6": 195
+      },
+      "image_sizes": {
+        "2376x1584": 195
+      },
+      "expert_vs_majority_rd_p50_90_99": [
+        0.021752107783215617,
+        0.04715452312886484,
+        0.08830274398427629
+      ],
+      "expert_gt_0p2_rd": 2,
+      "expert_pairs": 1170,
+      "mean_vs_majority_rd_p50_99": [
+        0.005253165434422698,
+        0.035268572866894686
+      ],
+      "fill_hull_ratio_p5_p50": [
+        0.9935123612819684,
+        0.9949969949205719
+      ],
+      "ref_r_px_p5_50_95": [
+        91.02443099493384,
+        106.33888614556372,
+        121.60189083325463
+      ],
+      "gt_r384_R0_p5_50_95": [
+        23.822619319658198,
+        27.829731515877008,
+        31.83758424242417
+      ],
+      "R0_in_rule": 195,
+      "gt_r384_R1m_p5_50_95": [
+        23.822619319658198,
+        27.829731515877008,
+        31.83758424242417
+      ],
+      "R1m_in_rule": 195
+    },
+    "Magrabi": {
+      "images_used": 92,
+      "excluded": 3,
+      "excluded_reasons": [
+        "3 valid raters",
+        "incomplete group"
+      ],
+      "n_valid_raters": {
+        "4": 0,
+        "5": 0,
+        "6": 92
+      },
+      "image_sizes": {
+        "2743x1936": 92
+      },
+      "expert_vs_majority_rd_p50_90_99": [
+        0.02160218173674544,
+        0.047992998942624744,
+        0.11981710391383982
+      ],
+      "expert_gt_0p2_rd": 2,
+      "expert_pairs": 552,
+      "mean_vs_majority_rd_p50_99": [
+        0.005671972130960741,
+        0.08355679107044643
+      ],
+      "fill_hull_ratio_p5_p50": [
+        0.99410120012648,
+        0.9960365052178417
+      ],
+      "ref_r_px_p5_50_95": [
+        156.15564961085195,
+        196.11797545522455,
+        282.3425855995227
+      ],
+      "gt_r384_R0_p5_50_95": [
+        21.518728280918502,
+        27.394017896081312,
+        39.127316113297425
+      ],
+      "R0_in_rule": 92,
+      "gt_r384_R1m_p5_50_95": [
+        21.87883852676484,
+        27.50824996918925,
+        39.6579907521336
+      ],
+      "R1m_in_rule": 92
+    }
+  }
+}

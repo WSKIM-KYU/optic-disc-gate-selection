@@ -1,0 +1,290 @@
+{
+ "chaksu_train/all/flag": {
+  "rho": 0.8666666666666667,
+  "p": 0.004508377425044092,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_train/all/reject": {
+  "rho": 0.8666666666666667,
+  "p": 0.004508377425044092,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_train/Bosch/flag": {
+  "rho": 0.7531446678801508,
+  "p": 0.023743386243386243,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.04807692307692307,
+   "product": 0.0
+  }
+ },
+ "chaksu_train/Bosch/reject": {
+  "rho": 0.9201680672268908,
+  "p": 0.0009093915343915343,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.04807692307692307,
+   "product": 0.0
+  }
+ },
+ "chaksu_train/Forus/flag": {
+  "rho": null,
+  "p": null,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_train/Forus/reject": {
+  "rho": null,
+  "p": null,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_train/Remidio/flag": {
+  "rho": 0.8833333333333333,
+  "p": 0.0030753968253968253,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_train/Remidio/reject": {
+  "rho": 0.8166666666666667,
+  "p": 0.010769400352733686,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_test/all/flag": {
+  "rho": 0.9288784237188525,
+  "p": 0.0007716049382716049,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_test/all/reject": {
+  "rho": 0.8284591346681659,
+  "p": 0.008531746031746031,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_test/Bosch/flag": {
+  "rho": 0.9166666666666666,
+  "p": 0.0013117283950617284,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_test/Bosch/reject": {
+  "rho": 0.9075950713612994,
+  "p": 0.0015652557319223985,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_test/Forus/flag": {
+  "rho": null,
+  "p": null,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_test/Forus/reject": {
+  "rho": null,
+  "p": null,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_test/Remidio/flag": {
+  "rho": 0.8666666666666667,
+  "p": 0.004508377425044092,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "chaksu_test/Remidio/reject": {
+  "rho": 0.8499999999999999,
+  "p": 0.00607363315696649,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "riga/all/flag": {
+  "rho": 0.43333333333333335,
+  "p": 0.24991732804232805,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "riga/all/reject": {
+  "rho": 0.75,
+  "p": 0.02549052028218695,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "riga/BinRushed/flag": {
+  "rho": 0.33333333333333337,
+  "p": 0.3853229717813051,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed44"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.36923076923076925
+  }
+ },
+ "riga/BinRushed/reject": {
+  "rho": 0.5857791861290061,
+  "p": 0.10279982363315697,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "riga/Magrabi/flag": {
+  "rho": 0.2643402663188405,
+  "p": 0.5277777777777778,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.010869565217391304,
+   "product": 0.0
+  }
+ },
+ "riga/Magrabi/reject": {
+  "rho": 0.2643402663188405,
+  "p": 0.5277777777777778,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.010869565217391304,
+   "product": 0.0
+  }
+ },
+ "riga/Messidor/flag": {
+  "rho": 0.6443571047419068,
+  "p": 0.06769179894179894,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ },
+ "riga/Messidor/reject": {
+  "rho": 0.9539832459815243,
+  "p": 0.0002535273368606702,
+  "picks": {
+   "research": "fe_v14_seed42",
+   "product": "fe_v14p_seed42"
+  },
+  "regret": {
+   "research": 0.0,
+   "product": 0.0
+  }
+ }
+}

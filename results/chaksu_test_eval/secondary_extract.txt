@@ -1,0 +1,23 @@
+R0 seed dependence (replication): {'research': (0.301, '5.7e-27', True), 'product': (0.342, '4.7e-32', True)}
+
+[Bosch] TTA Spearman: {'flag_rate': (0.92, 0.0013117283950617284), 'median_spread': (0.95, 0.0003527336860670194)}
+  research: choice fe_v14_seed42 (fail 2.4%, cover 90.2%, fail|kept 0.0) best fe_v14_seed42
+  product: choice fe_v14p_seed42 (fail 9.8%, cover 92.7%, fail|kept 0.02631578947368421) best fe_v14p_seed42
+  descriptive_R0: {'fe_v14_seed42': '9.8%', 'fe_v14_seed43': '46.3%', 'fe_v14_seed44': '80.5%', 'fe_v14p_seed42': '17.1%', 'fe_v14p_seed43': '100.0%', 'fe_v14p_seed44': '63.4%', 'pipeline_research': '9.8%', 'pipeline_product': '22.0%'}
+  descriptive_R1m: {'fe_v14_seed42': '2.4%', 'fe_v14_seed43': '4.9%', 'fe_v14_seed44': '68.3%', 'fe_v14p_seed42': '2.4%', 'fe_v14p_seed43': '95.1%', 'fe_v14p_seed44': '29.3%', 'pipeline_research': '2.4%', 'pipeline_product': '9.8%'}
+
+[Forus] TTA Spearman: {'flag_rate': (None, None), 'median_spread': (None, None)}
+  research: choice fe_v14_seed42 (fail 0.0%, cover 87.1%, fail|kept 0.0) best fe_v14_seed42
+  product: choice fe_v14p_seed42 (fail 0.0%, cover 100.0%, fail|kept 0.0) best fe_v14p_seed42
+  descriptive_R0: {'fe_v14_seed42': '0.0%', 'fe_v14_seed43': '0.0%', 'fe_v14_seed44': '0.0%', 'fe_v14p_seed42': '0.0%', 'fe_v14p_seed43': '0.0%', 'fe_v14p_seed44': '0.0%', 'pipeline_research': '0.0%', 'pipeline_product': '0.0%'}
+  descriptive_R1m: {'fe_v14_seed42': '0.0%', 'fe_v14_seed43': '0.0%', 'fe_v14_seed44': '0.0%', 'fe_v14p_seed42': '0.0%', 'fe_v14p_seed43': '0.0%', 'fe_v14p_seed44': '0.0%', 'pipeline_research': '0.0%', 'pipeline_product': '0.0%'}
+
+[Remidio] TTA Spearman: {'flag_rate': (0.87, 0.004508377425044092), 'median_spread': (0.85, 0.00607363315696649)}
+  research: choice fe_v14_seed42 (fail 15.2%, cover 76.9%, fail|kept 0.0) best fe_v14_seed42
+  product: choice fe_v14p_seed42 (fail 38.3%, cover 62.1%, fail|kept 0.012195121951219513) best fe_v14p_seed42
+  descriptive_R0: {'fe_v14_seed42': '67.4%', 'fe_v14_seed43': '69.7%', 'fe_v14_seed44': '94.7%', 'fe_v14p_seed42': '65.5%', 'fe_v14p_seed43': '96.2%', 'fe_v14p_seed44': '84.5%', 'pipeline_research': '65.5%', 'pipeline_product': '67.4%'}
+  descriptive_R1m: {'fe_v14_seed42': '13.3%', 'fe_v14_seed43': '35.6%', 'fe_v14_seed44': '74.2%', 'fe_v14p_seed42': '35.6%', 'fe_v14p_seed43': '85.2%', 'fe_v14p_seed44': '70.5%', 'pipeline_research': '15.2%', 'pipeline_product': '38.3%'}
+
+self_detection_R0: {'research': {'failures': 177, 'tta_flag_sensitivity': 0.977, 'tta_flag_specificity': 0.78}, 'product': {'failures': 187, 'tta_flag_sensitivity': 0.914, 'tta_flag_specificity': 0.966}}
+
+self_detection_R1m: {'research': {'failures': 41, 'tta_flag_sensitivity': 1.0, 'tta_flag_specificity': 0.905}, 'product': {'failures': 105, 'tta_flag_sensitivity': 0.971, 'tta_flag_specificity': 0.996}}
